@@ -17,6 +17,36 @@ import yaml
 from pathlib import Path
 from typing import Any, Dict
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+CONFIG_DIR = PROJECT_ROOT / "config"
+
+def resolve_config_path(path: str | Path) -> Path:
+    """
+    Resolve a configuration file path relative to current directory,
+    project root, or config directory.
+    """
+    p = Path(path)
+    if p.exists():
+        return p
+
+    # Try relative to project root
+    candidate_root = (PROJECT_ROOT / p).resolve()
+    if candidate_root.exists():
+        return candidate_root
+
+    # Try removing leading ".." components
+    clean_parts = [part for part in p.parts if part != ".."]
+    if clean_parts:
+        candidate_clean = (PROJECT_ROOT / Path(*clean_parts)).resolve()
+        if candidate_clean.exists():
+            return candidate_clean
+
+    # Try directly in CONFIG_DIR
+    candidate_config = (CONFIG_DIR / p.name).resolve()
+    if candidate_config.exists():
+        return candidate_config
+
+    return p
 
 # ============================================================
 # Exceptions personnalisées
@@ -52,7 +82,7 @@ def load_config(path: str | Path, defaults: Dict[str, Any] | None = None) -> Dic
         If the file does not exist or has an unsupported format.
     """
 
-    path = Path(path)
+    path = resolve_config_path(path)
     if not path.exists():
         raise ConfigError(f"❌ Fichier de configuration introuvable : {path}")
 
@@ -101,15 +131,15 @@ def validate_config(config: Dict[str, Any], required_keys: list[str], context: s
 
 
 # ============================================================
-# Chargement global (fusion de plusieurs fichiers)
+# Chargement global (fusion de me plusieurs fichiers)
 # ============================================================
 
 def load_all_configs(
-    base_path: str | Path = "../config/config_viswir.yaml",
-    params_path: str | Path = "../config/parameters.json",
-    yolo_path: str | Path = "../config/yolo_config.json",
-    optuna_path: str | Path = "../config/optuna_config.yaml",
-    logging_path: str | Path = "../config/logging_config.yaml"
+    base_path: str | Path = "config/config_viswir.yaml",
+    params_path: str | Path = "config/parameters.json",
+    yolo_path: str | Path = "config/yolo_config.json",
+    optuna_path: str | Path = "config/optuna_config.yaml",
+    logging_path: str | Path = "config/logging_config.yaml"
 ) -> Dict[str, Dict[str, Any]]:
     """
     Load and validate all configuration files required for the VISWIR_vQuasar project.
@@ -203,7 +233,7 @@ def load_all_configs(
 # Chargement spécial pour Optuna (espace de recherche des paramètres)
 # ============================================================
 
-def load_optuna_search_space(path: str | Path = "../config/optuna_search_space.yaml") -> Dict[str, Any]:
+def load_optuna_search_space(path: str | Path = "config/optuna_search_space.yaml") -> Dict[str, Any]:
     """
     Load the YAML file defining the Optuna search space.
 
@@ -217,5 +247,5 @@ def load_optuna_search_space(path: str | Path = "../config/optuna_search_space.y
     dict
         Dictionary describing the Optuna search space.
     """
-    
+
     return load_config(path)
