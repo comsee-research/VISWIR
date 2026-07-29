@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Large model weights (YOLO)
+*.pt
+*.pth
+
+# Sphinx build output
+docs/build/
+
+# Logging
+*.log
+src/logs/
+src/common/logs/
+
+# SQL databases and query results
+*.db
+*.sqlite3
+results/*
+!results/.gitkeep

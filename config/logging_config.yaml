@@ -1,0 +1,21 @@
+# Configuration du système de logs pour VISWIR_vQuasar
+
+# Niveau de log global : DEBUG, INFO, WARNING, ERROR, CRITICAL
+level: INFO
+
+# Activer/désactiver la sortie console
+log_to_console: true
+
+# Activer/désactiver la sortie fichier
+log_to_file: true
+
+# Nom du fichier de log (sera placé dans src/logs/)
+log_file: viswir.log
+
+# Format des logs (Loguru)
+format: "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
+
+# Rotation et rétention sont fixées dans logger.py :
+# rotation: "10 MB"
+# retention: "10 days"
+# compression: "zip"

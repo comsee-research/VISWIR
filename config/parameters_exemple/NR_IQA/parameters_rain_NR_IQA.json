@@ -1,0 +1,8 @@
+{
+    "mode_fixe": true,
+    "facteur_swir": 0.8,
+    "beta": 1.5,
+    "level": 6,
+    "apply_gamma": true,
+    "gamma_value": 1.5
+}

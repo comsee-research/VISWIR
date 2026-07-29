@@ -1,0 +1,13 @@
+# Paramètres de pilotage
+visible_folder: "../data/VIS"
+swir_folder: "../data/SWIR"
+output_folder: "../results" # sortie
+ref_image_path: null # pour le calcul des métriques R-IQA, nécessite une image de référence par paire de fusion
+ground_truth_path: "../data/Ground truth"
+
+mode: "sql"   # "fixed", "sql", "optuna"
+
+run_detection: false # true, false
+save_output: true # enregistre ou non les images fusionnées
+
+# Ici on ne met PAS les paramètres de fusion (ils restent dans parameters.json)

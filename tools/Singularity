@@ -1,0 +1,73 @@
+Bootstrap: docker
+From: python:3.11.2-bullseye  # Plus complet que slim
+
+%files
+    # Copier les fichiers du projet dans le conteneur
+    VISWIR /VISWIR
+
+%post
+#!/bin/bash
+set -e  # stop on first error
+
+    # Mettre à jour le système
+    echo "🛠️ Mise à jour du système..."
+	# apt-get update && apt-get install -y --no-install-recommends \
+	apt-get update && apt-get install -y \
+		build-essential wget curl git \
+		libgl1 libglib2.0-0 libxrender1 \
+		zlib1g-dev libffi-dev libssl-dev \
+		libsqlite3-dev libbz2-dev liblzma-dev \
+		libreadline-dev libncurses5-dev libgdbm-dev
+	
+	echo "✅ Libs système installées."
+	
+	echo "🧹 Nettoyage..."
+	apt-get clean && rm -rf /var/lib/apt/lists/*
+
+    # Installer les dépendances Python en exécutant `install_packages_container.sh`
+    echo "📦 Exécution du script d'installation des packages..."
+    chmod +x /VISWIR/install_packages_container.sh
+    /VISWIR/install_packages_container.sh
+
+	echo "🧹 Nettoyage pip cache..."
+    python3 -m pip cache purge || true
+
+    echo "💾 Conteneurisation du projet terminée."
+
+%test
+#!/bin/bash
+
+    echo "🔍 Test des composants..."
+	python -c "import numpy" && echo "✅ Numpy OK." || (echo "❌ Numpy absent." && exit 1)
+	python -c "import torch; print(torch.__version__)" && echo "✅ PyTorch OK." || (echo "❌ PyTorch absent." && exit 1)
+	python -c "import cv2; print(cv2.__version__)" && echo "✅ OpenCV OK." || (echo "❌ OpenCV absent." && exit 1)
+    python -c "import ultralytics" && echo "✅ YOLO OK." || (echo "❌ Ultralytics absent." && exit 1)
+	python -c "import optuna; print(optuna.__version__)" && echo "✅ Optuna OK." || (echo "❌ Optuna absent." && exit 1)
+
+    echo "📁 Vérification des dossiers..."
+	[ -d "/VISWIR/src" ] || (echo "❌ /VISWIR/src manquant." && exit 1)
+
+    # echo "🚀 Toutes les vérifications sont OK, le conteneur est prêt à l'emploi !"
+	echo "✅ Tous les tests passent."
+
+%runscript
+#!/bin/bash
+
+	# Afficher un message de bienvenue avec lien vers la doc
+    echo "📖 Documentation disponible ici : /VISWIR/HELP.md"
+    echo "Pour afficher la doc : singularity exec VISWIR.sif cat /VISWIR/HELP.md"
+
+    # Vérifier la version de Python utilisée
+    echo "📌 Python utilisé : $(which python)"
+
+	# Exécuter le code principal
+    echo "⚙️ Lancement de VISWIR.py avec arguments : $@"
+	echo "Exemple : singularity run VISWIR.sif --fast --visible ../data/vis.png --swir ../data/swir.png --out ../results/fused.png"
+	cd /VISWIR/src
+	python VISWIR_vQuasar.py "$@"
+
+    # Afficher un message de fin
+    echo "✅ Exécution terminée. Les résultats sont enregistrés dans /VISWIR/results et les logs dans /VISWIR/src/logs."
+    echo "Au revoir !"
+
+	exit 0

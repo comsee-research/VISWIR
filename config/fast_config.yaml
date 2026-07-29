@@ -1,0 +1,7 @@
+# Minimal entries used by FastFusionPipeline (others can remain for full pipeline)
+run_detection: true    # true or false
+facteur_swir: 0.1
+beta: 2.21
+level: 4
+apply_gamma: true
+gamma_value: 1.63
