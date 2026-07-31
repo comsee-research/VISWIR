@@ -51,3 +51,4 @@ sphinx
 sphinx-nefertiti
 sphinx-rtd-theme
 myst-parser
+linkify-it-py
