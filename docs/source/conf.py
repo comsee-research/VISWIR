@@ -31,6 +31,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",  # pour docstrings style Google/NumPy
     "sphinx.ext.viewcode",  # ajoute des liens vers le code source
+    "sphinx_nefertiti",
 ]
 source_suffix = {
     ".rst": "restructuredtext",
