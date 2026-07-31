@@ -38,7 +38,7 @@ sewar==0.4.6
 six==1.17.0
 SQLAlchemy==2.0.41
 sympy==1.13.3
-tifffile==2025.5.26
+tifffile==2024.8.30
 torch>=2.0.0
 torchaudio>=2.0.0
 torchvision>=0.15.0
