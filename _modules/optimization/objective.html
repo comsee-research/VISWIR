@@ -1,0 +1,795 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="colorset-reset" content="0" />
+    <meta name="docsearch:name" content="VISWIR: Visible and SWIR Weighted Image Reconstruction" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.2 (vQuasar)" />
+    <meta name="docsearch:version" content="" />
+    
+      <meta name="theme-color" content="#6610f2" />
+    
+    
+      <title>optimization.objective &mdash; VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation</title>
+    
+    <link rel="canonical" href="_modules/optimization/objective" />
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/nunito/stylesheet.css?v=abf98f06" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/fonts/ubuntu-sans-mono/stylesheet.css?v=8616a587" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments-dark.css?v=2de69186" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/pygments-light.css?v=d6779c33" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../_static/sphinx-nefertiti-indigo.min.css?v=07734d20" /><!-- add (1) -->
+        <link rel="index" title="Index" href="../../genindex.html" />
+        <link rel="search" title="Search" href="../../search.html" />
+        <link rel="top" title="VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation" href="#" />
+        <link rel="up" title="Module code" href="../index.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Ubuntu Sans Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to index filter</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="../../index.html"
+             class="navbar-brand"
+          ><span class="brand-text">VISWIR: Visible and SWIR Weighted Image Reconstruction</span><span class="brand-short-text">VISWIR</span></a>
+        
+        
+          <ul class="nftt-header-links-large navbar-nav">
+          
+            
+            
+            
+            
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="../../index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+          
+          </ul>
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="../../search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-short-text">VISWIR</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+                <div class="nftt-header-links-small">
+                  
+                    
+                    
+                    
+                    <div class="d-inline-block">
+                      
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="../../index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+                    </div>
+                  
+                  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                    <hr class="d-xl-none text-white-50">
+                  </li>
+                </div>
+              
+              
+              <li class="nav-item col-12 col-xl-auto">
+                <a class="nav-link py-2 py-xl-0 px-0 px-xl-2" href="https://github.com/comsee-research/VISWIR" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/comsee-research/VISWIR">
+                      VISWIR
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                <hr class="d-xl-none text-white-50">
+              </li>
+              
+              
+              
+  <!-- colorssets-dropdown.html -->
+  <li class="nav-item dropdown">
+    <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-color" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change base color">
+      <i class="bi bi-palette"></i>
+      <span id="snftt-color-text" class="d-xl-none ms-2">Change base color</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-color-text">
+      <li>
+        <h6 class="dropdown-header">Change base color</h6>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="blue" href="#" aria-pressed="false">
+          <span class="blue">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Blue</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center active" data-snftt-colorset="indigo" href="#" aria-pressed="false">
+          <span class="indigo">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Indigo</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="purple" href="#" aria-pressed="false">
+          <span class="purple">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Purple</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="pink" href="#" aria-pressed="false">
+          <span class="pink">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Pink</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="red" href="#" aria-pressed="false">
+          <span class="red">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Red</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="orange" href="#" aria-pressed="false">
+          <span class="orange">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Orange</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="yellow" href="#" aria-pressed="false">
+          <span class="yellow">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Yellow</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="green" href="#" aria-pressed="false">
+          <span class="green">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Green</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="teal" href="#" aria-pressed="false">
+          <span class="teal">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Teal</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="default" href="#" aria-pressed="false">
+          <span class="cyan">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Cyan</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <h6 class="dropdown-header">Header style</h6>
+      </li>
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset-neutral="off" href="#" aria-pressed="false">
+          <i class="bi bi-noise-reduction"></i>
+          <span class="ms-3">Neutral</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+    <hr class="d-lg-none text-white-50">
+  </li>
+
+              
+              <!-- lightdark-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change appearance">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Change appearance</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Change appearance</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Automatic</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-none">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Index
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="index filter" aria-label="index filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/configs.html">Configuration Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/optuna.html">Optuna Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/data.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/tools.html">Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">Help for Singularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/hpc_slurm.html">Running VISWIR on HPC with SLURM</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Source Code Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../VISWIR_vQuasar.html">VISWIR_vQuasar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../common.html">common package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fusion.html">fusion package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../fusion.NIQE.html">fusion.NIQE package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../optimization.html">optimization package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../processing.html">processing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../realtime.html">realtime package</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../authors.html">Authors</a></li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <div><div class="d-flex flex-row justify-content-between">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../index.html">Start</a></li>
+        <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active" aria-current="page">optimization.objective</li>
+    </ol>
+  </nav>
+  
+    <div class="fs085">
+    </div>
+  
+</div>
+            
+    <h1>Source code for optimization.objective</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Optuna objective functions for hyperparameter optimization.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># FILENAME:       objective.py</span>
+<span class="c1"># DESCRIPTION:    Définitions des fonctions objectif pour Optuna</span>
+<span class="c1">#                 - NR-IQA (entropy, BRISQUE, NIQE, PIQE)</span>
+<span class="c1">#                 - Détection (F1-score)</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">optuna</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">optimization.optuna_wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="n">process_image_wrapper_optuna</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">common.logger</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">common.config_loader</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_optuna_search_space</span><span class="p">,</span> <span class="n">load_all_configs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">common.datatypes</span><span class="w"> </span><span class="kn">import</span> <span class="n">FusionTask</span>
+
+<span class="c1"># Chargement du search space une seule fois</span>
+<span class="n">SEARCH_SPACE</span> <span class="o">=</span> <span class="n">load_optuna_search_space</span><span class="p">()</span>
+
+<span class="c1"># Charger la config optuna</span>
+<span class="n">configs</span> <span class="o">=</span> <span class="n">load_all_configs</span><span class="p">()</span>
+<span class="n">OPTUNA_CFG</span> <span class="o">=</span> <span class="n">configs</span><span class="p">[</span><span class="s2">&quot;optuna&quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="suggest_params">
+<a class="viewcode-back" href="../../optimization.html#optimization.objective.suggest_params">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">suggest_params</span><span class="p">(</span><span class="n">trial</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a dictionary of parameters from the Optuna search space.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    trial : optuna.trial.Trial</span>
+<span class="sd">        Current Optuna trial object.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        Dictionary of suggested parameters with their values.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the parameter type in the search space is unsupported.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">spec</span> <span class="ow">in</span> <span class="n">SEARCH_SPACE</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">spec</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;float&quot;</span><span class="p">:</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">trial</span><span class="o">.</span><span class="n">suggest_float</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">spec</span><span class="p">[</span><span class="s2">&quot;min&quot;</span><span class="p">],</span> <span class="n">spec</span><span class="p">[</span><span class="s2">&quot;max&quot;</span><span class="p">],</span> <span class="n">step</span><span class="o">=</span><span class="n">spec</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;step&quot;</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">spec</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;int&quot;</span><span class="p">:</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">trial</span><span class="o">.</span><span class="n">suggest_int</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">spec</span><span class="p">[</span><span class="s2">&quot;min&quot;</span><span class="p">],</span> <span class="n">spec</span><span class="p">[</span><span class="s2">&quot;max&quot;</span><span class="p">],</span> <span class="n">step</span><span class="o">=</span><span class="n">spec</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;step&quot;</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">spec</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;categorical&quot;</span><span class="p">:</span>
+            <span class="n">params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">trial</span><span class="o">.</span><span class="n">suggest_categorical</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">spec</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Type de paramètre non supporté : </span><span class="si">{</span><span class="n">spec</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">params</span></div>
+
+
+<span class="c1"># ============================================================</span>
+<span class="c1"># Objectif NR-IQA</span>
+<span class="c1"># ============================================================</span>
+
+<div class="viewcode-block" id="objective">
+<a class="viewcode-back" href="../../optimization.html#optimization.objective.objective">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">objective</span><span class="p">(</span><span class="n">trial</span><span class="p">,</span> <span class="n">visible_files</span><span class="p">,</span> <span class="n">swir_files</span><span class="p">,</span> <span class="n">ref_image_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">run_detection</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Optuna objective function based on NR-IQA metrics.</span>
+
+<span class="sd">    This objective evaluates fused images using no-reference image quality</span>
+<span class="sd">    assessment metrics (Entropy, BRISQUE, NIQE, PIQE).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    trial : optuna.trial.Trial</span>
+<span class="sd">        Current Optuna trial object.</span>
+<span class="sd">    visible_files : list of str</span>
+<span class="sd">        List of visible image file paths.</span>
+<span class="sd">    swir_files : list of str</span>
+<span class="sd">        List of SWIR image file paths.</span>
+<span class="sd">    ref_image_path : str, optional</span>
+<span class="sd">        Path to the reference image (not used in NR-IQA).</span>
+<span class="sd">    run_detection : bool, default=False</span>
+<span class="sd">        Whether to run detection in addition to NR-IQA.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple of float</span>
+<span class="sd">        A tuple containing:</span>
+<span class="sd">        - entropy : float</span>
+<span class="sd">        - brisque : float</span>
+<span class="sd">        - niqe : float</span>
+<span class="sd">        - piqe : float</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    optuna.TrialPruned</span>
+<span class="sd">        If no valid metrics are computed for the trial.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 1. Espace de recherche</span>
+    <span class="c1"># facteur_swir = trial.suggest_float(&quot;facteur_swir&quot;, 0.0, 1.0, step=0.01)</span>
+    <span class="c1"># beta = trial.suggest_float(&quot;beta&quot;, 1.0, 5.0, step=0.01)</span>
+    <span class="c1"># level = trial.suggest_int(&quot;level&quot;, 1, 6, step=1)</span>
+    <span class="c1"># apply_gamma = trial.suggest_categorical(&quot;apply_gamma&quot;, [True])</span>
+    <span class="c1"># gamma_value = trial.suggest_float(&quot;gamma_value&quot;, 0.01, 4.0, step=0.01)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="n">suggest_params</span><span class="p">(</span><span class="n">trial</span><span class="p">)</span>
+
+    <span class="n">facteur_swir</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;facteur_swir&quot;</span><span class="p">]</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;beta&quot;</span><span class="p">]</span>
+    <span class="n">level</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">]</span>
+    <span class="n">apply_gamma</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;apply_gamma&quot;</span><span class="p">]</span>
+    <span class="n">gamma_value</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;gamma_value&quot;</span><span class="p">]</span>
+
+    <span class="c1"># 2. Échantillonnage (max 50 images)</span>
+    <span class="c1"># sample_size = min(50, len(visible_files))</span>
+    <span class="n">sample_size</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">OPTUNA_CFG</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;sample_size&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">visible_files</span><span class="p">))</span>
+    <span class="n">sampled_data</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">visible_files</span><span class="p">,</span> <span class="n">swir_files</span><span class="p">)),</span> <span class="n">sample_size</span><span class="p">)</span>
+
+    <span class="c1"># 3. Préparer les tâches</span>
+    <span class="n">task_batch</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">FusionTask</span><span class="p">(</span>
+            <span class="n">visible_path</span><span class="o">=</span><span class="n">vf</span><span class="p">,</span>
+            <span class="n">swir_path</span><span class="o">=</span><span class="n">sf</span><span class="p">,</span>
+            <span class="n">ref_image_path</span><span class="o">=</span><span class="n">ref_image_path</span><span class="p">,</span>
+            <span class="n">ground_truth_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>   <span class="c1"># pas de GT en NR-IQA</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">&quot;facteur_swir&quot;</span><span class="p">:</span> <span class="n">facteur_swir</span><span class="p">,</span>
+                <span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="n">beta</span><span class="p">,</span>
+                <span class="s2">&quot;level&quot;</span><span class="p">:</span> <span class="n">level</span><span class="p">,</span>
+                <span class="s2">&quot;apply_gamma&quot;</span><span class="p">:</span> <span class="n">apply_gamma</span><span class="p">,</span>
+                <span class="s2">&quot;gamma_value&quot;</span><span class="p">:</span> <span class="n">gamma_value</span>
+            <span class="p">},</span>
+            <span class="n">save_output</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>        <span class="c1"># on force à False pour Optuna, pas de sauvegarde autorisée</span>
+            <span class="n">run_detection</span><span class="o">=</span><span class="n">run_detection</span><span class="p">,</span>
+            <span class="n">output_dir</span><span class="o">=</span><span class="kc">None</span>           <span class="c1"># inutile en optimisation</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">vf</span><span class="p">,</span> <span class="n">sf</span> <span class="ow">in</span> <span class="n">sampled_data</span>
+    <span class="p">]</span>
+
+    <span class="c1"># 4. Exécution parallèle</span>
+    <span class="k">with</span> <span class="n">ProcessPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">process_image_wrapper_optuna</span><span class="p">,</span> <span class="n">task_batch</span><span class="p">))</span>
+
+    <span class="c1"># 5. Extraire les métriques fusionnées</span>
+    <span class="n">metrics_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">metrics_fusion</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">metrics_fusion</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">metrics_list</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">optuna</span><span class="o">.</span><span class="n">TrialPruned</span><span class="p">()</span>
+
+    <span class="n">avg_metrics</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">key</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">metrics_list</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">metrics_list</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">metrics_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="c1"># 6. Retourner les objectifs</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">avg_metrics</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;entropy&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="n">avg_metrics</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;brisque&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="n">avg_metrics</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;niqe&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="n">avg_metrics</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;piqe&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="c1"># ============================================================</span>
+<span class="c1"># Objectif Détection</span>
+<span class="c1"># ============================================================</span>
+
+<div class="viewcode-block" id="objective_detection">
+<a class="viewcode-back" href="../../optimization.html#optimization.objective.objective_detection">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">objective_detection</span><span class="p">(</span><span class="n">trial</span><span class="p">,</span> <span class="n">visible_files</span><span class="p">,</span> <span class="n">swir_files</span><span class="p">,</span> <span class="n">ref_image_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+                        <span class="n">run_detection</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">ground_truth_list</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Optuna objective function based on detection metrics (F1-score).</span>
+
+<span class="sd">    This objective evaluates fused images by running detection and computing</span>
+<span class="sd">    the average F1-score across a sampled subset of images.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    trial : optuna.trial.Trial</span>
+<span class="sd">        Current Optuna trial object.</span>
+<span class="sd">    visible_files : list of str</span>
+<span class="sd">        List of visible image file paths.</span>
+<span class="sd">    swir_files : list of str</span>
+<span class="sd">        List of SWIR image file paths.</span>
+<span class="sd">    ref_image_path : str, optional</span>
+<span class="sd">        Path to the reference image.</span>
+<span class="sd">    run_detection : bool</span>
+<span class="sd">        Whether detection is enabled.</span>
+<span class="sd">    ground_truth_list : list of str or None</span>
+<span class="sd">        List of ground truth annotation file paths aligned with visible images,</span>
+<span class="sd">        or None if unavailable.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float</span>
+<span class="sd">        Average F1-score across the sampled dataset.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    optuna.TrialPruned</span>
+<span class="sd">        If no valid metrics are computed for the trial.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 1. Espace de recherche</span>
+    <span class="c1"># facteur_swir = trial.suggest_float(&quot;facteur_swir&quot;, 0.0, 1.0, step=0.01)</span>
+    <span class="c1"># beta = trial.suggest_float(&quot;beta&quot;, 1.0, 5.0, step=0.01)</span>
+    <span class="c1"># level = trial.suggest_int(&quot;level&quot;, 1, 6, step=1)</span>
+    <span class="c1"># apply_gamma = trial.suggest_categorical(&quot;apply_gamma&quot;, [True])</span>
+    <span class="c1"># gamma_value = trial.suggest_float(&quot;gamma_value&quot;, 0.01, 4.0, step=0.01)</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="n">suggest_params</span><span class="p">(</span><span class="n">trial</span><span class="p">)</span>
+    
+    <span class="n">facteur_swir</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;facteur_swir&quot;</span><span class="p">]</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;beta&quot;</span><span class="p">]</span>
+    <span class="n">level</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">]</span>
+    <span class="n">apply_gamma</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;apply_gamma&quot;</span><span class="p">]</span>
+    <span class="n">gamma_value</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;gamma_value&quot;</span><span class="p">]</span>
+
+    <span class="c1"># 2. Échantillonnage (max 50 images)</span>
+    <span class="c1"># sample_size = min(50, len(visible_files))</span>
+    <span class="n">sample_size</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">OPTUNA_CFG</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;sample_size&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">visible_files</span><span class="p">))</span>
+    <span class="n">sampled_data</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">visible_files</span><span class="p">,</span> <span class="n">swir_files</span><span class="p">)),</span> <span class="n">sample_size</span><span class="p">)</span>
+
+    <span class="c1"># 3. Préparer les tâches</span>
+    <span class="n">task_batch</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">FusionTask</span><span class="p">(</span>
+            <span class="n">visible_path</span><span class="o">=</span><span class="n">vf</span><span class="p">,</span>
+            <span class="n">swir_path</span><span class="o">=</span><span class="n">sf</span><span class="p">,</span>
+            <span class="n">ref_image_path</span><span class="o">=</span><span class="n">ref_image_path</span><span class="p">,</span>
+            <span class="n">ground_truth_path</span><span class="o">=</span><span class="n">ground_truth_list</span><span class="p">[</span><span class="n">visible_files</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">vf</span><span class="p">)]</span> <span class="k">if</span> <span class="n">ground_truth_list</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">&quot;facteur_swir&quot;</span><span class="p">:</span> <span class="n">facteur_swir</span><span class="p">,</span>
+                <span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="n">beta</span><span class="p">,</span>
+                <span class="s2">&quot;level&quot;</span><span class="p">:</span> <span class="n">level</span><span class="p">,</span>
+                <span class="s2">&quot;apply_gamma&quot;</span><span class="p">:</span> <span class="n">apply_gamma</span><span class="p">,</span>
+                <span class="s2">&quot;gamma_value&quot;</span><span class="p">:</span> <span class="n">gamma_value</span>
+            <span class="p">},</span>
+            <span class="n">save_output</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>        <span class="c1"># pas de sauvegarde autorisée avec Optuna</span>
+            <span class="n">run_detection</span><span class="o">=</span><span class="n">run_detection</span><span class="p">,</span>
+            <span class="n">output_dir</span><span class="o">=</span><span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">vf</span><span class="p">,</span> <span class="n">sf</span> <span class="ow">in</span> <span class="n">sampled_data</span>
+    <span class="p">]</span>
+
+    <span class="c1"># 4. Exécution parallèle</span>
+    <span class="k">with</span> <span class="n">ProcessPoolExecutor</span><span class="p">()</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">executor</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">process_image_wrapper_optuna</span><span class="p">,</span> <span class="n">task_batch</span><span class="p">))</span>
+
+    <span class="c1"># 5. Extraire les métriques fusionnées</span>
+    <span class="n">metrics_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="o">.</span><span class="n">metrics_fusion</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">metrics_fusion</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">metrics_list</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">optuna</span><span class="o">.</span><span class="n">TrialPruned</span><span class="p">()</span>
+
+    <span class="c1"># 6. Calcul du F1 moyen</span>
+    <span class="n">f1_scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;f1_score&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">metrics_list</span><span class="p">]</span>
+    <span class="n">avg_f1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f1_scores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">f1_scores</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">avg_f1</span></div>
+
+</pre></div>
+</div>
+        </article>
+        <aside class="nftt-toc">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      
+<nav id="paginator"></nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul id="nftt-footer-links" class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          <li class="d-inline">
+            <a href="../../mailto%3Aalexandre%40uca.fr.html"  class="list-item">Contact</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="../../license.html"  class="list-item">License</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="VISWIR: Visible and SWIR Weighted Image Reconstruction">
+          <span class="fs-6 fw-bold">VISWIR: Visible and SWIR Weighted Image Reconstruction</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2025, Riffard Alexandre - Institut Pascal</li>
+          </ul>
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.1.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.9</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <div class="modal modal-xl fade" id="nftt-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-xxl-down modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nftt-modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="nftt-modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="../../_static/documentation_options.js?v=bc51abb5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/colorsets.js?v=58f89e02"></script>
+    <script src="../../_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="../../_static/sphinx-nefertiti.min.js?v=af404e0e"></script>
+    <script src="../../_static/bootstrap.bundle.min.js?v=c066362f"></script>
+  </body>
+</html>

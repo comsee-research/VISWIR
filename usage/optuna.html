@@ -1,0 +1,780 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="colorset-reset" content="0" />
+    <meta name="docsearch:name" content="VISWIR: Visible and SWIR Weighted Image Reconstruction" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.2 (vQuasar)" />
+    <meta name="docsearch:version" content="" />
+    
+      <meta name="theme-color" content="#6610f2" />
+    
+    
+      <title>Optuna Optimization &mdash; VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation</title>
+    
+    <link rel="canonical" href="usage/optuna" />
+          <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../_static/fonts/nunito/stylesheet.css?v=abf98f06" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../_static/fonts/ubuntu-sans-mono/stylesheet.css?v=8616a587" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../_static/pygments-dark.css?v=2de69186" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../_static/pygments-light.css?v=d6779c33" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../_static/sphinx-nefertiti-indigo.min.css?v=07734d20" /><!-- add (1) -->
+        <link rel="index" title="Index" href="../genindex.html" />
+        <link rel="search" title="Search" href="../search.html" />
+        <link rel="top" title="VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation" href="#" />
+        <link rel="next" title="Datasets" href="data.html" />
+        <link rel="prev" title="Configuration Files" href="configs.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Ubuntu Sans Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to index filter</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="../index.html"
+             class="navbar-brand"
+          ><span class="brand-text">VISWIR: Visible and SWIR Weighted Image Reconstruction</span><span class="brand-short-text">VISWIR</span></a>
+        
+        
+          <ul class="nftt-header-links-large navbar-nav">
+          
+            
+            
+            
+            
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="../index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+          
+          </ul>
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="../search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-short-text">VISWIR</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+                <div class="nftt-header-links-small">
+                  
+                    
+                    
+                    
+                    <div class="d-inline-block">
+                      
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="../index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+                    </div>
+                  
+                  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                    <hr class="d-xl-none text-white-50">
+                  </li>
+                </div>
+              
+              
+              <li class="nav-item col-12 col-xl-auto">
+                <a class="nav-link py-2 py-xl-0 px-0 px-xl-2" href="https://github.com/comsee-research/VISWIR" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/comsee-research/VISWIR">
+                      VISWIR
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                <hr class="d-xl-none text-white-50">
+              </li>
+              
+              
+              
+  <!-- colorssets-dropdown.html -->
+  <li class="nav-item dropdown">
+    <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-color" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change base color">
+      <i class="bi bi-palette"></i>
+      <span id="snftt-color-text" class="d-xl-none ms-2">Change base color</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-color-text">
+      <li>
+        <h6 class="dropdown-header">Change base color</h6>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="blue" href="#" aria-pressed="false">
+          <span class="blue">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Blue</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center active" data-snftt-colorset="indigo" href="#" aria-pressed="false">
+          <span class="indigo">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Indigo</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="purple" href="#" aria-pressed="false">
+          <span class="purple">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Purple</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="pink" href="#" aria-pressed="false">
+          <span class="pink">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Pink</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="red" href="#" aria-pressed="false">
+          <span class="red">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Red</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="orange" href="#" aria-pressed="false">
+          <span class="orange">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Orange</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="yellow" href="#" aria-pressed="false">
+          <span class="yellow">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Yellow</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="green" href="#" aria-pressed="false">
+          <span class="green">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Green</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="teal" href="#" aria-pressed="false">
+          <span class="teal">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Teal</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="default" href="#" aria-pressed="false">
+          <span class="cyan">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Cyan</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <h6 class="dropdown-header">Header style</h6>
+      </li>
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset-neutral="off" href="#" aria-pressed="false">
+          <i class="bi bi-noise-reduction"></i>
+          <span class="ms-3">Neutral</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+    <hr class="d-lg-none text-white-50">
+  </li>
+
+              
+              <!-- lightdark-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change appearance">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Change appearance</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Change appearance</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Automatic</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-none">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Index
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="index filter" aria-label="index filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configs.html">Configuration Files</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Optuna Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../help.html">Help for Singularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hpc_slurm.html">Running VISWIR on HPC with SLURM</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Source Code Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../VISWIR_vQuasar.html">VISWIR_vQuasar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../common.html">common package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fusion.html">fusion package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../fusion.NIQE.html">fusion.NIQE package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../optimization.html">optimization package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../processing.html">processing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../realtime.html">realtime package</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">Authors</a></li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <div><div class="d-flex flex-row justify-content-between">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../index.html">Start</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Optuna Optimization</li>
+    </ol>
+  </nav>
+  
+    <div class="fs085">
+        <a href="../_sources/usage/optuna.rst.txt"  rel="nofollow" aria-label="Show source of this document"><i class="bi bi-file-earmark-code"></i></a>
+    </div>
+  
+</div>
+            
+    <section id="optuna-optimization">
+<h1>Optuna Optimization<a class="headerlink" href="#optuna-optimization" title="Link to this heading">¶</a></h1>
+<p>VISWIR integrates <a class="reference external" href="https://optuna.org/">Optuna</a> to automatically optimize
+fusion parameters. This page explains how to configure, run, and analyze
+Optuna experiments.</p>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#configuration" id="id1">Configuration</a></p></li>
+<li><p><a class="reference internal" href="#execution" id="id2">Execution</a></p></li>
+<li><p><a class="reference internal" href="#resource-considerations" id="id3">Resource Considerations</a></p></li>
+<li><p><a class="reference internal" href="#results-and-visualization" id="id4">Results and Visualization</a></p></li>
+<li><p><a class="reference internal" href="#advanced-usage" id="id5">Advanced Usage</a></p></li>
+<li><p><a class="reference internal" href="#best-practices" id="id6">Best Practices</a></p></li>
+</ul>
+</nav>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Configuration</a><a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
+<p>Three configuration files are required:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">config_viswir.yaml</span></code> : general control parameters, with <code class="docutils literal notranslate"><span class="pre">mode:</span> <span class="pre">&quot;optuna&quot;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">optuna_config.yaml</span></code> : optimization settings (trials, jobs, sampler, pruner).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">optuna_search_space.yaml</span></code> : definition of the hyperparameter ranges.</p></li>
+</ul>
+<p>Example <code class="docutils literal notranslate"><span class="pre">optuna_config.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configuration spécifique à Optuna</span>
+<span class="nt">n_trials</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="nt">n_jobs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">sampler</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;TPE&quot;</span><span class="w">          </span><span class="c1"># or &quot;Random&quot;, &quot;CMA-ES&quot;…</span>
+<span class="nt">pruner</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MedianPruner&quot;</span><span class="w">  </span><span class="c1"># or &quot;SuccessiveHalving&quot;</span>
+<span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7200</span><span class="w">           </span><span class="c1"># in seconds</span>
+<span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span><span class="w">           </span><span class="c1"># e.g. &quot;sqlite:///results/optuna.db&quot;</span>
+<span class="nt">sample_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
+</pre></div>
+</div>
+<p>Example <code class="docutils literal notranslate"><span class="pre">optuna_search_space.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Définition de l’espace de recherche pour Optuna</span>
+<span class="nt">facteur_swir</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
+<span class="w">  </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="w">  </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">  </span><span class="nt">step</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+
+<span class="nt">beta</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
+<span class="w">  </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">  </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.0</span>
+<span class="w">  </span><span class="nt">step</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+
+<span class="nt">level</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">int</span>
+<span class="w">  </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="w">  </span><span class="nt">step</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+
+<span class="nt">apply_gamma</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">categorical</span>
+<span class="w">  </span><span class="nt">values</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">True</span><span class="p p-Indicator">]</span>
+
+<span class="nt">gamma_value</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float</span>
+<span class="w">  </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+<span class="w">  </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.0</span>
+<span class="w">  </span><span class="nt">step</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.01</span>
+</pre></div>
+</div>
+<p>Example <code class="docutils literal notranslate"><span class="pre">config_viswir.yaml</span></code> (pilotage):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">visible_folder</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;../data/VIS&quot;</span>
+<span class="nt">swir_folder</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;../data/SWIR&quot;</span>
+<span class="nt">output_folder</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;../results/optim&quot;</span>
+<span class="nt">ref_image_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="nt">ground_truth_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;../data/ground_truth&quot;</span>
+
+<span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;optuna&quot;</span>
+
+<span class="nt">run_detection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># true or false</span>
+<span class="nt">save_output</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># always true for optimization</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You do not need include fusion parameters in <code class="docutils literal notranslate"><span class="pre">parameters.json</span></code> when using Optuna.
+They are defined and explored via <code class="docutils literal notranslate"><span class="pre">optuna_search_space.yaml</span></code>.</p>
+</div>
+</section>
+<section id="execution">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Execution</a><a class="headerlink" href="#execution" title="Link to this heading">¶</a></h2>
+<p>Run VISWIR in Optuna mode:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>src/VISWIR_vQuasar.py
+</pre></div>
+</div>
+<p>Each trial explores a different set of parameters. Results are stored in
+<code class="docutils literal notranslate"><span class="pre">results/optuna_study.sqlite3</span></code> (SQLite).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Start with a small number of trials (10-20) to validate setup,
+then scale up for production runs.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once optimisation is complete, the best parameters are stored in <code class="docutils literal notranslate"><span class="pre">result/best_parameters.json</span></code>.</p>
+</div>
+</section>
+<section id="resource-considerations">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Resource Considerations</a><a class="headerlink" href="#resource-considerations" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Workers (n_jobs)</strong>: increasing jobs consumes more CPU/RAM.</p></li>
+<li><p><strong>Detection optimization</strong>: not recommended without a powerful machine
+(risk of crash or extremely long runtimes).</p></li>
+<li><p><strong>Batch size &amp; image size</strong>: strongly influence optimization time.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Running detection optimization on limited hardware can lead to memory
+exhaustion or absurdly long computation times.</p>
+</div>
+</section>
+<section id="results-and-visualization">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Results and Visualization</a><a class="headerlink" href="#results-and-visualization" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Trials and metrics are saved in <code class="docutils literal notranslate"><span class="pre">results/optuna_study.sqlite3</span></code>.</p></li>
+<li><p>The best parameters are stored in <code class="docutils literal notranslate"><span class="pre">result/best_parameters.json</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">tools/optuna_sqlite3_loader_mono_obj.py</span></code> or
+<code class="docutils literal notranslate"><span class="pre">tools/optuna_sqlite3_loader_multi_obj.py</span></code> to explore results.</p></li>
+<li><p>On local machines, graphs are displayed in the browser at the end of optimization.</p></li>
+<li><p>The VS Code extension <strong>Optuna Dashboard</strong> can be used to visualize trials
+in real time.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Visualization requires a local environment with a browser. On HPC clusters,
+results must be exported and analyzed offline.</p>
+</div>
+</section>
+<section id="advanced-usage">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Advanced Usage</a><a class="headerlink" href="#advanced-usage" title="Link to this heading">¶</a></h2>
+<p>Optuna offers several advanced features that can be leveraged in VISWIR:</p>
+<ul>
+<li><p><strong>Multi-objective optimization</strong>
+Instead of optimizing a single metric, Optuna can handle multiple objectives
+(e.g. maximizing Entropy while minimizing BRISQUE, NIQE and PIQE).
+Results can be explored with <code class="docutils literal notranslate"><span class="pre">tools/optuna_sqlite3_loader_multi_obj.py</span></code>
+and visualized as a Pareto front.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To activate multi-objective optimization, simply <strong>disable detection</strong> in
+<code class="docutils literal notranslate"><span class="pre">config_viswir.yaml</span></code>. The optimization will then be performed on
+NR-IQA metrics instead of the F1 score.
+This allows Optuna to balance several image quality metrics simultaneously.</p>
+</div>
+</li>
+<li><p><strong>Custom samplers</strong>
+By default, the TPE sampler is used. You can switch to other samplers such as
+Random, CMA-ES, or GridSearch by editing <code class="docutils literal notranslate"><span class="pre">optuna_config.yaml</span></code>.
+Each sampler has trade-offs:
+- <em>TPE</em>: efficient for continuous spaces.
+- <em>Random</em>: baseline, useful for debugging.
+- <em>CMA-ES</em>: good for continuous, smooth search spaces.</p></li>
+<li><p><strong>Pruners</strong>
+Pruners stop unpromising trials early to save resources.
+Common options:
+- <em>MedianPruner</em>: stops trials worse than the median (default).
+- <em>SuccessiveHalving</em>: aggressively prunes based on performance tiers.
+Configure in <code class="docutils literal notranslate"><span class="pre">optuna_config.yaml</span></code>.</p></li>
+<li><p><strong>Custom metrics</strong>
+You can extend VISWIR to optimize on custom metrics (e.g. perceptual quality,
+task-specific accuracy). This requires modifying the evaluation/objective function
+inside the pipeline.</p></li>
+<li><p><strong>Storage backends</strong>
+Optuna supports different storage backends for results:
+- SQLite (default, local file).
+- MySQL/PostgreSQL (for collaborative or large-scale experiments).
+Configure via the <code class="docutils literal notranslate"><span class="pre">storage</span></code> field in <code class="docutils literal notranslate"><span class="pre">optuna_config.yaml</span></code>.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use multi-objective optimisation when you want to optimise the quality
+of the output images independently of the detection scores.</p>
+</div>
+</section>
+<section id="best-practices">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Best Practices</a><a class="headerlink" href="#best-practices" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Start small</strong>
+Begin with a limited number of trials (10-20) to validate your setup before
+scaling up.</p></li>
+<li><p><strong>Control resources</strong>
+The number of workers (<code class="docutils literal notranslate"><span class="pre">n_jobs</span></code>) directly impacts CPU and memory usage.
+Avoid setting it too high on limited hardware like laptop.</p></li>
+<li><p><strong>Detection optimization caution</strong>
+Running Optuna with detection enabled requires significant memory and compute.
+On modest machines, this can lead to crashes or extremely long runtimes.</p></li>
+<li><p><strong>Batch size &amp; image size</strong>
+Larger batches and high-resolution images drastically increase optimization
+time. Adjust these parameters carefully.</p></li>
+<li><p><strong>Crash and restart</strong>
+If optimisation stops midway, simply restart it. As long as the <code class="docutils literal notranslate"><span class="pre">*.sqlite3</span></code>
+file is still in the output folder, VISWIR and Optuna can pick up where they stopped.</p></li>
+<li><p><strong>Use pruners</strong>
+Enable pruners to stop unpromising trials early and save resources.</p></li>
+<li><p><strong>Visualize progress</strong>
+On local runs, Optuna automatically opens graphs in the browser at the end
+of optimization.
+For real-time monitoring, the VS Code extension <strong>Optuna Dashboard</strong> is
+recommended but not mendatory.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Misconfigured search spaces (too wide or unrealistic ranges) can lead to
+wasted trials and excessive runtimes. Always define sensible bounds.</p>
+</div>
+</section>
+</section>
+
+</div>
+        </article>
+        <aside class="nftt-toc">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">Optuna Optimization</a><ul>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+<li><a class="reference internal" href="#execution">Execution</a></li>
+<li><a class="reference internal" href="#resource-considerations">Resource Considerations</a></li>
+<li><a class="reference internal" href="#results-and-visualization">Results and Visualization</a></li>
+<li><a class="reference internal" href="#advanced-usage">Advanced Usage</a></li>
+<li><a class="reference internal" href="#best-practices">Best Practices</a></li>
+</ul>
+</li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      <nav id="paginator" class="py-4" aria-label="Documentation navigation">
+    <div class="container">
+      <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
+            <a href="configs.html" class="d-flex pe-5 px-lg-5 align-items-end" rel="prev" aria-label="Previous page: Configuration Files">
+              <span class="prev-page"><i class="bi bi-caret-left"></i></span>
+              <div class="d-none d-sm-flex flex-column">
+                <span class="text-small text-start text-muted">Previous</span>
+                <span class="underline">Configuration Files</span>
+              </div>
+            </a>
+          </li>
+        <li class="d-flex page-item ms-auto">
+            <a href="data.html" class="d-flex ps-5 px-lg-5 align-items-end" rel="next" aria-label="Next page: Datasets">
+              <div class="d-flex flex-column">
+                <span class="text-small text-end text-start text-muted">Next</span>
+                <span class="underline">Datasets</span>
+              </div>
+              <span class="next-page"><i class="bi bi-caret-right"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul id="nftt-footer-links" class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          <li class="d-inline">
+            <a href="../mailto%3Aalexandre%40uca.fr.html"  class="list-item">Contact</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="../license.html"  class="list-item">License</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="VISWIR: Visible and SWIR Weighted Image Reconstruction">
+          <span class="fs-6 fw-bold">VISWIR: Visible and SWIR Weighted Image Reconstruction</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2025, Riffard Alexandre - Institut Pascal</li>
+          </ul>
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.1.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.9</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <div class="modal modal-xl fade" id="nftt-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-xxl-down modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nftt-modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="nftt-modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="../_static/documentation_options.js?v=bc51abb5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/colorsets.js?v=58f89e02"></script>
+    <script src="../_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="../_static/sphinx-nefertiti.min.js?v=af404e0e"></script>
+    <script src="../_static/bootstrap.bundle.min.js?v=c066362f"></script>
+  </body>
+</html>

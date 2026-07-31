@@ -1,0 +1,865 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="colorset-reset" content="0" />
+    <meta name="docsearch:name" content="VISWIR: Visible and SWIR Weighted Image Reconstruction" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.2 (vQuasar)" />
+    <meta name="docsearch:version" content="" />
+    
+      <meta name="theme-color" content="#6610f2" />
+    
+    
+      <title>Quickstart &mdash; VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation</title>
+    
+    <link rel="canonical" href="usage/quickstart" />
+          <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../_static/fonts/nunito/stylesheet.css?v=abf98f06" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../_static/fonts/ubuntu-sans-mono/stylesheet.css?v=8616a587" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../_static/pygments-dark.css?v=2de69186" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../_static/pygments-light.css?v=d6779c33" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../_static/sphinx-nefertiti-indigo.min.css?v=07734d20" /><!-- add (1) -->
+        <link rel="index" title="Index" href="../genindex.html" />
+        <link rel="search" title="Search" href="../search.html" />
+        <link rel="top" title="VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation" href="#" />
+        <link rel="next" title="Configuration Files" href="configs.html" />
+        <link rel="prev" title="Welcome to VISWIR’s documentation!" href="../index.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Ubuntu Sans Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to index filter</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="../index.html"
+             class="navbar-brand"
+          ><span class="brand-text">VISWIR: Visible and SWIR Weighted Image Reconstruction</span><span class="brand-short-text">VISWIR</span></a>
+        
+        
+          <ul class="nftt-header-links-large navbar-nav">
+          
+            
+            
+            
+            
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="../index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+          
+          </ul>
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="../search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-short-text">VISWIR</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+                <div class="nftt-header-links-small">
+                  
+                    
+                    
+                    
+                    <div class="d-inline-block">
+                      
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="../index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+                    </div>
+                  
+                  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                    <hr class="d-xl-none text-white-50">
+                  </li>
+                </div>
+              
+              
+              <li class="nav-item col-12 col-xl-auto">
+                <a class="nav-link py-2 py-xl-0 px-0 px-xl-2" href="https://github.com/comsee-research/VISWIR" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/comsee-research/VISWIR">
+                      VISWIR
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                <hr class="d-xl-none text-white-50">
+              </li>
+              
+              
+              
+  <!-- colorssets-dropdown.html -->
+  <li class="nav-item dropdown">
+    <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-color" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change base color">
+      <i class="bi bi-palette"></i>
+      <span id="snftt-color-text" class="d-xl-none ms-2">Change base color</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-color-text">
+      <li>
+        <h6 class="dropdown-header">Change base color</h6>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="blue" href="#" aria-pressed="false">
+          <span class="blue">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Blue</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center active" data-snftt-colorset="indigo" href="#" aria-pressed="false">
+          <span class="indigo">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Indigo</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="purple" href="#" aria-pressed="false">
+          <span class="purple">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Purple</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="pink" href="#" aria-pressed="false">
+          <span class="pink">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Pink</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="red" href="#" aria-pressed="false">
+          <span class="red">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Red</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="orange" href="#" aria-pressed="false">
+          <span class="orange">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Orange</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="yellow" href="#" aria-pressed="false">
+          <span class="yellow">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Yellow</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="green" href="#" aria-pressed="false">
+          <span class="green">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Green</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="teal" href="#" aria-pressed="false">
+          <span class="teal">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Teal</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="default" href="#" aria-pressed="false">
+          <span class="cyan">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Cyan</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <h6 class="dropdown-header">Header style</h6>
+      </li>
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset-neutral="off" href="#" aria-pressed="false">
+          <i class="bi bi-noise-reduction"></i>
+          <span class="ms-3">Neutral</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+    <hr class="d-lg-none text-white-50">
+  </li>
+
+              
+              <!-- lightdark-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change appearance">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Change appearance</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Change appearance</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Automatic</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-none">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Index
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="index filter" aria-label="index filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configs.html">Configuration Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optuna.html">Optuna Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../help.html">Help for Singularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hpc_slurm.html">Running VISWIR on HPC with SLURM</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Source Code Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../VISWIR_vQuasar.html">VISWIR_vQuasar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../common.html">common package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fusion.html">fusion package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../fusion.NIQE.html">fusion.NIQE package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../optimization.html">optimization package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../processing.html">processing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../realtime.html">realtime package</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">Authors</a></li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <div><div class="d-flex flex-row justify-content-between">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../index.html">Start</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Quickstart</li>
+    </ol>
+  </nav>
+  
+    <div class="fs085">
+        <a href="../_sources/usage/quickstart.rst.txt"  rel="nofollow" aria-label="Show source of this document"><i class="bi bi-file-earmark-code"></i></a>
+    </div>
+  
+</div>
+            
+    <section id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">¶</a></h1>
+<p>This step-by-step guide walks you from a fresh checkout to a successful run
+of <strong>VISWIR</strong>. Follow the steps in order; optional paths (container/HPC)
+are clearly marked.</p>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#prerequisites" id="id1">Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#step-1-get-the-source" id="id2">Step 1 - Get the source</a></p></li>
+<li><p><a class="reference internal" href="#step-2-choose-your-environment" id="id3">Step 2 - Choose your environment</a></p>
+<ul>
+<li><p><a class="reference internal" href="#a-local-python-virtualenv" id="id4">A. Local Python (virtualenv)</a></p></li>
+<li><p><a class="reference internal" href="#b-container-singularity-apptainer" id="id5">B. Container (Singularity/Apptainer)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#step-3-prepare-your-data" id="id6">Step 3 - Prepare your data</a></p></li>
+<li><p><a class="reference internal" href="#step-4-configure-the-run" id="id7">Step 4 - Configure the run</a></p></li>
+<li><p><a class="reference internal" href="#step-5-first-execution" id="id8">Step 5 - First execution</a></p>
+<ul>
+<li><p><a class="reference internal" href="#fast-mode-quick-smoke-test" id="id9">Fast mode (quick smoke test)</a></p></li>
+<li><p><a class="reference internal" href="#sql-mode-recommended-full-run" id="id10">SQL mode (recommended full run)</a></p></li>
+<li><p><a class="reference internal" href="#optuna-mode-hyperparameter-optimization" id="id11">Optuna mode (hyperparameter optimization)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#step-6-running-with-container" id="id12">Step 6 - Running with container</a></p></li>
+<li><p><a class="reference internal" href="#step-7-optional-hpc-slurm-submission" id="id13">Step 7 - Optional: HPC (SLURM) submission</a></p></li>
+<li><p><a class="reference internal" href="#step-8-verify-outputs-and-logs" id="id14">Step 8 - Verify outputs and logs</a></p></li>
+<li><p><a class="reference internal" href="#step-9-common-issues-and-quick-fixes" id="id15">Step 9 - Common issues and quick fixes</a></p></li>
+<li><p><a class="reference internal" href="#step-10-next-steps" id="id16">Step 10 - Next steps</a></p></li>
+</ul>
+</nav>
+<section id="prerequisites">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>OS:</strong> Linux (recommended) or Windows (developed on), not tested on macOS</p></li>
+<li><p><strong>Python:</strong> 3.10+ installed and on PATH</p></li>
+<li><p><strong>Git:</strong> installed</p></li>
+<li><p><strong>Disk space:</strong> ~3-5 GB (datasets + container optional)</p></li>
+<li><p><strong>Optional:</strong> <a class="reference external" href="https://docs.sylabs.io/guides/latest/user-guide/">Singularity</a>/Apptainer (for container), <a class="reference external" href="https://slurm.schedmd.com/overview.html">SLURM</a> (for HPC)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you plan to use TIFF images, you’ll need the Python package <code class="docutils literal notranslate"><span class="pre">imagecodecs</span></code>.</p>
+</div>
+</section>
+<section id="step-1-get-the-source">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Step 1 - Get the source</a><a class="headerlink" href="#step-1-get-the-source" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Clone the repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/comsee-research/viswir.git
+<span class="nb">cd</span><span class="w"> </span>viswir
+</pre></div>
+</div>
+</li>
+<li><p>Inspect the layout (optional):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-1
+<span class="c1"># README.md, HELP.md, src/, config/, data/, tools/, results/, requirements.txt ...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="step-2-choose-your-environment">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Step 2 - Choose your environment</a><a class="headerlink" href="#step-2-choose-your-environment" title="Link to this heading">¶</a></h2>
+<section id="a-local-python-virtualenv">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">A. Local Python (virtualenv)</a><a class="headerlink" href="#a-local-python-virtualenv" title="Link to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p>Install packages (script provided):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>+x<span class="w"> </span>install_packages_venv.sh
+./install_packages_venv.sh
+</pre></div>
+</div>
+</li>
+<li><p>If you use TIFF images:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>imagecodecs
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also install manually with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>.
+In this case, first create a virtualenv and activate it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</pre></div>
+</div>
+</div>
+</section>
+<section id="b-container-singularity-apptainer">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">B. Container (Singularity/Apptainer)</a><a class="headerlink" href="#b-container-singularity-apptainer" title="Link to this heading">¶</a></h3>
+<ol class="arabic">
+<li><p>Build the container (CPU-only example):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>tools
+sudo<span class="w"> </span>singularity<span class="w"> </span>build<span class="w"> </span>VISWIR.sif<span class="w"> </span>Singularity
+</pre></div>
+</div>
+<p>The Singularity build file is available in the <code class="docutils literal notranslate"><span class="pre">tools</span></code> folder.</p>
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To use Singularity, you must be running Linux or WSL2 for Windows
+(tested via WSL2 with Debian).
+See the <a class="reference external" href="https://docs.sylabs.io/guides/latest/user-guide/">Singularity user guide</a>.</p>
+</div>
+<ol class="arabic" start="2">
+<li><p>Confirm it runs:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>VISWIR.sif<span class="w"> </span>python<span class="w"> </span>-V
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Full container instructions are available in <a class="reference internal" href="../help.html"><span class="doc">Help for Singularity</span></a> and <a class="reference internal" href="hpc_slurm.html"><span class="doc">Running VISWIR on HPC with SLURM</span></a>.</p>
+</div>
+</section>
+</section>
+<section id="step-3-prepare-your-data">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Step 3 - Prepare your data</a><a class="headerlink" href="#step-3-prepare-your-data" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Create a minimal dataset structure:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>data/visible<span class="w"> </span>data/swir<span class="w"> </span>results
+cp<span class="w"> </span>path/to/your/visible_images/*.png<span class="w"> </span>data/visible/
+cp<span class="w"> </span>path/to/your/swir_images/*.png<span class="w"> </span>data/swir/
+</pre></div>
+</div>
+</li>
+<li><p>Ensure filenames are paired consistently:</p>
+<ul class="simple">
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">data/visible/img_001.png</span></code> matches <code class="docutils literal notranslate"><span class="pre">data/swir/img_001.png</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Optional detection annotations:</p>
+<ul class="simple">
+<li><p>Add XML files in <code class="docutils literal notranslate"><span class="pre">data/ground_truth/</span></code> if you plan to run detection.</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Misaligned pairs produce invalid fusion. Always verify filenames match
+across <code class="docutils literal notranslate"><span class="pre">visible/</span></code> and <code class="docutils literal notranslate"><span class="pre">swir/</span></code>.</p>
+</div>
+</section>
+<section id="step-4-configure-the-run">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Step 4 - Configure the run</a><a class="headerlink" href="#step-4-configure-the-run" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">config/config_viswir.yaml</span></code>:
+- Paths: <code class="docutils literal notranslate"><span class="pre">visible_folder</span></code>, <code class="docutils literal notranslate"><span class="pre">swir_folder</span></code>, <code class="docutils literal notranslate"><span class="pre">output_folder</span></code>
+- Mode: <code class="docutils literal notranslate"><span class="pre">sql</span></code> (recommended), <code class="docutils literal notranslate"><span class="pre">optuna</span></code>, or <code class="docutils literal notranslate"><span class="pre">fixed</span></code> (legacy)
+- Optional: <code class="docutils literal notranslate"><span class="pre">ref_image_path</span></code>, <code class="docutils literal notranslate"><span class="pre">ground_truth_path</span></code>, <code class="docutils literal notranslate"><span class="pre">run_detection</span></code>, <code class="docutils literal notranslate"><span class="pre">save_output</span></code></p></li>
+<li><p>Fusion parameters:
+- <code class="docutils literal notranslate"><span class="pre">parameters.json</span></code> (SQL/fixed modes)
+- <code class="docutils literal notranslate"><span class="pre">fast_config.yaml</span></code> (fast mode)</p></li>
+<li><p>Detection (optional):
+- <code class="docutils literal notranslate"><span class="pre">yolo_config.json</span></code> (weights, thresholds, classes, device)</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Start simple—disable detection and enable <code class="docutils literal notranslate"><span class="pre">save_output</span></code> to validate the pipeline first.</p>
+</div>
+</section>
+<section id="step-5-first-execution">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Step 5 - First execution</a><a class="headerlink" href="#step-5-first-execution" title="Link to this heading">¶</a></h2>
+<section id="fast-mode-quick-smoke-test">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">Fast mode (quick smoke test)</a><a class="headerlink" href="#fast-mode-quick-smoke-test" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>src/VISWIR_vQuasar.py<span class="w"> </span>--fast<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--visible<span class="w"> </span>./data/visible/img_001.png<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--swir<span class="w"> </span>./data/swir/img_001.png<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--out<span class="w"> </span>./results/fused_img_001.png
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Fast mode skips metric computation. Use it for rapid prototyping,
+not for final evaluation.</p>
+</div>
+</section>
+<section id="sql-mode-recommended-full-run">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">SQL mode (recommended full run)</a><a class="headerlink" href="#sql-mode-recommended-full-run" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In config_viswir.yaml: mode: &quot;sql&quot;</span>
+python<span class="w"> </span>src/VISWIR_vQuasar.py
+</pre></div>
+</div>
+</section>
+<section id="optuna-mode-hyperparameter-optimization">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">Optuna mode (hyperparameter optimization)</a><a class="headerlink" href="#optuna-mode-hyperparameter-optimization" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In config_viswir.yaml: mode: &quot;optuna&quot;</span>
+python<span class="w"> </span>src/VISWIR_vQuasar.py
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Start with fewer trials (10-20) to validate everything, then scale up.</p>
+</div>
+</section>
+</section>
+<section id="step-6-running-with-container">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Step 6 - Running with container</a><a class="headerlink" href="#step-6-running-with-container" title="Link to this heading">¶</a></h2>
+<p>Fast test inside container:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity<span class="w"> </span>run<span class="w"> </span>VISWIR.sif<span class="w"> </span>--fast<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--visible<span class="w"> </span>/VISWIR/data/visible/img_001.png<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--swir<span class="w"> </span>/VISWIR/data/swir/img_001.png<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--out<span class="w"> </span>/VISWIR/results/fused_img_001.png
+</pre></div>
+</div>
+<p>Bind host directories:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-B<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/results:/VISWIR/results<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-B<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/src/logs:/VISWIR/src/logs<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-B<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/config:/VISWIR/config<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-B<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/data:/VISWIR/data<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>VISWIR.sif
+</pre></div>
+</div>
+</section>
+<section id="step-7-optional-hpc-slurm-submission">
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Step 7 - Optional: HPC (SLURM) submission</a><a class="headerlink" href="#step-7-optional-hpc-slurm-submission" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Pick a script in <code class="docutils literal notranslate"><span class="pre">tools/</span></code>:
+- <code class="docutils literal notranslate"><span class="pre">job_viswir_test.slurm</span></code> (quick test)
+- <code class="docutils literal notranslate"><span class="pre">job_viswir.slurm</span></code> (standard)
+- <code class="docutils literal notranslate"><span class="pre">job_viswir_ex.slurm</span></code> (custom resources)</p></li>
+<li><p>Submit:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>tools/job_viswir.slurm
+</pre></div>
+</div>
+</li>
+<li><p>Monitor:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
+scontrol<span class="w"> </span>show<span class="w"> </span>job<span class="w"> </span>&lt;job_id&gt;
+seff<span class="w"> </span>&lt;job_id&gt;
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Adjust <code class="docutils literal notranslate"><span class="pre">--mem</span></code>, <code class="docutils literal notranslate"><span class="pre">--cpus-per-task</span></code>, and <code class="docutils literal notranslate"><span class="pre">--time</span></code> to match your quota
+and dataset size.</p>
+</div>
+</section>
+<section id="step-8-verify-outputs-and-logs">
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Step 8 - Verify outputs and logs</a><a class="headerlink" href="#step-8-verify-outputs-and-logs" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Images:</strong> check <code class="docutils literal notranslate"><span class="pre">results/</span></code> for fused outputs.</p></li>
+<li><p><strong>Database:</strong> inspect <code class="docutils literal notranslate"><span class="pre">results/results.db</span></code> with <code class="docutils literal notranslate"><span class="pre">tools/sql_explorer.py</span></code>.</p></li>
+<li><p><strong>Logs:</strong> review <code class="docutils literal notranslate"><span class="pre">src/logs/</span></code> for warnings or errors.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any errors related to input data (different sizes, unequal number of visible and SWIR images, etc.)
+will cause a fatal error in code execution.
+Errors that cause the code to crash will be displayed in your terminal.</p>
+</div>
+</section>
+<section id="step-9-common-issues-and-quick-fixes">
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Step 9 - Common issues and quick fixes</a><a class="headerlink" href="#step-9-common-issues-and-quick-fixes" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Missing TIFF support → <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">imagecodecs</span></code></p></li>
+<li><p>No fused image in fast mode → check <code class="docutils literal notranslate"><span class="pre">--out</span></code> path</p></li>
+<li><p>SQL run persists but no metrics → confirm <code class="docutils literal notranslate"><span class="pre">save_output</span></code> and dataset paths</p></li>
+<li><p>Detection crashes → check <code class="docutils literal notranslate"><span class="pre">yolo_config.json</span></code> and try <code class="docutils literal notranslate"><span class="pre">device:</span> <span class="pre">&quot;cpu&quot;</span></code></p></li>
+<li><p>Container path issues → verify <code class="docutils literal notranslate"><span class="pre">-B</span></code> bindings and internal paths</p></li>
+</ul>
+</section>
+<section id="step-10-next-steps">
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">Step 10 - Next steps</a><a class="headerlink" href="#step-10-next-steps" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Explore configuration details: see <a class="reference internal" href="configs.html"><span class="doc">Configuration Files</span></a></p></li>
+<li><p>Prepare larger datasets: see <a class="reference internal" href="data.html"><span class="doc">Datasets</span></a></p></li>
+<li><p>Use tools for analysis and export: see <a class="reference internal" href="tools.html"><span class="doc">Tools</span></a></p></li>
+<li><p>Run at scale on HPC: see <a class="reference internal" href="hpc_slurm.html"><span class="doc">Running VISWIR on HPC with SLURM</span></a></p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Once your pipeline is stable in SQL mode, move to Optuna to tune parameters
+and maximize metric performance for your dataset.</p>
+</div>
+</section>
+</section>
+
+</div>
+        </article>
+        <aside class="nftt-toc">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">Quickstart</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#step-1-get-the-source">Step 1 - Get the source</a></li>
+<li><a class="reference internal" href="#step-2-choose-your-environment">Step 2 - Choose your environment</a><ul>
+<li><a class="reference internal" href="#a-local-python-virtualenv">A. Local Python (virtualenv)</a></li>
+<li><a class="reference internal" href="#b-container-singularity-apptainer">B. Container (Singularity/Apptainer)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#step-3-prepare-your-data">Step 3 - Prepare your data</a></li>
+<li><a class="reference internal" href="#step-4-configure-the-run">Step 4 - Configure the run</a></li>
+<li><a class="reference internal" href="#step-5-first-execution">Step 5 - First execution</a><ul>
+<li><a class="reference internal" href="#fast-mode-quick-smoke-test">Fast mode (quick smoke test)</a></li>
+<li><a class="reference internal" href="#sql-mode-recommended-full-run">SQL mode (recommended full run)</a></li>
+<li><a class="reference internal" href="#optuna-mode-hyperparameter-optimization">Optuna mode (hyperparameter optimization)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#step-6-running-with-container">Step 6 - Running with container</a></li>
+<li><a class="reference internal" href="#step-7-optional-hpc-slurm-submission">Step 7 - Optional: HPC (SLURM) submission</a></li>
+<li><a class="reference internal" href="#step-8-verify-outputs-and-logs">Step 8 - Verify outputs and logs</a></li>
+<li><a class="reference internal" href="#step-9-common-issues-and-quick-fixes">Step 9 - Common issues and quick fixes</a></li>
+<li><a class="reference internal" href="#step-10-next-steps">Step 10 - Next steps</a></li>
+</ul>
+</li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      <nav id="paginator" class="py-4" aria-label="Documentation navigation">
+    <div class="container">
+      <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
+            <a href="../index.html" class="d-flex pe-5 px-lg-5 align-items-end" rel="prev" aria-label="Previous page: Welcome to VISWIR’s documentation!">
+              <span class="prev-page"><i class="bi bi-caret-left"></i></span>
+              <div class="d-none d-sm-flex flex-column">
+                <span class="text-small text-start text-muted">Previous</span>
+                <span class="underline">Welcome to VISWIR’s documentation!</span>
+              </div>
+            </a>
+          </li>
+        <li class="d-flex page-item ms-auto">
+            <a href="configs.html" class="d-flex ps-5 px-lg-5 align-items-end" rel="next" aria-label="Next page: Configuration Files">
+              <div class="d-flex flex-column">
+                <span class="text-small text-end text-start text-muted">Next</span>
+                <span class="underline">Configuration Files</span>
+              </div>
+              <span class="next-page"><i class="bi bi-caret-right"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul id="nftt-footer-links" class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          <li class="d-inline">
+            <a href="../mailto%3Aalexandre%40uca.fr.html"  class="list-item">Contact</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="../license.html"  class="list-item">License</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="VISWIR: Visible and SWIR Weighted Image Reconstruction">
+          <span class="fs-6 fw-bold">VISWIR: Visible and SWIR Weighted Image Reconstruction</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2025, Riffard Alexandre - Institut Pascal</li>
+          </ul>
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.1.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.9</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <div class="modal modal-xl fade" id="nftt-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-xxl-down modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nftt-modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="nftt-modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="../_static/documentation_options.js?v=bc51abb5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/colorsets.js?v=58f89e02"></script>
+    <script src="../_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="../_static/sphinx-nefertiti.min.js?v=af404e0e"></script>
+    <script src="../_static/bootstrap.bundle.min.js?v=c066362f"></script>
+  </body>
+</html>

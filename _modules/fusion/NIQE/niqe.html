@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="colorset-reset" content="0" />
+    <meta name="docsearch:name" content="VISWIR: Visible and SWIR Weighted Image Reconstruction" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.2 (vQuasar)" />
+    <meta name="docsearch:version" content="" />
+    
+      <meta name="theme-color" content="#6610f2" />
+    
+    
+      <title>fusion.NIQE.niqe &mdash; VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation</title>
+    
+    <link rel="canonical" href="_modules/fusion/NIQE/niqe" />
+          <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../../_static/fonts/nunito/stylesheet.css?v=abf98f06" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../../_static/fonts/ubuntu-sans-mono/stylesheet.css?v=8616a587" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../../_static/pygments-dark.css?v=2de69186" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../../_static/pygments-light.css?v=d6779c33" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-nefertiti-indigo.min.css?v=07734d20" /><!-- add (1) -->
+        <link rel="index" title="Index" href="../../../genindex.html" />
+        <link rel="search" title="Search" href="../../../search.html" />
+        <link rel="top" title="VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation" href="#" />
+        <link rel="up" title="Module code" href="../../index.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Ubuntu Sans Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to index filter</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="../../../index.html"
+             class="navbar-brand"
+          ><span class="brand-text">VISWIR: Visible and SWIR Weighted Image Reconstruction</span><span class="brand-short-text">VISWIR</span></a>
+        
+        
+          <ul class="nftt-header-links-large navbar-nav">
+          
+            
+            
+            
+            
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="../../../index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+          
+          </ul>
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="../../../search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-short-text">VISWIR</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+                <div class="nftt-header-links-small">
+                  
+                    
+                    
+                    
+                    <div class="d-inline-block">
+                      
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="../../../index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+                    </div>
+                  
+                  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                    <hr class="d-xl-none text-white-50">
+                  </li>
+                </div>
+              
+              
+              <li class="nav-item col-12 col-xl-auto">
+                <a class="nav-link py-2 py-xl-0 px-0 px-xl-2" href="https://github.com/comsee-research/VISWIR" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/comsee-research/VISWIR">
+                      VISWIR
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                <hr class="d-xl-none text-white-50">
+              </li>
+              
+              
+              
+  <!-- colorssets-dropdown.html -->
+  <li class="nav-item dropdown">
+    <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-color" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change base color">
+      <i class="bi bi-palette"></i>
+      <span id="snftt-color-text" class="d-xl-none ms-2">Change base color</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-color-text">
+      <li>
+        <h6 class="dropdown-header">Change base color</h6>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="blue" href="#" aria-pressed="false">
+          <span class="blue">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Blue</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center active" data-snftt-colorset="indigo" href="#" aria-pressed="false">
+          <span class="indigo">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Indigo</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="purple" href="#" aria-pressed="false">
+          <span class="purple">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Purple</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="pink" href="#" aria-pressed="false">
+          <span class="pink">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Pink</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="red" href="#" aria-pressed="false">
+          <span class="red">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Red</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="orange" href="#" aria-pressed="false">
+          <span class="orange">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Orange</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="yellow" href="#" aria-pressed="false">
+          <span class="yellow">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Yellow</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="green" href="#" aria-pressed="false">
+          <span class="green">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Green</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="teal" href="#" aria-pressed="false">
+          <span class="teal">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Teal</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="default" href="#" aria-pressed="false">
+          <span class="cyan">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Cyan</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <h6 class="dropdown-header">Header style</h6>
+      </li>
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset-neutral="off" href="#" aria-pressed="false">
+          <i class="bi bi-noise-reduction"></i>
+          <span class="ms-3">Neutral</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+    <hr class="d-lg-none text-white-50">
+  </li>
+
+              
+              <!-- lightdark-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change appearance">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Change appearance</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Change appearance</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Automatic</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-none">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Index
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="index filter" aria-label="index filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/configs.html">Configuration Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/optuna.html">Optuna Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/data.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/tools.html">Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../help.html">Help for Singularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/hpc_slurm.html">Running VISWIR on HPC with SLURM</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Source Code Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../VISWIR_vQuasar.html">VISWIR_vQuasar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../common.html">common package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../fusion.html">fusion package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../fusion.NIQE.html">fusion.NIQE package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../optimization.html">optimization package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../processing.html">processing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../realtime.html">realtime package</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../authors.html">Authors</a></li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <div><div class="d-flex flex-row justify-content-between">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../../index.html">Start</a></li>
+        <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active" aria-current="page">fusion.NIQE.niqe</li>
+    </ol>
+  </nav>
+  
+    <div class="fs085">
+    </div>
+  
+</div>
+            
+    <h1>Source code for fusion.NIQE.niqe</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">NIQE (Natural Image Quality Evaluator) Implementation</span>
+<span class="sd">=====================================================</span>
+
+<span class="sd">This module implements the NIQE algorithm for no-reference image quality</span>
+<span class="sd">assessment. The implementation is adapted from the GitHub repository:</span>
+<span class="sd">https://github.com/nuniniyujin/niqe/tree/score_debug</span>
+
+<span class="sd">The original algorithm has been adapted to fit the specific requirements</span>
+<span class="sd">and structure of the VISWIR project. The core logic and algorithms remain</span>
+<span class="sd">consistent with the original work.</span>
+
+<span class="sd">References</span>
+<span class="sd">----------</span>
+<span class="sd">A. Mittal, R. Soundararajan, and A. C. Bovik,</span>
+<span class="sd">&quot;Making a &#39;Completely Blind&#39; Image Quality Analyzer,&quot;</span>
+<span class="sd">IEEE Signal Processing Letters, 2013.</span>
+
+<span class="sd">Author</span>
+<span class="sd">------</span>
+<span class="sd">Riffard Alexandre</span>
+
+<span class="sd">Last Modified</span>
+<span class="sd">-------------</span>
+<span class="sd">28/10/2025</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.io</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.ndimage</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.special</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.linalg</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">os.path</span><span class="w"> </span><span class="kn">import</span> <span class="n">dirname</span><span class="p">,</span> <span class="n">join</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">common.logger</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span>
+
+<span class="c1"># Définition des variables globales et les fonctions nécessaires ici</span>
+<span class="n">gamma_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.001</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">gamma_range</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">*=</span> <span class="n">a</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="n">gamma_range</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="mf">3.0</span><span class="o">/</span><span class="n">gamma_range</span><span class="p">)</span>
+<span class="n">prec_gammas</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
+
+<div class="viewcode-block" id="aggd_features">
+<a class="viewcode-back" href="../../../fusion.NIQE.html#fusion.NIQE.niqe.aggd_features">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">aggd_features</span><span class="p">(</span><span class="n">imdata</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    NIQE helper function: aggd_features</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Flatten imdata</span>
+    <span class="n">imdata</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">imdata</span><span class="o">.</span><span class="n">flat</span><span class="p">),)</span>
+    
+    <span class="c1"># Separate positive and negative data before squaring</span>
+    <span class="n">left_data</span> <span class="o">=</span> <span class="n">imdata</span><span class="p">[</span><span class="n">imdata</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">right_data</span> <span class="o">=</span> <span class="n">imdata</span><span class="p">[</span><span class="n">imdata</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">]</span>
+    
+    <span class="c1"># Now square the data</span>
+    <span class="n">left_data_squared</span> <span class="o">=</span> <span class="n">left_data</span> <span class="o">*</span> <span class="n">left_data</span>
+    <span class="n">right_data_squared</span> <span class="o">=</span> <span class="n">right_data</span> <span class="o">*</span> <span class="n">right_data</span>
+    
+    <span class="c1"># Calculate means of the squared data</span>
+    <span class="n">left_mean_sqrt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">right_mean_sqrt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">left_data_squared</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">left_mean_sqrt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">left_data_squared</span><span class="p">))</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">right_data_squared</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">right_mean_sqrt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">right_data_squared</span><span class="p">))</span>
+
+    <span class="c1"># Calculate gamma_hat</span>
+    <span class="k">if</span> <span class="n">right_mean_sqrt</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">gamma_hat</span> <span class="o">=</span> <span class="n">left_mean_sqrt</span> <span class="o">/</span> <span class="n">right_mean_sqrt</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">gamma_hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+
+    <span class="c1"># Sécurisation : bornes cohérentes avec gamma_range (0.2 → 10)</span>
+    <span class="k">if</span> <span class="n">gamma_hat</span> <span class="o">&lt;</span> <span class="mf">0.2</span> <span class="ow">or</span> <span class="n">gamma_hat</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">gamma_hat</span><span class="p">):</span>
+        <span class="c1"># logger.warning(f&quot;⚠️ gamma_hat hors borne détecté : {gamma_hat}, clampé dans [0.2, 10]&quot;)</span>
+        <span class="n">gamma_hat</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">gamma_hat</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="mf">0.2</span><span class="p">)</span>
+
+    <span class="c1"># Solve for r_hat norm</span>
+    <span class="n">imdata_squared</span> <span class="o">=</span> <span class="n">imdata</span> <span class="o">*</span> <span class="n">imdata</span>  <span class="c1"># Squared imdata</span>
+    <span class="n">imdata2_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">imdata_squared</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">imdata2_mean</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">r_hat</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">imdata</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">imdata_squared</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">r_hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+
+    <span class="c1"># Sécurisation du dénominateur</span>
+    <span class="n">denominator</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">gamma_hat</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-8</span>
+    <span class="n">rhat_norm</span> <span class="o">=</span> <span class="n">r_hat</span> <span class="o">*</span> <span class="p">(((</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">gamma_hat</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">gamma_hat</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="n">denominator</span><span class="p">)</span>
+    <span class="c1"># rhat_norm = r_hat * (((math.pow(gamma_hat, 3) + 1) * (gamma_hat + 1)) / math.pow(math.pow(gamma_hat, 2) + 1, 2))</span>
+
+    <span class="c1"># Solve for alpha by guessing values that minimize rhat_norm</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">((</span><span class="n">prec_gammas</span> <span class="o">-</span> <span class="n">rhat_norm</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="n">gamma_range</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
+
+    <span class="c1"># Calculate gamma values</span>
+    <span class="n">gam1</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">alpha</span><span class="p">)</span>
+    <span class="n">gam2</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">/</span> <span class="n">alpha</span><span class="p">)</span>
+    <span class="n">gam3</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">gamma</span><span class="p">(</span><span class="mf">3.0</span> <span class="o">/</span> <span class="n">alpha</span><span class="p">)</span>
+
+    <span class="c1"># Calculate AGGD ratio</span>
+    <span class="n">aggdratio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gam1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gam3</span><span class="p">)</span>
+    <span class="n">bl</span> <span class="o">=</span> <span class="n">aggdratio</span> <span class="o">*</span> <span class="n">left_mean_sqrt</span>
+    <span class="n">br</span> <span class="o">=</span> <span class="n">aggdratio</span> <span class="o">*</span> <span class="n">right_mean_sqrt</span>
+
+    <span class="c1"># Calculate N</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="n">br</span> <span class="o">-</span> <span class="n">bl</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">gam2</span> <span class="o">/</span> <span class="n">gam1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">bl</span><span class="p">,</span> <span class="n">br</span><span class="p">,</span> <span class="n">left_mean_sqrt</span><span class="p">,</span> <span class="n">right_mean_sqrt</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ggd_features">
+<a class="viewcode-back" href="../../../fusion.NIQE.html#fusion.NIQE.niqe.ggd_features">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">ggd_features</span><span class="p">(</span><span class="n">imdata</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    NIQE helper function: ggd_features</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nr_gam</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">prec_gammas</span>
+    <span class="n">sigma_sq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">imdata</span><span class="p">)</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">imdata</span><span class="p">))</span>
+    <span class="n">rho</span> <span class="o">=</span> <span class="n">sigma_sq</span><span class="o">/</span><span class="n">E</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">nr_gam</span> <span class="o">-</span> <span class="n">rho</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">gamma_range</span><span class="p">[</span><span class="n">pos</span><span class="p">],</span> <span class="n">sigma_sq</span></div>
+
+
+<div class="viewcode-block" id="paired_product">
+<a class="viewcode-back" href="../../../fusion.NIQE.html#fusion.NIQE.niqe.paired_product">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">paired_product</span><span class="p">(</span><span class="n">new_im</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    NIQE helper function: paired_product</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">shift1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">new_im</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">shift2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">new_im</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">shift3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">new_im</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">shift4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">new_im</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">H_img</span> <span class="o">=</span> <span class="n">shift1</span> <span class="o">*</span> <span class="n">new_im</span>
+    <span class="n">V_img</span> <span class="o">=</span> <span class="n">shift2</span> <span class="o">*</span> <span class="n">new_im</span>
+    <span class="n">D1_img</span> <span class="o">=</span> <span class="n">shift3</span> <span class="o">*</span> <span class="n">new_im</span>
+    <span class="n">D2_img</span> <span class="o">=</span> <span class="n">shift4</span> <span class="o">*</span> <span class="n">new_im</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">H_img</span><span class="p">,</span> <span class="n">V_img</span><span class="p">,</span> <span class="n">D1_img</span><span class="p">,</span> <span class="n">D2_img</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="gen_gauss_window">
+<a class="viewcode-back" href="../../../fusion.NIQE.html#fusion.NIQE.niqe.gen_gauss_window">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gen_gauss_window</span><span class="p">(</span><span class="n">lw</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    NIQE helper function: gen_gauss_window</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
+    <span class="n">lw</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">lw</span><span class="p">)</span>
+    <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">lw</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">weights</span><span class="p">[</span><span class="n">lw</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="n">sd</span> <span class="o">*=</span> <span class="n">sd</span>
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">lw</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">ii</span> <span class="o">*</span> <span class="n">ii</span><span class="p">)</span> <span class="o">/</span> <span class="n">sd</span><span class="p">)</span>
+        <span class="n">weights</span><span class="p">[</span><span class="n">lw</span> <span class="o">+</span> <span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span>
+        <span class="n">weights</span><span class="p">[</span><span class="n">lw</span> <span class="o">-</span> <span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">tmp</span>
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">lw</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">weights</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span> <span class="o">/=</span> <span class="nb">sum</span>
+    <span class="k">return</span> <span class="n">weights</span></div>
+
+
+<div class="viewcode-block" id="compute_image_mscn_transform">
+<a class="viewcode-back" href="../../../fusion.NIQE.html#fusion.NIQE.niqe.compute_image_mscn_transform">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_image_mscn_transform</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">avg_window</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extend_mode</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute MSCN coefficients using Gaussian filtering with correlate1d.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        image (numpy.ndarray): Input grayscale image.</span>
+<span class="sd">        C (float): Stabilizing constant.</span>
+<span class="sd">        avg_window (numpy.ndarray): Gaussian kernel for filtering.</span>
+<span class="sd">        extend_mode (str): Padding mode for boundaries.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: MSCN coefficients, variance, and mean.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">avg_window</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">avg_window</span> <span class="o">=</span> <span class="n">gen_gauss_window</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">7.0</span> <span class="o">/</span> <span class="mf">6.0</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">image</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="n">mu_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">var_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Apply Gaussian filtering along rows and columns</span>
+    <span class="n">scipy</span><span class="o">.</span><span class="n">ndimage</span><span class="o">.</span><span class="n">correlate1d</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">avg_window</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">mu_image</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">extend_mode</span><span class="p">)</span>
+    <span class="n">scipy</span><span class="o">.</span><span class="n">ndimage</span><span class="o">.</span><span class="n">correlate1d</span><span class="p">(</span><span class="n">mu_image</span><span class="p">,</span> <span class="n">avg_window</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">mu_image</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">extend_mode</span><span class="p">)</span>
+    <span class="n">scipy</span><span class="o">.</span><span class="n">ndimage</span><span class="o">.</span><span class="n">correlate1d</span><span class="p">(</span><span class="n">image</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">avg_window</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">var_image</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">extend_mode</span><span class="p">)</span>
+    <span class="n">scipy</span><span class="o">.</span><span class="n">ndimage</span><span class="o">.</span><span class="n">correlate1d</span><span class="p">(</span><span class="n">var_image</span><span class="p">,</span> <span class="n">avg_window</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">var_image</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">extend_mode</span><span class="p">)</span>
+
+    <span class="c1"># Compute variance and MSCN coefficients</span>
+    <span class="n">var_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">var_image</span> <span class="o">-</span> <span class="n">mu_image</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">mscn_coeffs</span> <span class="o">=</span> <span class="p">(</span><span class="n">image</span> <span class="o">-</span> <span class="n">mu_image</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">var_image</span> <span class="o">+</span> <span class="n">C</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">mscn_coeffs</span><span class="p">,</span> <span class="n">var_image</span><span class="p">,</span> <span class="n">mu_image</span></div>
+
+
+<div class="viewcode-block" id="extract_on_patches">
+<a class="viewcode-back" href="../../../fusion.NIQE.html#fusion.NIQE.niqe.extract_on_patches">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_on_patches</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">patch_size</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    NIQE helper function: extract_on_patches</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">patch_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">patch_size</span><span class="p">)</span>  <span class="c1"># Fixed np.int deprecation</span>
+    <span class="n">patches</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">h</span> <span class="o">-</span> <span class="n">patch_size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">patch_size</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">w</span> <span class="o">-</span> <span class="n">patch_size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">patch_size</span><span class="p">):</span>
+            <span class="n">patch</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="n">j</span><span class="p">:</span><span class="n">j</span> <span class="o">+</span> <span class="n">patch_size</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">patch_size</span><span class="p">]</span>
+            <span class="n">patches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span>
+
+    <span class="n">patches</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">patches</span><span class="p">)</span>
+
+    <span class="n">patch_features</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">patches</span><span class="p">:</span>
+        <span class="n">patch_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_niqe_extract_subband_feats</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+    <span class="n">patch_features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">patch_features</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">patch_features</span></div>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_get_patches_generic</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">patch_size</span><span class="p">,</span> <span class="n">is_train</span><span class="p">,</span> <span class="n">stride</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    NIQE helper function: _get_patches_generic</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">h</span> <span class="o">&lt;</span> <span class="n">patch_size</span> <span class="ow">or</span> <span class="n">w</span> <span class="o">&lt;</span> <span class="n">patch_size</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Input image is too small&quot;</span><span class="p">)</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># ensure that the patch divides evenly into img</span>
+    <span class="n">hoffset</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span> <span class="o">%</span> <span class="n">patch_size</span><span class="p">)</span>
+    <span class="n">woffset</span> <span class="o">=</span> <span class="p">(</span><span class="n">w</span> <span class="o">%</span> <span class="n">patch_size</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">hoffset</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="p">[:</span><span class="o">-</span><span class="n">hoffset</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="k">if</span> <span class="n">woffset</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="n">woffset</span><span class="p">]</span>
+
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+    <span class="n">img2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">2</span><span class="p">),</span> <span class="n">Image</span><span class="o">.</span><span class="n">BICUBIC</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="n">mscn1</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">compute_image_mscn_transform</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">mscn1</span> <span class="o">=</span> <span class="n">mscn1</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="n">mscn2</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">compute_image_mscn_transform</span><span class="p">(</span><span class="n">img2</span><span class="p">)</span>
+    <span class="n">mscn2</span> <span class="o">=</span> <span class="n">mscn2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+
+    <span class="n">feats_lvl1</span> <span class="o">=</span> <span class="n">extract_on_patches</span><span class="p">(</span><span class="n">mscn1</span><span class="p">,</span> <span class="n">patch_size</span><span class="p">)</span>
+    <span class="n">feats_lvl2</span> <span class="o">=</span> <span class="n">extract_on_patches</span><span class="p">(</span><span class="n">mscn2</span><span class="p">,</span> <span class="n">patch_size</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">feats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">feats_lvl1</span><span class="p">,</span> <span class="n">feats_lvl2</span><span class="p">))</span><span class="c1"># feats_lvl3))</span>
+
+    <span class="k">return</span> <span class="n">feats</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_niqe_extract_subband_feats</span><span class="p">(</span><span class="n">mscncoefs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    NIQE helper function: _niqe_extract_subband_feats</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># alpha_m,  = extract_ggd_features(mscncoefs)</span>
+    <span class="n">alpha_m</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">bl</span><span class="p">,</span> <span class="n">br</span><span class="p">,</span> <span class="n">lsq</span><span class="p">,</span> <span class="n">rsq</span> <span class="o">=</span> <span class="n">aggd_features</span><span class="p">(</span><span class="n">mscncoefs</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+    <span class="n">pps1</span><span class="p">,</span> <span class="n">pps2</span><span class="p">,</span> <span class="n">pps3</span><span class="p">,</span> <span class="n">pps4</span> <span class="o">=</span> <span class="n">paired_product</span><span class="p">(</span><span class="n">mscncoefs</span><span class="p">)</span>
+    <span class="n">alpha1</span><span class="p">,</span> <span class="n">N1</span><span class="p">,</span> <span class="n">bl1</span><span class="p">,</span> <span class="n">br1</span><span class="p">,</span> <span class="n">lsq1</span><span class="p">,</span> <span class="n">rsq1</span> <span class="o">=</span> <span class="n">aggd_features</span><span class="p">(</span><span class="n">pps1</span><span class="p">)</span>
+    <span class="n">alpha2</span><span class="p">,</span> <span class="n">N2</span><span class="p">,</span> <span class="n">bl2</span><span class="p">,</span> <span class="n">br2</span><span class="p">,</span> <span class="n">lsq2</span><span class="p">,</span> <span class="n">rsq2</span> <span class="o">=</span> <span class="n">aggd_features</span><span class="p">(</span><span class="n">pps2</span><span class="p">)</span>
+    <span class="n">alpha3</span><span class="p">,</span> <span class="n">N3</span><span class="p">,</span> <span class="n">bl3</span><span class="p">,</span> <span class="n">br3</span><span class="p">,</span> <span class="n">lsq3</span><span class="p">,</span> <span class="n">rsq3</span> <span class="o">=</span> <span class="n">aggd_features</span><span class="p">(</span><span class="n">pps3</span><span class="p">)</span>
+    <span class="n">alpha4</span><span class="p">,</span> <span class="n">N4</span><span class="p">,</span> <span class="n">bl4</span><span class="p">,</span> <span class="n">br4</span><span class="p">,</span> <span class="n">lsq4</span><span class="p">,</span> <span class="n">rsq4</span> <span class="o">=</span> <span class="n">aggd_features</span><span class="p">(</span><span class="n">pps4</span><span class="p">)</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="n">alpha_m</span><span class="p">,</span> <span class="p">(</span><span class="n">bl</span> <span class="o">+</span> <span class="n">br</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span>
+        <span class="n">alpha1</span><span class="p">,</span> <span class="n">N1</span><span class="p">,</span> <span class="n">bl1</span><span class="p">,</span> <span class="n">br1</span><span class="p">,</span>  <span class="c1"># (V)</span>
+        <span class="n">alpha2</span><span class="p">,</span> <span class="n">N2</span><span class="p">,</span> <span class="n">bl2</span><span class="p">,</span> <span class="n">br2</span><span class="p">,</span>  <span class="c1"># (H)</span>
+        <span class="n">alpha3</span><span class="p">,</span> <span class="n">N3</span><span class="p">,</span> <span class="n">bl3</span><span class="p">,</span> <span class="n">br3</span><span class="p">,</span>  <span class="c1"># (D1)</span>
+        <span class="n">alpha4</span><span class="p">,</span> <span class="n">N4</span><span class="p">,</span> <span class="n">bl4</span><span class="p">,</span> <span class="n">br4</span>   <span class="c1"># (D2)</span>
+    <span class="p">])</span>
+    <span class="k">return</span> <span class="n">features</span>
+
+<div class="viewcode-block" id="get_patches_test_features">
+<a class="viewcode-back" href="../../../fusion.NIQE.html#fusion.NIQE.niqe.get_patches_test_features">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_patches_test_features</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">patch_size</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    NIQE helper function: get_patches_test_features</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_get_patches_generic</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">patch_size</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stride</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="niqe">
+<a class="viewcode-back" href="../../../fusion.NIQE.html#fusion.NIQE.niqe.niqe">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">niqe</span><span class="p">(</span><span class="n">inputImgData</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    NIQE helper function: niqe</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">patch_size</span> <span class="o">=</span> <span class="mi">96</span>
+    <span class="n">module_path</span> <span class="o">=</span> <span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
+
+    <span class="n">params</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">loadmat</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="n">module_path</span><span class="p">,</span> <span class="s1">&#39;clean_image_parameters.mat&#39;</span><span class="p">))</span>
+    <span class="n">pop_mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;clean_mean&quot;</span><span class="p">])</span>
+    <span class="n">pop_cov</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s2">&quot;clean_cov&quot;</span><span class="p">]</span>
+
+    <span class="n">M</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="n">inputImgData</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="k">assert</span> <span class="n">M</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">patch_size</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;niqe called with small frame size, requires &gt; 192x192 resolution video using current training parameters&quot;</span>
+    <span class="k">assert</span> <span class="n">N</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">patch_size</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;niqe called with small frame size, requires &gt; 192x192 resolution video using current training parameters&quot;</span>
+
+    <span class="n">feats</span> <span class="o">=</span> <span class="n">get_patches_test_features</span><span class="p">(</span><span class="n">inputImgData</span><span class="p">,</span> <span class="n">patch_size</span><span class="p">)</span>
+    <span class="c1"># print(feats.shape)</span>
+    <span class="n">sample_mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">feats</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sample_cov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">feats</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+
+    <span class="n">X</span> <span class="o">=</span> <span class="n">sample_mu</span> <span class="o">-</span> <span class="n">pop_mu</span>
+    <span class="n">covmat</span> <span class="o">=</span> <span class="p">((</span><span class="n">pop_cov</span><span class="o">+</span><span class="n">sample_cov</span><span class="p">)</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span>
+    <span class="n">pinvmat</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">pinv</span><span class="p">(</span><span class="n">covmat</span><span class="p">)</span>
+    <span class="n">niqe_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">pinvmat</span><span class="p">),</span> <span class="n">X</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">niqe_score</span></div>
+
+
+<div class="viewcode-block" id="calculate_niqe">
+<a class="viewcode-back" href="../../../fusion.NIQE.html#fusion.NIQE.niqe.calculate_niqe">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_niqe</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the NIQE score for a grayscale image.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        image (numpy.ndarray): Input grayscale image in float64 format.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: NIQE score for the grayscale image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Ensure the image is in the correct format</span>
+    <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">:</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+    <span class="c1"># Calculate and return the NIQE score</span>
+    <span class="n">niqe_score</span> <span class="o">=</span> <span class="n">niqe</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">niqe_score</span><span class="p">)</span></div>
+
+
+
+<span class="c1">####################################################</span>
+<span class="c1"># import sys</span>
+<span class="c1"># from skimage.color import rgb2gray</span>
+
+<span class="c1"># def to_grayscale_array_skimage(image):</span>
+<span class="c1">#     # &quot;&quot;&quot;Convert an image to grayscale using skimage.&quot;&quot;&quot;</span>
+<span class="c1">#     # if isinstance(image, np.ndarray):</span>
+<span class="c1">#     #     if len(image.shape) == 3 and image.shape[2] == 3:</span>
+<span class="c1">#     #         # Simple conversion to grayscale assuming RGB image</span>
+<span class="c1">#     #         return np.dot(image[..., :3], [0.2989, 0.5870, 0.1140])</span>
+<span class="c1">#     #     elif len(image.shape) == 2:</span>
+<span class="c1">#     #         return image</span>
+<span class="c1">#     # elif isinstance(image, Image.Image):</span>
+<span class="c1">#     #     return np.array(image.convert(&#39;L&#39;))</span>
+<span class="c1">#     # else:</span>
+<span class="c1">#     #     raise ValueError(&quot;Unsupported image type&quot;)</span>
+<span class="c1">#     &quot;&quot;&quot;</span>
+<span class="c1">#     Convertit une image couleur en niveaux de gris en utilisant skimage.</span>
+
+<span class="c1">#     Paramètres :</span>
+<span class="c1">#     - image : np.ndarray</span>
+<span class="c1">#         Image en entrée (2D ou 3D).</span>
+
+<span class="c1">#     Retour :</span>
+<span class="c1">#     - np.ndarray</span>
+<span class="c1">#         Image en niveaux de gris.</span>
+<span class="c1">#     &quot;&quot;&quot;</span>
+<span class="c1">#     if isinstance(image, np.ndarray):</span>
+<span class="c1">#         if image.ndim == 2 or (image.ndim == 3 and image.shape[-1] == 1):</span>
+<span class="c1">#             # Déjà en niveaux de gris</span>
+<span class="c1">#             return np.squeeze(image)  # Au cas où il reste un canal singleton</span>
+<span class="c1">#         elif image.ndim == 3 and image.shape[-1] == 3:</span>
+<span class="c1">#             # Conversion RGB -&gt; Grayscale</span>
+<span class="c1">#             return rgb2gray(image)</span>
+<span class="c1">#         else:</span>
+<span class="c1">#             raise ValueError(&quot;Format d&#39;image non reconnu (np.ndarray)&quot;)</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         raise TypeError(&quot;L&#39;image doit être un tableau NumPy&quot;)</span>
+
+<span class="c1"># if __name__ == &quot;__main__&quot;:</span>
+<span class="c1">#     if len(sys.argv) != 2:</span>
+<span class="c1">#         print(&quot;Usage: python niqe.py &lt;image_path&gt;&quot;)</span>
+<span class="c1">#         sys.exit(1)</span>
+
+<span class="c1">#     image_path = sys.argv[1]</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         # Load the image and convert to grayscale</span>
+<span class="c1">#         image = np.array(Image.open(image_path))</span>
+<span class="c1">#         img_gray = to_grayscale_array_skimage(image)</span>
+
+<span class="c1">#         # Calculate NIQE score</span>
+<span class="c1">#         niqe_score = calculate_niqe(img_gray)</span>
+<span class="c1">#         print(f&quot;NIQE score for &#39;{image_path}&#39;: {niqe_score:.3f}&quot;)</span>
+<span class="c1">#     except Exception as e:</span>
+<span class="c1">#         print(f&quot;An error occurred: {e}&quot;)</span>
+</pre></div>
+</div>
+        </article>
+        <aside class="nftt-toc">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      
+<nav id="paginator"></nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul id="nftt-footer-links" class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          <li class="d-inline">
+            <a href="../../../mailto%3Aalexandre%40uca.fr.html"  class="list-item">Contact</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="../../../license.html"  class="list-item">License</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="VISWIR: Visible and SWIR Weighted Image Reconstruction">
+          <span class="fs-6 fw-bold">VISWIR: Visible and SWIR Weighted Image Reconstruction</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2025, Riffard Alexandre - Institut Pascal</li>
+          </ul>
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.1.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.9</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <div class="modal modal-xl fade" id="nftt-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-xxl-down modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nftt-modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="nftt-modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="../../../_static/documentation_options.js?v=bc51abb5"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/colorsets.js?v=58f89e02"></script>
+    <script src="../../../_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="../../../_static/sphinx-nefertiti.min.js?v=af404e0e"></script>
+    <script src="../../../_static/bootstrap.bundle.min.js?v=c066362f"></script>
+  </body>
+</html>

@@ -1,0 +1,934 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="colorset-reset" content="0" />
+    <meta name="docsearch:name" content="VISWIR: Visible and SWIR Weighted Image Reconstruction" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.2 (vQuasar)" />
+    <meta name="docsearch:version" content="" />
+    
+      <meta name="theme-color" content="#6610f2" />
+    
+    
+      <title>Source Code Documentation &mdash; VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation</title>
+    
+    <link rel="canonical" href="modules" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/nunito/stylesheet.css?v=abf98f06" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/ubuntu-sans-mono/stylesheet.css?v=8616a587" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-dark.css?v=2de69186" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-light.css?v=d6779c33" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/sphinx-nefertiti-indigo.min.css?v=07734d20" /><!-- add (1) -->
+        <link rel="index" title="Index" href="genindex.html" />
+        <link rel="search" title="Search" href="search.html" />
+        <link rel="top" title="VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation" href="#" />
+        <link rel="next" title="VISWIR_vQuasar module" href="VISWIR_vQuasar.html" />
+        <link rel="prev" title="Running VISWIR on HPC with SLURM" href="usage/hpc_slurm.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Ubuntu Sans Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to index filter</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="index.html"
+             class="navbar-brand"
+          ><span class="brand-text">VISWIR: Visible and SWIR Weighted Image Reconstruction</span><span class="brand-short-text">VISWIR</span></a>
+        
+        
+          <ul class="nftt-header-links-large navbar-nav">
+          
+            
+            
+            
+            
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+          
+          </ul>
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-short-text">VISWIR</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+                <div class="nftt-header-links-small">
+                  
+                    
+                    
+                    
+                    <div class="d-inline-block">
+                      
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+                    </div>
+                  
+                  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                    <hr class="d-xl-none text-white-50">
+                  </li>
+                </div>
+              
+              
+              <li class="nav-item col-12 col-xl-auto">
+                <a class="nav-link py-2 py-xl-0 px-0 px-xl-2" href="https://github.com/comsee-research/VISWIR" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/comsee-research/VISWIR">
+                      VISWIR
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                <hr class="d-xl-none text-white-50">
+              </li>
+              
+              
+              
+  <!-- colorssets-dropdown.html -->
+  <li class="nav-item dropdown">
+    <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-color" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change base color">
+      <i class="bi bi-palette"></i>
+      <span id="snftt-color-text" class="d-xl-none ms-2">Change base color</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-color-text">
+      <li>
+        <h6 class="dropdown-header">Change base color</h6>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="blue" href="#" aria-pressed="false">
+          <span class="blue">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Blue</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center active" data-snftt-colorset="indigo" href="#" aria-pressed="false">
+          <span class="indigo">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Indigo</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="purple" href="#" aria-pressed="false">
+          <span class="purple">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Purple</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="pink" href="#" aria-pressed="false">
+          <span class="pink">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Pink</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="red" href="#" aria-pressed="false">
+          <span class="red">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Red</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="orange" href="#" aria-pressed="false">
+          <span class="orange">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Orange</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="yellow" href="#" aria-pressed="false">
+          <span class="yellow">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Yellow</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="green" href="#" aria-pressed="false">
+          <span class="green">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Green</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="teal" href="#" aria-pressed="false">
+          <span class="teal">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Teal</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="default" href="#" aria-pressed="false">
+          <span class="cyan">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Cyan</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <h6 class="dropdown-header">Header style</h6>
+      </li>
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset-neutral="off" href="#" aria-pressed="false">
+          <i class="bi bi-noise-reduction"></i>
+          <span class="ms-3">Neutral</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+    <hr class="d-lg-none text-white-50">
+  </li>
+
+              
+              <!-- lightdark-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change appearance">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Change appearance</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Change appearance</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Automatic</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-none">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Index
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="index filter" aria-label="index filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/configs.html">Configuration Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/optuna.html">Optuna Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage/data.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/tools.html">Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help for Singularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/hpc_slurm.html">Running VISWIR on HPC with SLURM</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Source Code Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="VISWIR_vQuasar.html">VISWIR_vQuasar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common.html">common package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fusion.html">fusion package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fusion.NIQE.html">fusion.NIQE package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="optimization.html">optimization package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processing.html">processing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="realtime.html">realtime package</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <div><div class="d-flex flex-row justify-content-between">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Start</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Source Code Documentation</li>
+    </ol>
+  </nav>
+  
+    <div class="fs085">
+        <a href="_sources/modules.rst.txt"  rel="nofollow" aria-label="Show source of this document"><i class="bi bi-file-earmark-code"></i></a>
+    </div>
+  
+</div>
+            
+    <section id="source-code-documentation">
+<h1>Source Code Documentation<a class="headerlink" href="#source-code-documentation" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VISWIR_vQuasar.html">VISWIR_vQuasar module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="VISWIR_vQuasar.html#workflow">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VISWIR_vQuasar.html#VISWIR_vQuasar.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="common.html">common package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="common.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common.html#common-config-loader-module">common.config_loader module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="common.html#config-loader-py">config_loader.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.config_loader.ConfigError"><code class="docutils literal notranslate"><span class="pre">ConfigError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.config_loader.load_all_configs"><code class="docutils literal notranslate"><span class="pre">load_all_configs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.config_loader.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.config_loader.load_optuna_search_space"><code class="docutils literal notranslate"><span class="pre">load_optuna_search_space()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.config_loader.resolve_config_path"><code class="docutils literal notranslate"><span class="pre">resolve_config_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.config_loader.validate_config"><code class="docutils literal notranslate"><span class="pre">validate_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="common.html#common-datatypes-module">common.datatypes module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.datatypes.FusionConfig"><code class="docutils literal notranslate"><span class="pre">FusionConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionConfig.visible_folder"><code class="docutils literal notranslate"><span class="pre">FusionConfig.visible_folder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionConfig.swir_folder"><code class="docutils literal notranslate"><span class="pre">FusionConfig.swir_folder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionConfig.output_folder"><code class="docutils literal notranslate"><span class="pre">FusionConfig.output_folder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionConfig.ref_image_path"><code class="docutils literal notranslate"><span class="pre">FusionConfig.ref_image_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionConfig.ground_truth_path"><code class="docutils literal notranslate"><span class="pre">FusionConfig.ground_truth_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionConfig.mode"><code class="docutils literal notranslate"><span class="pre">FusionConfig.mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionConfig.run_detection"><code class="docutils literal notranslate"><span class="pre">FusionConfig.run_detection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id0"><code class="docutils literal notranslate"><span class="pre">FusionConfig.ground_truth_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id1"><code class="docutils literal notranslate"><span class="pre">FusionConfig.mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id2"><code class="docutils literal notranslate"><span class="pre">FusionConfig.output_folder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id3"><code class="docutils literal notranslate"><span class="pre">FusionConfig.ref_image_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id4"><code class="docutils literal notranslate"><span class="pre">FusionConfig.run_detection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id5"><code class="docutils literal notranslate"><span class="pre">FusionConfig.swir_folder</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id6"><code class="docutils literal notranslate"><span class="pre">FusionConfig.visible_folder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.datatypes.FusionTask"><code class="docutils literal notranslate"><span class="pre">FusionTask</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionTask.visible_path"><code class="docutils literal notranslate"><span class="pre">FusionTask.visible_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionTask.swir_path"><code class="docutils literal notranslate"><span class="pre">FusionTask.swir_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionTask.ref_image_path"><code class="docutils literal notranslate"><span class="pre">FusionTask.ref_image_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionTask.ground_truth_path"><code class="docutils literal notranslate"><span class="pre">FusionTask.ground_truth_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionTask.params"><code class="docutils literal notranslate"><span class="pre">FusionTask.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionTask.save_output"><code class="docutils literal notranslate"><span class="pre">FusionTask.save_output</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionTask.run_detection"><code class="docutils literal notranslate"><span class="pre">FusionTask.run_detection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.FusionTask.output_dir"><code class="docutils literal notranslate"><span class="pre">FusionTask.output_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id7"><code class="docutils literal notranslate"><span class="pre">FusionTask.ground_truth_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id8"><code class="docutils literal notranslate"><span class="pre">FusionTask.output_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id9"><code class="docutils literal notranslate"><span class="pre">FusionTask.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id10"><code class="docutils literal notranslate"><span class="pre">FusionTask.ref_image_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id11"><code class="docutils literal notranslate"><span class="pre">FusionTask.run_detection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id12"><code class="docutils literal notranslate"><span class="pre">FusionTask.save_output</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id13"><code class="docutils literal notranslate"><span class="pre">FusionTask.swir_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id14"><code class="docutils literal notranslate"><span class="pre">FusionTask.visible_path</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.datatypes.OptunaConfig"><code class="docutils literal notranslate"><span class="pre">OptunaConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.OptunaConfig.n_trials"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.n_trials</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.OptunaConfig.n_jobs"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.n_jobs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.OptunaConfig.sampler"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.sampler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.OptunaConfig.pruner"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.pruner</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.OptunaConfig.timeout"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.timeout</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id15"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.n_jobs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id16"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.n_trials</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id17"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.pruner</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id18"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.sampler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id19"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.timeout</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.datatypes.OptunaResult"><code class="docutils literal notranslate"><span class="pre">OptunaResult</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.OptunaResult.visible_path"><code class="docutils literal notranslate"><span class="pre">OptunaResult.visible_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.OptunaResult.swir_path"><code class="docutils literal notranslate"><span class="pre">OptunaResult.swir_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.OptunaResult.params"><code class="docutils literal notranslate"><span class="pre">OptunaResult.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.OptunaResult.metrics_fusion"><code class="docutils literal notranslate"><span class="pre">OptunaResult.metrics_fusion</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.OptunaResult.error"><code class="docutils literal notranslate"><span class="pre">OptunaResult.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id20"><code class="docutils literal notranslate"><span class="pre">OptunaResult.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id21"><code class="docutils literal notranslate"><span class="pre">OptunaResult.metrics_fusion</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id22"><code class="docutils literal notranslate"><span class="pre">OptunaResult.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id23"><code class="docutils literal notranslate"><span class="pre">OptunaResult.swir_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id24"><code class="docutils literal notranslate"><span class="pre">OptunaResult.visible_path</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.datatypes.ProcessResult"><code class="docutils literal notranslate"><span class="pre">ProcessResult</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.ProcessResult.visible_path"><code class="docutils literal notranslate"><span class="pre">ProcessResult.visible_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.ProcessResult.swir_path"><code class="docutils literal notranslate"><span class="pre">ProcessResult.swir_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.ProcessResult.ground_truth_path"><code class="docutils literal notranslate"><span class="pre">ProcessResult.ground_truth_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.ProcessResult.params"><code class="docutils literal notranslate"><span class="pre">ProcessResult.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.ProcessResult.metrics_fusion"><code class="docutils literal notranslate"><span class="pre">ProcessResult.metrics_fusion</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.ProcessResult.metrics_visible"><code class="docutils literal notranslate"><span class="pre">ProcessResult.metrics_visible</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.ProcessResult.metrics_swir"><code class="docutils literal notranslate"><span class="pre">ProcessResult.metrics_swir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.datatypes.ProcessResult.error"><code class="docutils literal notranslate"><span class="pre">ProcessResult.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id25"><code class="docutils literal notranslate"><span class="pre">ProcessResult.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id26"><code class="docutils literal notranslate"><span class="pre">ProcessResult.ground_truth_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id27"><code class="docutils literal notranslate"><span class="pre">ProcessResult.metrics_fusion</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id28"><code class="docutils literal notranslate"><span class="pre">ProcessResult.metrics_swir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id29"><code class="docutils literal notranslate"><span class="pre">ProcessResult.metrics_visible</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id30"><code class="docutils literal notranslate"><span class="pre">ProcessResult.params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id31"><code class="docutils literal notranslate"><span class="pre">ProcessResult.swir_path</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id32"><code class="docutils literal notranslate"><span class="pre">ProcessResult.visible_path</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="common.html#common-logger-module">common.logger module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="common.html#features">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="common.html#common-results-db-module">common.results_db module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.results_db.FusionResult"><code class="docutils literal notranslate"><span class="pre">FusionResult</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.results_db.FusionResult.id"><code class="docutils literal notranslate"><span class="pre">FusionResult.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.results_db.FusionResult.visible_img"><code class="docutils literal notranslate"><span class="pre">FusionResult.visible_img</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.results_db.FusionResult.swir_img"><code class="docutils literal notranslate"><span class="pre">FusionResult.swir_img</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.results_db.FusionResult.ref_img"><code class="docutils literal notranslate"><span class="pre">FusionResult.ref_img</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.results_db.FusionResult.grd_tr"><code class="docutils literal notranslate"><span class="pre">FusionResult.grd_tr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.results_db.FusionResult.alpha"><code class="docutils literal notranslate"><span class="pre">FusionResult.alpha</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.results_db.FusionResult.beta"><code class="docutils literal notranslate"><span class="pre">FusionResult.beta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.results_db.FusionResult.level"><code class="docutils literal notranslate"><span class="pre">FusionResult.level</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.results_db.FusionResult.gamma"><code class="docutils literal notranslate"><span class="pre">FusionResult.gamma</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.results_db.FusionResult.metrics_f"><code class="docutils literal notranslate"><span class="pre">FusionResult.metrics_f</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.results_db.FusionResult.metrics_v"><code class="docutils literal notranslate"><span class="pre">FusionResult.metrics_v</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.results_db.FusionResult.metrics_s"><code class="docutils literal notranslate"><span class="pre">FusionResult.metrics_s</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#common.results_db.FusionResult.error"><code class="docutils literal notranslate"><span class="pre">FusionResult.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id33"><code class="docutils literal notranslate"><span class="pre">FusionResult.alpha</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id34"><code class="docutils literal notranslate"><span class="pre">FusionResult.beta</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id35"><code class="docutils literal notranslate"><span class="pre">FusionResult.error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id36"><code class="docutils literal notranslate"><span class="pre">FusionResult.gamma</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id37"><code class="docutils literal notranslate"><span class="pre">FusionResult.grd_tr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id38"><code class="docutils literal notranslate"><span class="pre">FusionResult.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id39"><code class="docutils literal notranslate"><span class="pre">FusionResult.level</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id40"><code class="docutils literal notranslate"><span class="pre">FusionResult.metrics_f</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id41"><code class="docutils literal notranslate"><span class="pre">FusionResult.metrics_s</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id42"><code class="docutils literal notranslate"><span class="pre">FusionResult.metrics_v</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id43"><code class="docutils literal notranslate"><span class="pre">FusionResult.ref_img</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id44"><code class="docutils literal notranslate"><span class="pre">FusionResult.swir_img</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html#id45"><code class="docutils literal notranslate"><span class="pre">FusionResult.visible_img</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.results_db.get_session"><code class="docutils literal notranslate"><span class="pre">get_session()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.results_db.save_result_to_db"><code class="docutils literal notranslate"><span class="pre">save_result_to_db()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="common.html#common-ui-module">common.ui module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.ui.print_license_info"><code class="docutils literal notranslate"><span class="pre">print_license_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="common.html#common.ui.print_viswir_header"><code class="docutils literal notranslate"><span class="pre">print_viswir_header()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="common.html#module-contents">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="common.html#id46">common package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fusion.html">fusion package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fusion.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fusion.NIQE.html">fusion.NIQE package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fusion.NIQE.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fusion.NIQE.html#fusion-niqe-niqe-module">fusion.NIQE.niqe module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fusion.NIQE.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fusion.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fusion.html#fusion-detection-module-module">fusion.detection_module module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.detection_module.iou"><code class="docutils literal notranslate"><span class="pre">iou()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.detection_module.parse_voc_annotations"><code class="docutils literal notranslate"><span class="pre">parse_voc_annotations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.detection_module.prepare_image_for_yolo"><code class="docutils literal notranslate"><span class="pre">prepare_image_for_yolo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.detection_module.run_yolo_and_compute_f1"><code class="docutils literal notranslate"><span class="pre">run_yolo_and_compute_f1()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.detection_module.save_annotated_float64_image_as_uint16"><code class="docutils literal notranslate"><span class="pre">save_annotated_float64_image_as_uint16()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.detection_module.save_predictions_as_voc_xml"><code class="docutils literal notranslate"><span class="pre">save_predictions_as_voc_xml()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fusion.html#fusion-functions-module">fusion.functions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.functions.calculate_levels"><code class="docutils literal notranslate"><span class="pre">calculate_levels()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.functions.downsample"><code class="docutils literal notranslate"><span class="pre">downsample()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.functions.gaussian_pyramid"><code class="docutils literal notranslate"><span class="pre">gaussian_pyramid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.functions.laplacian_pyramid"><code class="docutils literal notranslate"><span class="pre">laplacian_pyramid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.functions.local_std"><code class="docutils literal notranslate"><span class="pre">local_std()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.functions.local_visibility"><code class="docutils literal notranslate"><span class="pre">local_visibility()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.functions.my_upsample"><code class="docutils literal notranslate"><span class="pre">my_upsample()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.functions.pyramid_filter"><code class="docutils literal notranslate"><span class="pre">pyramid_filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.functions.reconstruct_laplacian_pyramid"><code class="docutils literal notranslate"><span class="pre">reconstruct_laplacian_pyramid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.functions.reconstruct_laplacian_pyramid_2"><code class="docutils literal notranslate"><span class="pre">reconstruct_laplacian_pyramid_2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.functions.reconstruct_without_laplacian"><code class="docutils literal notranslate"><span class="pre">reconstruct_without_laplacian()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fusion.html#fusion-fusion-module">fusion.fusion module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.fusion.process_image"><code class="docutils literal notranslate"><span class="pre">process_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.fusion.viswir_core_fusion"><code class="docutils literal notranslate"><span class="pre">viswir_core_fusion()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fusion.html#fusion-metrics-module">fusion.metrics module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_brisque"><code class="docutils literal notranslate"><span class="pre">calculate_brisque()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_correlation"><code class="docutils literal notranslate"><span class="pre">calculate_correlation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_entropy"><code class="docutils literal notranslate"><span class="pre">calculate_entropy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_entropy_normalized"><code class="docutils literal notranslate"><span class="pre">calculate_entropy_normalized()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_ergas"><code class="docutils literal notranslate"><span class="pre">calculate_ergas()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_gmsd"><code class="docutils literal notranslate"><span class="pre">calculate_gmsd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_gmsd_color"><code class="docutils literal notranslate"><span class="pre">calculate_gmsd_color()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_mad"><code class="docutils literal notranslate"><span class="pre">calculate_mad()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_mad_color"><code class="docutils literal notranslate"><span class="pre">calculate_mad_color()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_mean_gradient"><code class="docutils literal notranslate"><span class="pre">calculate_mean_gradient()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_mean_intensity"><code class="docutils literal notranslate"><span class="pre">calculate_mean_intensity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_ms_ssim_pytorch"><code class="docutils literal notranslate"><span class="pre">calculate_ms_ssim_pytorch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_ms_ssim_pytorch_color"><code class="docutils literal notranslate"><span class="pre">calculate_ms_ssim_pytorch_color()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_mse"><code class="docutils literal notranslate"><span class="pre">calculate_mse()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_niqe_metric"><code class="docutils literal notranslate"><span class="pre">calculate_niqe_metric()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_piqe"><code class="docutils literal notranslate"><span class="pre">calculate_piqe()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_psnr"><code class="docutils literal notranslate"><span class="pre">calculate_psnr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_rmse"><code class="docutils literal notranslate"><span class="pre">calculate_rmse()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_sam"><code class="docutils literal notranslate"><span class="pre">calculate_sam()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_snr"><code class="docutils literal notranslate"><span class="pre">calculate_snr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_snr_color"><code class="docutils literal notranslate"><span class="pre">calculate_snr_color()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_snr_color_per_channel"><code class="docutils literal notranslate"><span class="pre">calculate_snr_color_per_channel()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_spatial_frequency_color"><code class="docutils literal notranslate"><span class="pre">calculate_spatial_frequency_color()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_spatial_frequency_grey"><code class="docutils literal notranslate"><span class="pre">calculate_spatial_frequency_grey()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_ssim"><code class="docutils literal notranslate"><span class="pre">calculate_ssim()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_std"><code class="docutils literal notranslate"><span class="pre">calculate_std()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_uqi"><code class="docutils literal notranslate"><span class="pre">calculate_uqi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.calculate_vif"><code class="docutils literal notranslate"><span class="pre">calculate_vif()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.compute_all_metrics"><code class="docutils literal notranslate"><span class="pre">compute_all_metrics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.register_metric"><code class="docutils literal notranslate"><span class="pre">register_metric()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.metrics.safe"><code class="docutils literal notranslate"><span class="pre">safe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fusion.html#fusion-utils-module">fusion.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.configure_logger"><code class="docutils literal notranslate"><span class="pre">configure_logger()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.display_image"><code class="docutils literal notranslate"><span class="pre">display_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.ensure_grayscale"><code class="docutils literal notranslate"><span class="pre">ensure_grayscale()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.ensure_range_255"><code class="docutils literal notranslate"><span class="pre">ensure_range_255()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.from_grey_to_rgb_array"><code class="docutils literal notranslate"><span class="pre">from_grey_to_rgb_array()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.generate_parameters_json"><code class="docutils literal notranslate"><span class="pre">generate_parameters_json()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.generate_parameters_json_return"><code class="docutils literal notranslate"><span class="pre">generate_parameters_json_return()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.get_image_shape"><code class="docutils literal notranslate"><span class="pre">get_image_shape()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.load_image_opencv"><code class="docutils literal notranslate"><span class="pre">load_image_opencv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.load_image_ref"><code class="docutils literal notranslate"><span class="pre">load_image_ref()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.load_image_ref_skimage"><code class="docutils literal notranslate"><span class="pre">load_image_ref_skimage()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.load_image_skimage_core"><code class="docutils literal notranslate"><span class="pre">load_image_skimage_core()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.load_parameters_json"><code class="docutils literal notranslate"><span class="pre">load_parameters_json()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.normalize_image"><code class="docutils literal notranslate"><span class="pre">normalize_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.prepare_ground_truth_list"><code class="docutils literal notranslate"><span class="pre">prepare_ground_truth_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.prepare_ground_truth_list_vLegacy"><code class="docutils literal notranslate"><span class="pre">prepare_ground_truth_list_vLegacy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.preprocess_images_for_metrics"><code class="docutils literal notranslate"><span class="pre">preprocess_images_for_metrics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.print_image_info"><code class="docutils literal notranslate"><span class="pre">print_image_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.safe_float"><code class="docutils literal notranslate"><span class="pre">safe_float()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.save_float64_image_as_uint16"><code class="docutils literal notranslate"><span class="pre">save_float64_image_as_uint16()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.save_image"><code class="docutils literal notranslate"><span class="pre">save_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.str_to_bool_strict"><code class="docutils literal notranslate"><span class="pre">str_to_bool_strict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.to_float32"><code class="docutils literal notranslate"><span class="pre">to_float32()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.to_grayscale_array_OLD"><code class="docutils literal notranslate"><span class="pre">to_grayscale_array_OLD()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.to_grayscale_array_cv2"><code class="docutils literal notranslate"><span class="pre">to_grayscale_array_cv2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.to_grayscale_array_manual"><code class="docutils literal notranslate"><span class="pre">to_grayscale_array_manual()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.to_grayscale_array_skimage"><code class="docutils literal notranslate"><span class="pre">to_grayscale_array_skimage()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.to_rgb_array"><code class="docutils literal notranslate"><span class="pre">to_rgb_array()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.visualize_pyramid"><code class="docutils literal notranslate"><span class="pre">visualize_pyramid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#fusion.utils.wait_if_paused"><code class="docutils literal notranslate"><span class="pre">wait_if_paused()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fusion.html#module-contents">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fusion.html#module-fusion">fusion package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">optimization package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="optimization.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimization.html#optimization-objective-module">optimization.objective module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#optimization.objective.objective"><code class="docutils literal notranslate"><span class="pre">objective()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#optimization.objective.objective_detection"><code class="docutils literal notranslate"><span class="pre">objective_detection()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#optimization.objective.suggest_params"><code class="docutils literal notranslate"><span class="pre">suggest_params()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="optimization.html#optimization-optuna-runner-module">optimization.optuna_runner module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#optimization.optuna_runner.clear_cache_callback"><code class="docutils literal notranslate"><span class="pre">clear_cache_callback()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#optimization.optuna_runner.normalize"><code class="docutils literal notranslate"><span class="pre">normalize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#optimization.optuna_runner.optimize_parameters_for_group_v2"><code class="docutils literal notranslate"><span class="pre">optimize_parameters_for_group_v2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#optimization.optuna_runner.process_folder_optuna"><code class="docutils literal notranslate"><span class="pre">process_folder_optuna()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#optimization.optuna_runner.tchebycheff_distance"><code class="docutils literal notranslate"><span class="pre">tchebycheff_distance()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="optimization.html#optimization-optuna-wrapper-module">optimization.optuna_wrapper module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#id0"><code class="docutils literal notranslate"><span class="pre">clear_cache_callback()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#id1"><code class="docutils literal notranslate"><span class="pre">normalize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#id2"><code class="docutils literal notranslate"><span class="pre">optimize_parameters_for_group_v2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#id3"><code class="docutils literal notranslate"><span class="pre">process_folder_optuna()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#id4"><code class="docutils literal notranslate"><span class="pre">tchebycheff_distance()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="optimization.html#optimization-samplers-module">optimization.samplers module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#optimization.samplers.get_pruner"><code class="docutils literal notranslate"><span class="pre">get_pruner()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#optimization.samplers.get_sampler"><code class="docutils literal notranslate"><span class="pre">get_sampler()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="optimization.html#optimization-visualization-module">optimization.visualization module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#optimization.visualization.visualize_study"><code class="docutils literal notranslate"><span class="pre">visualize_study()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="optimization.html#module-contents">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="optimization.html#module-optimization">Optimization package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="optimization.html#id6">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="optimization.html#features">Features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="processing.html">processing package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="processing.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processing.html#processing-batch-runner-module">processing.batch_runner module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="processing.html#processing.batch_runner.process_folder"><code class="docutils literal notranslate"><span class="pre">process_folder()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="processing.html#processing.batch_runner.process_image_wrapper"><code class="docutils literal notranslate"><span class="pre">process_image_wrapper()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="processing.html#processing-interruption-module">processing.interruption module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="processing.html#processing.interruption.save_last_params"><code class="docutils literal notranslate"><span class="pre">save_last_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="processing.html#processing.interruption.signal_handler"><code class="docutils literal notranslate"><span class="pre">signal_handler()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="processing.html#processing-sql-runner-module">processing.sql_runner module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="processing.html#processing.sql_runner.process_folder_sql"><code class="docutils literal notranslate"><span class="pre">process_folder_sql()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="processing.html#processing-task-manager-module">processing.task_manager module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="processing.html#processing.task_manager.batchify_tasks"><code class="docutils literal notranslate"><span class="pre">batchify_tasks()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="processing.html#processing.task_manager.generate_tasks_in_memory"><code class="docutils literal notranslate"><span class="pre">generate_tasks_in_memory()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="processing.html#module-contents">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="processing.html#module-processing">processing package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="realtime.html">realtime package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="realtime.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="realtime.html#realtime-fast-config-module">realtime.fast_config module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="realtime.html#realtime.fast_config.load_fast_config"><code class="docutils literal notranslate"><span class="pre">load_fast_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="realtime.html#realtime-fast-detection-module">realtime.fast_detection module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="realtime.html#realtime.fast_detection.FastDetector"><code class="docutils literal notranslate"><span class="pre">FastDetector</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="realtime.html#realtime.fast_detection.FastDetector.draw"><code class="docutils literal notranslate"><span class="pre">FastDetector.draw()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="realtime.html#realtime.fast_detection.FastDetector.draw_label"><code class="docutils literal notranslate"><span class="pre">FastDetector.draw_label()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="realtime.html#realtime.fast_detection.FastDetector.predict"><code class="docutils literal notranslate"><span class="pre">FastDetector.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="realtime.html#realtime-fast-fusion-runner-module">realtime.fast_fusion_runner module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="realtime.html#realtime.fast_fusion_runner.FastFusionPipeline"><code class="docutils literal notranslate"><span class="pre">FastFusionPipeline</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="realtime.html#realtime.fast_fusion_runner.FastFusionPipeline.cfg"><code class="docutils literal notranslate"><span class="pre">FastFusionPipeline.cfg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="realtime.html#realtime.fast_fusion_runner.FastFusionPipeline.detector"><code class="docutils literal notranslate"><span class="pre">FastFusionPipeline.detector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="realtime.html#realtime.fast_fusion_runner.FastFusionPipeline.run_detection"><code class="docutils literal notranslate"><span class="pre">FastFusionPipeline.run_detection</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="realtime.html#realtime.fast_fusion_runner.FastFusionPipeline.defaults"><code class="docutils literal notranslate"><span class="pre">FastFusionPipeline.defaults</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="realtime.html#realtime.fast_fusion_runner.FastFusionPipeline.run"><code class="docutils literal notranslate"><span class="pre">FastFusionPipeline.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="realtime.html#realtime.fast_fusion_runner.read_image_swir"><code class="docutils literal notranslate"><span class="pre">read_image_swir()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="realtime.html#realtime.fast_fusion_runner.read_image_visible"><code class="docutils literal notranslate"><span class="pre">read_image_visible()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="realtime.html#module-contents">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="realtime.html#module-realtime">realtime package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+</div>
+        </article>
+        <aside class="nftt-toc">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">Source Code Documentation</a></li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      <nav id="paginator" class="py-4" aria-label="Documentation navigation">
+    <div class="container">
+      <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
+            <a href="usage/hpc_slurm.html" class="d-flex pe-5 px-lg-5 align-items-end" rel="prev" aria-label="Previous page: Running VISWIR on HPC with SLURM">
+              <span class="prev-page"><i class="bi bi-caret-left"></i></span>
+              <div class="d-none d-sm-flex flex-column">
+                <span class="text-small text-start text-muted">Previous</span>
+                <span class="underline">Running VISWIR on HPC with SLURM</span>
+              </div>
+            </a>
+          </li>
+        <li class="d-flex page-item ms-auto">
+            <a href="VISWIR_vQuasar.html" class="d-flex ps-5 px-lg-5 align-items-end" rel="next" aria-label="Next page: VISWIR_vQuasar module">
+              <div class="d-flex flex-column">
+                <span class="text-small text-end text-start text-muted">Next</span>
+                <span class="underline">VISWIR_vQuasar module</span>
+              </div>
+              <span class="next-page"><i class="bi bi-caret-right"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul id="nftt-footer-links" class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          <li class="d-inline">
+            <a href="mailto%3Aalexandre%40uca.fr.html"  class="list-item">Contact</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="license.html"  class="list-item">License</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="VISWIR: Visible and SWIR Weighted Image Reconstruction">
+          <span class="fs-6 fw-bold">VISWIR: Visible and SWIR Weighted Image Reconstruction</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2025, Riffard Alexandre - Institut Pascal</li>
+          </ul>
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.1.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.9</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <div class="modal modal-xl fade" id="nftt-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-xxl-down modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nftt-modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="nftt-modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="_static/documentation_options.js?v=bc51abb5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/colorsets.js?v=58f89e02"></script>
+    <script src="_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="_static/sphinx-nefertiti.min.js?v=af404e0e"></script>
+    <script src="_static/bootstrap.bundle.min.js?v=c066362f"></script>
+  </body>
+</html>

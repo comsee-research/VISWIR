@@ -1,0 +1,1127 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="colorset-reset" content="0" />
+    <meta name="docsearch:name" content="VISWIR: Visible and SWIR Weighted Image Reconstruction" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.2 (vQuasar)" />
+    <meta name="docsearch:version" content="" />
+    
+      <meta name="theme-color" content="#6610f2" />
+    
+    
+      <title>optimization package &mdash; VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation</title>
+    
+    <link rel="canonical" href="optimization" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/nunito/stylesheet.css?v=abf98f06" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/ubuntu-sans-mono/stylesheet.css?v=8616a587" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-dark.css?v=2de69186" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-light.css?v=d6779c33" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/sphinx-nefertiti-indigo.min.css?v=07734d20" /><!-- add (1) -->
+        <link rel="index" title="Index" href="genindex.html" />
+        <link rel="search" title="Search" href="search.html" />
+        <link rel="top" title="VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation" href="#" />
+        <link rel="up" title="Source Code Documentation" href="modules.html" />
+        <link rel="next" title="processing package" href="processing.html" />
+        <link rel="prev" title="fusion.NIQE package" href="fusion.NIQE.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Ubuntu Sans Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to index filter</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="index.html"
+             class="navbar-brand"
+          ><span class="brand-text">VISWIR: Visible and SWIR Weighted Image Reconstruction</span><span class="brand-short-text">VISWIR</span></a>
+        
+        
+          <ul class="nftt-header-links-large navbar-nav">
+          
+            
+            
+            
+            
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+          
+          </ul>
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-short-text">VISWIR</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+                <div class="nftt-header-links-small">
+                  
+                    
+                    
+                    
+                    <div class="d-inline-block">
+                      
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+                    </div>
+                  
+                  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                    <hr class="d-xl-none text-white-50">
+                  </li>
+                </div>
+              
+              
+              <li class="nav-item col-12 col-xl-auto">
+                <a class="nav-link py-2 py-xl-0 px-0 px-xl-2" href="https://github.com/comsee-research/VISWIR" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/comsee-research/VISWIR">
+                      VISWIR
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                <hr class="d-xl-none text-white-50">
+              </li>
+              
+              
+              
+  <!-- colorssets-dropdown.html -->
+  <li class="nav-item dropdown">
+    <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-color" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change base color">
+      <i class="bi bi-palette"></i>
+      <span id="snftt-color-text" class="d-xl-none ms-2">Change base color</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-color-text">
+      <li>
+        <h6 class="dropdown-header">Change base color</h6>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="blue" href="#" aria-pressed="false">
+          <span class="blue">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Blue</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center active" data-snftt-colorset="indigo" href="#" aria-pressed="false">
+          <span class="indigo">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Indigo</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="purple" href="#" aria-pressed="false">
+          <span class="purple">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Purple</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="pink" href="#" aria-pressed="false">
+          <span class="pink">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Pink</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="red" href="#" aria-pressed="false">
+          <span class="red">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Red</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="orange" href="#" aria-pressed="false">
+          <span class="orange">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Orange</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="yellow" href="#" aria-pressed="false">
+          <span class="yellow">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Yellow</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="green" href="#" aria-pressed="false">
+          <span class="green">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Green</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="teal" href="#" aria-pressed="false">
+          <span class="teal">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Teal</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="default" href="#" aria-pressed="false">
+          <span class="cyan">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Cyan</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <h6 class="dropdown-header">Header style</h6>
+      </li>
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset-neutral="off" href="#" aria-pressed="false">
+          <i class="bi bi-noise-reduction"></i>
+          <span class="ms-3">Neutral</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+    <hr class="d-lg-none text-white-50">
+  </li>
+
+              
+              <!-- lightdark-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change appearance">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Change appearance</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Change appearance</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Automatic</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-none">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Index
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="index filter" aria-label="index filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/configs.html">Configuration Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/optuna.html">Optuna Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage/data.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/tools.html">Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help for Singularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/hpc_slurm.html">Running VISWIR on HPC with SLURM</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Source Code Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="VISWIR_vQuasar.html">VISWIR_vQuasar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common.html">common package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fusion.html">fusion package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fusion.NIQE.html">fusion.NIQE package</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">optimization package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processing.html">processing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="realtime.html">realtime package</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <div><div class="d-flex flex-row justify-content-between">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Start</a></li>
+        <li class="breadcrumb-item"><a href="modules.html">Source Code Documentation</a></li>
+      <li class="breadcrumb-item active" aria-current="page">optimization package</li>
+    </ol>
+  </nav>
+  
+    <div class="fs085">
+        <a href="_sources/optimization.rst.txt"  rel="nofollow" aria-label="Show source of this document"><i class="bi bi-file-earmark-code"></i></a>
+    </div>
+  
+</div>
+            
+    <section id="optimization-package">
+<h1>optimization package<a class="headerlink" href="#optimization-package" title="Link to this heading">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">optimization</span></code> package provides tools for <strong>hyperparameter search,
+objective evaluation, and visualization</strong> of the VISWIR fusion pipeline.
+It integrates with Optuna for automated optimization and includes custom
+samplers and plotting utilities.</p>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="optimization-objective-module">
+<h2>optimization.objective module<a class="headerlink" href="#optimization-objective-module" title="Link to this heading">¶</a></h2>
+<p>Definition of objective functions used to evaluate fusion quality and
+guide optimization.</p>
+<p id="module-optimization.objective">Optuna objective functions for hyperparameter optimization.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimization.objective.objective">
+<span class="sig-prename descclassname"><span class="pre">optimization.objective.</span></span><span class="sig-name descname"><span class="pre">objective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trial</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visible_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swir_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_image_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_detection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimization/objective.html#objective"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#optimization.objective.objective" title="Link to this definition">¶</a></dt>
+<dd><p>Optuna objective function based on NR-IQA metrics.</p>
+<p>This objective evaluates fused images using no-reference image quality
+assessment metrics (Entropy, BRISQUE, NIQE, PIQE).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trial</strong> (<em>optuna.trial.Trial</em>) – Current Optuna trial object.</p></li>
+<li><p><strong>visible_files</strong> (<em>list</em><em> of </em><em>str</em>) – List of visible image file paths.</p></li>
+<li><p><strong>swir_files</strong> (<em>list</em><em> of </em><em>str</em>) – List of SWIR image file paths.</p></li>
+<li><p><strong>ref_image_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to the reference image (not used in NR-IQA).</p></li>
+<li><p><strong>run_detection</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to run detection in addition to NR-IQA.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing:
+- entropy : float
+- brisque : float
+- niqe : float
+- piqe : float</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of float</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>optuna.TrialPruned</strong> – If no valid metrics are computed for the trial.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimization.objective.objective_detection">
+<span class="sig-prename descclassname"><span class="pre">optimization.objective.</span></span><span class="sig-name descname"><span class="pre">objective_detection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trial</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visible_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swir_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_image_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_detection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimization/objective.html#objective_detection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#optimization.objective.objective_detection" title="Link to this definition">¶</a></dt>
+<dd><p>Optuna objective function based on detection metrics (F1-score).</p>
+<p>This objective evaluates fused images by running detection and computing
+the average F1-score across a sampled subset of images.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trial</strong> (<em>optuna.trial.Trial</em>) – Current Optuna trial object.</p></li>
+<li><p><strong>visible_files</strong> (<em>list</em><em> of </em><em>str</em>) – List of visible image file paths.</p></li>
+<li><p><strong>swir_files</strong> (<em>list</em><em> of </em><em>str</em>) – List of SWIR image file paths.</p></li>
+<li><p><strong>ref_image_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to the reference image.</p></li>
+<li><p><strong>run_detection</strong> (<em>bool</em>) – Whether detection is enabled.</p></li>
+<li><p><strong>ground_truth_list</strong> (<em>list</em><em> of </em><em>str</em><em> or </em><em>None</em>) – List of ground truth annotation file paths aligned with visible images,
+or None if unavailable.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Average F1-score across the sampled dataset.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>optuna.TrialPruned</strong> – If no valid metrics are computed for the trial.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimization.objective.suggest_params">
+<span class="sig-prename descclassname"><span class="pre">optimization.objective.</span></span><span class="sig-name descname"><span class="pre">suggest_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trial</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimization/objective.html#suggest_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#optimization.objective.suggest_params" title="Link to this definition">¶</a></dt>
+<dd><p>Generate a dictionary of parameters from the Optuna search space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>trial</strong> (<em>optuna.trial.Trial</em>) – Current Optuna trial object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary of suggested parameters with their values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the parameter type in the search space is unsupported.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="optimization-optuna-runner-module">
+<h2>optimization.optuna_runner module<a class="headerlink" href="#optimization-optuna-runner-module" title="Link to this heading">¶</a></h2>
+<p>Orchestration of fusion parameter optimisation with Optuna framework
+to run optimization studies and manage trials (NR-IQA or detection).</p>
+<p id="module-optimization.optuna_runner">Orchestration of Optuna hyperparameter optimization for VISWIR.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimization.optuna_runner.clear_cache_callback">
+<span class="sig-prename descclassname"><span class="pre">optimization.optuna_runner.</span></span><span class="sig-name descname"><span class="pre">clear_cache_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">study</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trial</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimization/optuna_runner.html#clear_cache_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#optimization.optuna_runner.clear_cache_callback" title="Link to this definition">¶</a></dt>
+<dd><p>Callback to clear memory after each Optuna trial.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>study</strong> (<em>optuna.study.Study</em>) – The current Optuna study.</p></li>
+<li><p><strong>trial</strong> (<em>optuna.trial.Trial</em>) – The completed trial.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Calls Python garbage collector.</p></li>
+<li><p>Can be extended to clear GPU cache if needed.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimization.optuna_runner.normalize">
+<span class="sig-prename descclassname"><span class="pre">optimization.optuna_runner.</span></span><span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimization/optuna_runner.html#normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#optimization.optuna_runner.normalize" title="Link to this definition">¶</a></dt>
+<dd><p>Normalize values to [0, 1] given min and max bounds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>list</em><em> of </em><em>float</em>) – Values to normalize.</p></li>
+<li><p><strong>mins</strong> (<em>list</em><em> of </em><em>float</em>) – Minimum values for each dimension.</p></li>
+<li><p><strong>maxs</strong> (<em>list</em><em> of </em><em>float</em>) – Maximum values for each dimension.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Normalized values in [0, 1].</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimization.optuna_runner.optimize_parameters_for_group_v2">
+<span class="sig-prename descclassname"><span class="pre">optimization.optuna_runner.</span></span><span class="sig-name descname"><span class="pre">optimize_parameters_for_group_v2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visible_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swir_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_image_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_trials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_detection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampler_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'TPE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pruner_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'MedianPruner'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimization/optuna_runner.html#optimize_parameters_for_group_v2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#optimization.optuna_runner.optimize_parameters_for_group_v2" title="Link to this definition">¶</a></dt>
+<dd><p>Optimize fusion parameters with Optuna (NR-IQA or detection).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>visible_files</strong> (<em>list</em><em> of </em><em>Path</em>) – List of visible image file paths.</p></li>
+<li><p><strong>swir_files</strong> (<em>list</em><em> of </em><em>Path</em>) – List of SWIR image file paths.</p></li>
+<li><p><strong>ref_image_path</strong> (<em>Path</em><em> or </em><em>None</em>) – Path to the reference image (optional).</p></li>
+<li><p><strong>output_dir</strong> (<em>Path</em>) – Directory where results and logs will be saved.</p></li>
+<li><p><strong>n_trials</strong> (<em>int</em><em>, </em><em>default=100</em>) – Number of optimization trials.</p></li>
+<li><p><strong>run_detection</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to optimize based on detection (F1-score).</p></li>
+<li><p><strong>ground_truth_path</strong> (<em>Path</em><em>, </em><em>optional</em>) – Path to ground truth annotations (used if detection is enabled).</p></li>
+<li><p><strong>sampler_name</strong> (<em>str</em><em>, </em><em>default=&quot;TPE&quot;</em>) – Name of the Optuna sampler to use.</p></li>
+<li><p><strong>pruner_name</strong> (<em>str</em><em>, </em><em>default=&quot;MedianPruner&quot;</em>) – Name of the Optuna pruner to use.</p></li>
+<li><p><strong>n_jobs</strong> (<em>int</em><em>, </em><em>default=4</em>) – Number of parallel jobs.</p></li>
+<li><p><strong>storage</strong> (<em>str</em><em>, </em><em>optional</em>) – Storage backend (SQLite or external database).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>study<span class="classifier">optuna.study.Study</span></dt><dd><p>The completed Optuna study.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>best_params<span class="classifier">dict</span></dt><dd><p>Dictionary of best parameters found.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>best_values<span class="classifier">tuple</span></dt><dd><p>Best objective values.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the number of visible and SWIR images does not match.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimization.optuna_runner.process_folder_optuna">
+<span class="sig-prename descclassname"><span class="pre">optimization.optuna_runner.</span></span><span class="sig-name descname"><span class="pre">process_folder_optuna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visible_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swir_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_image_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_trials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_detection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/optimization/optuna_runner.html#process_folder_optuna"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#optimization.optuna_runner.process_folder_optuna" title="Link to this definition">¶</a></dt>
+<dd><p>Complete optimization pipeline with Optuna.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>visible_folder</strong> (<em>Path</em>) – Folder containing visible images.</p></li>
+<li><p><strong>swir_folder</strong> (<em>Path</em>) – Folder containing SWIR images.</p></li>
+<li><p><strong>output_dir</strong> (<em>Path</em>) – Directory where results will be saved.</p></li>
+<li><p><strong>ref_image_path</strong> (<em>Path</em><em>, </em><em>optional</em>) – Path to the reference image.</p></li>
+<li><p><strong>n_trials</strong> (<em>int</em><em>, </em><em>default=100</em>) – Number of optimization trials.</p></li>
+<li><p><strong>run_detection</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to optimize based on detection (F1-score).</p></li>
+<li><p><strong>ground_truth_path</strong> (<em>Path</em><em>, </em><em>optional</em>) – Path to ground truth annotations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the number of visible and SWIR images does not match.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Saves the best parameters in <cite>best_parameters.json</cite>.</p></li>
+<li><p>Creates or reuses an Optuna study with SQLite or external storage.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimization.optuna_runner.tchebycheff_distance">
+<span class="sig-prename descclassname"><span class="pre">optimization.optuna_runner.</span></span><span class="sig-name descname"><span class="pre">tchebycheff_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ideal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimization/optuna_runner.html#tchebycheff_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#optimization.optuna_runner.tchebycheff_distance" title="Link to this definition">¶</a></dt>
+<dd><p>Compute the Tchebycheff distance between a solution and the ideal point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>list</em><em> of </em><em>float</em>) – Values of the current solution.</p></li>
+<li><p><strong>ideal</strong> (<em>list</em><em> of </em><em>float</em>) – Ideal target values.</p></li>
+<li><p><strong>weights</strong> (<em>list</em><em> of </em><em>float</em>) – Weights for each objective.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tchebycheff distance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="optimization-optuna-wrapper-module">
+<h2>optimization.optuna_wrapper module<a class="headerlink" href="#optimization-optuna-wrapper-module" title="Link to this heading">¶</a></h2>
+<p>Wrapper for Optuna, managing image fusion and metric calculation,
+as well as detection if enabled.</p>
+<p id="module-0">Orchestration of Optuna hyperparameter optimization for VISWIR.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-prename descclassname"><span class="pre">optimization.optuna_runner.</span></span><span class="sig-name descname"><span class="pre">clear_cache_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">study</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trial</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimization/optuna_runner.html#clear_cache_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd><p>Callback to clear memory after each Optuna trial.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>study</strong> (<em>optuna.study.Study</em>) – The current Optuna study.</p></li>
+<li><p><strong>trial</strong> (<em>optuna.trial.Trial</em>) – The completed trial.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Calls Python garbage collector.</p></li>
+<li><p>Can be extended to clear GPU cache if needed.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-prename descclassname"><span class="pre">optimization.optuna_runner.</span></span><span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimization/optuna_runner.html#normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
+<dd><p>Normalize values to [0, 1] given min and max bounds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>list</em><em> of </em><em>float</em>) – Values to normalize.</p></li>
+<li><p><strong>mins</strong> (<em>list</em><em> of </em><em>float</em>) – Minimum values for each dimension.</p></li>
+<li><p><strong>maxs</strong> (<em>list</em><em> of </em><em>float</em>) – Maximum values for each dimension.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Normalized values in [0, 1].</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-prename descclassname"><span class="pre">optimization.optuna_runner.</span></span><span class="sig-name descname"><span class="pre">optimize_parameters_for_group_v2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visible_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swir_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_image_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_trials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_detection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampler_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'TPE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pruner_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'MedianPruner'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimization/optuna_runner.html#optimize_parameters_for_group_v2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
+<dd><p>Optimize fusion parameters with Optuna (NR-IQA or detection).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>visible_files</strong> (<em>list</em><em> of </em><em>Path</em>) – List of visible image file paths.</p></li>
+<li><p><strong>swir_files</strong> (<em>list</em><em> of </em><em>Path</em>) – List of SWIR image file paths.</p></li>
+<li><p><strong>ref_image_path</strong> (<em>Path</em><em> or </em><em>None</em>) – Path to the reference image (optional).</p></li>
+<li><p><strong>output_dir</strong> (<em>Path</em>) – Directory where results and logs will be saved.</p></li>
+<li><p><strong>n_trials</strong> (<em>int</em><em>, </em><em>default=100</em>) – Number of optimization trials.</p></li>
+<li><p><strong>run_detection</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to optimize based on detection (F1-score).</p></li>
+<li><p><strong>ground_truth_path</strong> (<em>Path</em><em>, </em><em>optional</em>) – Path to ground truth annotations (used if detection is enabled).</p></li>
+<li><p><strong>sampler_name</strong> (<em>str</em><em>, </em><em>default=&quot;TPE&quot;</em>) – Name of the Optuna sampler to use.</p></li>
+<li><p><strong>pruner_name</strong> (<em>str</em><em>, </em><em>default=&quot;MedianPruner&quot;</em>) – Name of the Optuna pruner to use.</p></li>
+<li><p><strong>n_jobs</strong> (<em>int</em><em>, </em><em>default=4</em>) – Number of parallel jobs.</p></li>
+<li><p><strong>storage</strong> (<em>str</em><em>, </em><em>optional</em>) – Storage backend (SQLite or external database).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt>study<span class="classifier">optuna.study.Study</span></dt><dd><p>The completed Optuna study.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>best_params<span class="classifier">dict</span></dt><dd><p>Dictionary of best parameters found.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>best_values<span class="classifier">tuple</span></dt><dd><p>Best objective values.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the number of visible and SWIR images does not match.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-prename descclassname"><span class="pre">optimization.optuna_runner.</span></span><span class="sig-name descname"><span class="pre">process_folder_optuna</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visible_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swir_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_image_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_trials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_detection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/optimization/optuna_runner.html#process_folder_optuna"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Link to this definition">¶</a></dt>
+<dd><p>Complete optimization pipeline with Optuna.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>visible_folder</strong> (<em>Path</em>) – Folder containing visible images.</p></li>
+<li><p><strong>swir_folder</strong> (<em>Path</em>) – Folder containing SWIR images.</p></li>
+<li><p><strong>output_dir</strong> (<em>Path</em>) – Directory where results will be saved.</p></li>
+<li><p><strong>ref_image_path</strong> (<em>Path</em><em>, </em><em>optional</em>) – Path to the reference image.</p></li>
+<li><p><strong>n_trials</strong> (<em>int</em><em>, </em><em>default=100</em>) – Number of optimization trials.</p></li>
+<li><p><strong>run_detection</strong> (<em>bool</em><em>, </em><em>default=False</em>) – Whether to optimize based on detection (F1-score).</p></li>
+<li><p><strong>ground_truth_path</strong> (<em>Path</em><em>, </em><em>optional</em>) – Path to ground truth annotations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the number of visible and SWIR images does not match.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Saves the best parameters in <cite>best_parameters.json</cite>.</p></li>
+<li><p>Creates or reuses an Optuna study with SQLite or external storage.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-prename descclassname"><span class="pre">optimization.optuna_runner.</span></span><span class="sig-name descname"><span class="pre">tchebycheff_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ideal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimization/optuna_runner.html#tchebycheff_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Link to this definition">¶</a></dt>
+<dd><p>Compute the Tchebycheff distance between a solution and the ideal point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>list</em><em> of </em><em>float</em>) – Values of the current solution.</p></li>
+<li><p><strong>ideal</strong> (<em>list</em><em> of </em><em>float</em>) – Ideal target values.</p></li>
+<li><p><strong>weights</strong> (<em>list</em><em> of </em><em>float</em>) – Weights for each objective.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tchebycheff distance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="optimization-samplers-module">
+<h2>optimization.samplers module<a class="headerlink" href="#optimization-samplers-module" title="Link to this heading">¶</a></h2>
+<p>Custom Optuna samplers for exploring the hyperparameter space more
+efficiently.</p>
+<p id="module-optimization.samplers">Sampler and pruner configurations for Optuna.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimization.samplers.get_pruner">
+<span class="sig-prename descclassname"><span class="pre">optimization.samplers.</span></span><span class="sig-name descname"><span class="pre">get_pruner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">BasePruner</span></span></span><a class="reference internal" href="_modules/optimization/samplers.html#get_pruner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#optimization.samplers.get_pruner" title="Link to this definition">¶</a></dt>
+<dd><p>Return an Optuna pruner based on the provided name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the pruner. Supported values:
+- “MedianPruner” : Stops unpromising trials using median of past trials.
+- “SHA” or “SuccessiveHalving” : Successive Halving pruner.
+- “None” or “Nop” : No pruning applied.</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Additional parameters passed to the pruner constructor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The corresponding Optuna pruner instance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>optuna.pruners.BasePruner</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>If an unknown pruner name is provided, defaults to <cite>MedianPruner</cite>.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="optimization.samplers.get_sampler">
+<span class="sig-prename descclassname"><span class="pre">optimization.samplers.</span></span><span class="sig-name descname"><span class="pre">get_sampler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">BaseSampler</span></span></span><a class="reference internal" href="_modules/optimization/samplers.html#get_sampler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#optimization.samplers.get_sampler" title="Link to this definition">¶</a></dt>
+<dd><p>Return an Optuna sampler based on the provided name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the sampler. Supported values:
+- “TPE” : Tree-structured Parzen Estimator sampler.
+- “Random” : Random search sampler.
+- “CMAES” : Covariance Matrix Adaptation Evolution Strategy sampler.
+- “Grid” : Grid search sampler (requires explicit search space).</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Additional parameters passed to the sampler constructor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The corresponding Optuna sampler instance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>optuna.samplers.BaseSampler</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If “Grid” is selected but no <cite>search_space</cite> is provided.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="optimization-visualization-module">
+<h2>optimization.visualization module<a class="headerlink" href="#optimization-visualization-module" title="Link to this heading">¶</a></h2>
+<p>Visualization utilities for analyzing optimization results, including
+loss curves and parameter importance plots.</p>
+<p id="module-optimization.visualization">Optuna optimization result visualization and plotting.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimization.visualization.visualize_study">
+<span class="sig-prename descclassname"><span class="pre">optimization.visualization.</span></span><span class="sig-name descname"><span class="pre">visualize_study</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">study</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Study</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">best_trial</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_detection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/optimization/visualization.html#visualize_study"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#optimization.visualization.visualize_study" title="Link to this definition">¶</a></dt>
+<dd><p>Generate and save visualizations of an Optuna study.</p>
+<p>Depending on the optimization mode, this function produces:</p>
+<ul class="simple">
+<li><p><strong>NR-IQA mode</strong>:</p>
+<ul>
+<li><p>Pareto front (Entropy, BRISQUE, PIQE)</p></li>
+<li><p>Slice plots for each parameter vs. metric</p></li>
+<li><p>Contour plots (interpolated surfaces) for parameter pairs</p></li>
+</ul>
+</li>
+<li><p><strong>Detection mode</strong>:</p>
+<ul>
+<li><p>Optimization history (F1-score)</p></li>
+<li><p>Contour plots for parameter pairs vs. F1-score</p></li>
+</ul>
+</li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>study</strong> (<em>optuna.study.Study</em>) – The Optuna study object containing all trials.</p></li>
+<li><p><strong>best_trial</strong> (<em>optuna.trial.FrozenTrial</em>) – The best trial selected from the study.</p></li>
+<li><p><strong>output_dir</strong> (<em>Path</em>) – Directory where contour plots will be saved as PNG files.</p></li>
+<li><p><strong>run_detection</strong> (<em>bool</em><em>, </em><em>default=False</em>) – If True, generate visualizations for detection (F1-score).
+If False, generate visualizations for NR-IQA metrics.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Uses both Plotly (interactive) and Matplotlib (static) visualizations.</p></li>
+<li><p>Contour plots are saved to disk in <code class="docutils literal notranslate"><span class="pre">output_dir</span></code>.</p></li>
+<li><p>Interactive plots may fail to display in some environments; warnings are logged.</p></li>
+<li><p>Metrics visualized in NR-IQA mode: Entropy, BRISQUE, NIQE, PIQE.</p></li>
+<li><p>In detection mode, only F1-score is visualized.</p></li>
+</ul>
+</dd></dl>
+
+</section>
+<section id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+<p>The top-level <code class="docutils literal notranslate"><span class="pre">optimization</span></code> module re-exports selected functions and
+classes from its submodules for convenience.</p>
+<section id="module-optimization">
+<span id="id5"></span><h3>Optimization package<a class="headerlink" href="#module-optimization" title="Link to this heading">¶</a></h3>
+<p>This package provides modules and utilities for parameter optimization
+within the VISWIR project. It is primarily focused on automating the
+search for optimal fusion parameters using different strategies.</p>
+<section id="id6">
+<h4>Submodules<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>optuna_runner : integration with Optuna for hyperparameter search.</p></li>
+<li><p>objective     : optimisation target management (NR-IQA or F1 score if detection is enabled).</p></li>
+<li><p>sampler       : sampler for Optuna.</p></li>
+<li><p>visualization : module for the result visualization if the environnement authorise it.</p></li>
+</ul>
+</section>
+<section id="features">
+<h4>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Centralized entry points for launching optimization experiments.</p></li>
+<li><p>Logging and result tracking integrated with the VISWIR framework.</p></li>
+<li><p>Extensible design to add new optimization backends.</p></li>
+</ul>
+<p class="rubric">Notes</p>
+<p>This package is intended for research and experimentation.
+It may consume significant computational resources depending
+on the chosen optimization strategy.</p>
+</section>
+</section>
+</section>
+</section>
+
+</div>
+        </article>
+        <aside class="nftt-toc">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">optimization package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#optimization-objective-module">optimization.objective module</a><ul>
+<li><a class="reference internal" href="#optimization.objective.objective"><code class="docutils literal notranslate"><span class="pre">objective()</span></code></a></li>
+<li><a class="reference internal" href="#optimization.objective.objective_detection"><code class="docutils literal notranslate"><span class="pre">objective_detection()</span></code></a></li>
+<li><a class="reference internal" href="#optimization.objective.suggest_params"><code class="docutils literal notranslate"><span class="pre">suggest_params()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#optimization-optuna-runner-module">optimization.optuna_runner module</a><ul>
+<li><a class="reference internal" href="#optimization.optuna_runner.clear_cache_callback"><code class="docutils literal notranslate"><span class="pre">clear_cache_callback()</span></code></a></li>
+<li><a class="reference internal" href="#optimization.optuna_runner.normalize"><code class="docutils literal notranslate"><span class="pre">normalize()</span></code></a></li>
+<li><a class="reference internal" href="#optimization.optuna_runner.optimize_parameters_for_group_v2"><code class="docutils literal notranslate"><span class="pre">optimize_parameters_for_group_v2()</span></code></a></li>
+<li><a class="reference internal" href="#optimization.optuna_runner.process_folder_optuna"><code class="docutils literal notranslate"><span class="pre">process_folder_optuna()</span></code></a></li>
+<li><a class="reference internal" href="#optimization.optuna_runner.tchebycheff_distance"><code class="docutils literal notranslate"><span class="pre">tchebycheff_distance()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#optimization-optuna-wrapper-module">optimization.optuna_wrapper module</a><ul>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">clear_cache_callback()</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">normalize()</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">optimize_parameters_for_group_v2()</span></code></a></li>
+<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">process_folder_optuna()</span></code></a></li>
+<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">tchebycheff_distance()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#optimization-samplers-module">optimization.samplers module</a><ul>
+<li><a class="reference internal" href="#optimization.samplers.get_pruner"><code class="docutils literal notranslate"><span class="pre">get_pruner()</span></code></a></li>
+<li><a class="reference internal" href="#optimization.samplers.get_sampler"><code class="docutils literal notranslate"><span class="pre">get_sampler()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#optimization-visualization-module">optimization.visualization module</a><ul>
+<li><a class="reference internal" href="#optimization.visualization.visualize_study"><code class="docutils literal notranslate"><span class="pre">visualize_study()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-contents">Module contents</a><ul>
+<li><a class="reference internal" href="#module-optimization">Optimization package</a><ul>
+<li><a class="reference internal" href="#id6">Submodules</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      <nav id="paginator" class="py-4" aria-label="Documentation navigation">
+    <div class="container">
+      <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
+            <a href="fusion.NIQE.html" class="d-flex pe-5 px-lg-5 align-items-end" rel="prev" aria-label="Previous page: fusion.NIQE package">
+              <span class="prev-page"><i class="bi bi-caret-left"></i></span>
+              <div class="d-none d-sm-flex flex-column">
+                <span class="text-small text-start text-muted">Previous</span>
+                <span class="underline">fusion.NIQE package</span>
+              </div>
+            </a>
+          </li>
+        <li class="d-flex page-item ms-auto">
+            <a href="processing.html" class="d-flex ps-5 px-lg-5 align-items-end" rel="next" aria-label="Next page: processing package">
+              <div class="d-flex flex-column">
+                <span class="text-small text-end text-start text-muted">Next</span>
+                <span class="underline">processing package</span>
+              </div>
+              <span class="next-page"><i class="bi bi-caret-right"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul id="nftt-footer-links" class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          <li class="d-inline">
+            <a href="mailto%3Aalexandre%40uca.fr.html"  class="list-item">Contact</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="license.html"  class="list-item">License</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="VISWIR: Visible and SWIR Weighted Image Reconstruction">
+          <span class="fs-6 fw-bold">VISWIR: Visible and SWIR Weighted Image Reconstruction</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2025, Riffard Alexandre - Institut Pascal</li>
+          </ul>
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.1.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.9</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <div class="modal modal-xl fade" id="nftt-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-xxl-down modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nftt-modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="nftt-modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="_static/documentation_options.js?v=bc51abb5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/colorsets.js?v=58f89e02"></script>
+    <script src="_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="_static/sphinx-nefertiti.min.js?v=af404e0e"></script>
+    <script src="_static/bootstrap.bundle.min.js?v=c066362f"></script>
+  </body>
+</html>

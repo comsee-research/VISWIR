@@ -1,0 +1,1746 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="colorset-reset" content="0" />
+    <meta name="docsearch:name" content="VISWIR: Visible and SWIR Weighted Image Reconstruction" />
+    <meta name="docsearch:package_type" content="" />
+    <meta name="docsearch:release" content="0.2 (vQuasar)" />
+    <meta name="docsearch:version" content="" />
+    
+      <meta name="theme-color" content="#6610f2" />
+    
+    
+      <title>common package &mdash; VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation</title>
+    
+    <link rel="canonical" href="common" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/nunito/stylesheet.css?v=abf98f06" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/fonts/ubuntu-sans-mono/stylesheet.css?v=8616a587" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-dark.css?v=2de69186" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/pygments-light.css?v=d6779c33" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/bootstrap-icons.min.css?v=44730005" /><!-- add (1) -->
+          <link rel="stylesheet" type="text/css" href="_static/sphinx-nefertiti-indigo.min.css?v=07734d20" /><!-- add (1) -->
+        <link rel="index" title="Index" href="genindex.html" />
+        <link rel="search" title="Search" href="search.html" />
+        <link rel="top" title="VISWIR: Visible and SWIR Weighted Image Reconstruction 0.2 (vQuasar) documentation" href="#" />
+        <link rel="up" title="Source Code Documentation" href="modules.html" />
+        <link rel="next" title="fusion package" href="fusion.html" />
+        <link rel="prev" title="VISWIR_vQuasar module" href="VISWIR_vQuasar.html" />
+    <style>
+      :root {
+        --nftt-body-font-family: "Nunito", var(--nftt-font-sans-serif) !important;
+        --nftt-font-monospace: "Ubuntu Sans Mono", var(--nftt-font-family-monospace) !important;
+        --nftt-project-name-font: var(--nftt-body-font-family);
+        --nftt-documentation-font: var(--nftt-body-font-family);
+        --nftt-doc-headers-font: "Georgia", var(--nftt-documentation-font);}
+    </style>
+  </head>
+  <body>
+    <div id="back-to-top-container" class="position-fixed start-50 translate-middle-x">
+      <button id="back-to-top" type="button" class="d-none btn btn-neutral btn-sm shadow px-4" data-bs-toggle="button">Back to top</button>
+    </div>
+    <header id="snftt-nav-bar" class="navbar navbar-expand-xl navbar-dark nftt-navbar flex-column fixed-top">
+      <div class="skip-links container-fluid visually-hidden-focusable overflow-hidden justify-content-start flex-grow-1">
+        <div class="border-bottom mb-2 pb-2 w-100">
+          <a class="d-none d-md-inline-flex p-2 m-1" href="#sidebar-filter">Skip to index filter</a>
+          <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+        </div>
+      </div>
+      <nav class="container-xxl nftt-gutter flex-nowrap" aria-label="Main navigation">
+        <div class="nftt-navbar-toggler">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Toggle documentation navigation">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+          <a href="index.html"
+             class="navbar-brand"
+          ><span class="brand-text">VISWIR: Visible and SWIR Weighted Image Reconstruction</span><span class="brand-short-text">VISWIR</span></a>
+        
+        
+          <ul class="nftt-header-links-large navbar-nav">
+          
+            
+            
+            
+            
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+          
+          </ul>
+        
+        <div class="d-flex d-xl-none">
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttSearch" aria-controls="nfttSearch" aria-label="Search">
+            <i class="bi bi-search"></i>
+          </button>
+          <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#nfttNavbar" aria-controls="nfttNavbar" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+        </div>
+        
+<div class="offcanvas-xl offcanvas-end flex-grow-1" tabindex="-1" id="nfttSearch" aria-labelledby="nfttSearchOffcanvasLabel" data-bs-scroll="true">
+  <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title fw-bold" id="nfttSearchOffcanvasLabel">Search the documentation</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttSearch"></button>
+  </div>
+  <div class="offcanvas-body p-4 pt-0 p-xl-0 ps-xl-4">
+    <hr class="d-xl-none text-white-50">
+    <ul class="navbar-nav flex-row align-items-center flex-wrap ms-md-auto">
+      <li class="nav-item col-12 col-xl-auto">
+        <form id="nftt-search-form" action="search.html" method="get">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+            <button class="btn btn-primary" type="submit" id="button-search" aria-label="Search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+        <div class="offcanvas-xl offcanvas-end" tabindex="-1" id="nfttNavbar" aria-labelledby="nfttNavbarOffcanvasLabel" data-bs-scroll="true">
+          <div class="offcanvas-header px-4 pb-0">
+            <div class="offcanvas-title navbar-brand" id="nfttNavbarOffcanvasLabel"><span class="brand-short-text">VISWIR</span></div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#nfttNavbar"></button>
+          </div>
+          <div class="offcanvas-body p-4 pt-0 p-xl-0 px-xl-3">
+            <hr class="d-xl-none text-white-50">
+            <ul class="navbar-nav flex-row align-items-center flex-wrap ms-lg-auto">
+              
+                <div class="nftt-header-links-small">
+                  
+                    
+                    
+                    
+                    <div class="d-inline-block">
+                      
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="index.html" data-snftt-hl-id="1"  >Docs</a>
+    </li>
+  
+
+  
+    <li class="nav-item">
+      <a class="snftt-hl nav-link" href="https://github.com/comsee-research/VISWIR" data-snftt-hl-id="2"  >GitHub</a>
+    </li>
+  
+
+                    </div>
+                  
+                  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                    <hr class="d-xl-none text-white-50">
+                  </li>
+                </div>
+              
+              
+              <li class="nav-item col-12 col-xl-auto">
+                <a class="nav-link py-2 py-xl-0 px-0 px-xl-2" href="https://github.com/comsee-research/VISWIR" target="_blank" rel="noopener">
+                  <div class="d-flex align-items-center">
+                    <div class="me-2">
+                      <i class="bi bi-git size-24"></i>
+                    </div>
+                    <div class="repo d-flex flex-column align-items-center" data-snftt-repo-url="https://github.com/comsee-research/VISWIR">
+                      VISWIR
+                      <div class="d-flex justify-content-center" data-snftt-repo-metrics>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-tag size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-tag></span>
+                        </span>
+                        <span class="pe-2 d-flex justify-content-center align-items-center">
+                          <i class="bi bi-star size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-stars></span>
+                        </span>
+                        <span class="d-flex justify-content-center align-items-center">
+                          <i class="bi bi-diagram-2 size-14"></i>
+                          <span class="repo-metric" data-snftt-repo-forks></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+                <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+                <hr class="d-xl-none text-white-50">
+              </li>
+              
+              
+              
+  <!-- colorssets-dropdown.html -->
+  <li class="nav-item dropdown">
+    <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-color" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change base color">
+      <i class="bi bi-palette"></i>
+      <span id="snftt-color-text" class="d-xl-none ms-2">Change base color</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-color-text">
+      <li>
+        <h6 class="dropdown-header">Change base color</h6>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="blue" href="#" aria-pressed="false">
+          <span class="blue">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Blue</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center active" data-snftt-colorset="indigo" href="#" aria-pressed="false">
+          <span class="indigo">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Indigo</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="purple" href="#" aria-pressed="false">
+          <span class="purple">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Purple</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="pink" href="#" aria-pressed="false">
+          <span class="pink">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Pink</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="red" href="#" aria-pressed="false">
+          <span class="red">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Red</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="orange" href="#" aria-pressed="false">
+          <span class="orange">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Orange</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="yellow" href="#" aria-pressed="false">
+          <span class="yellow">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Yellow</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="green" href="#" aria-pressed="false">
+          <span class="green">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Green</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="teal" href="#" aria-pressed="false">
+          <span class="teal">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Teal</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset="default" href="#" aria-pressed="false">
+          <span class="cyan">
+            <i class="bi bi-circle-fill"></i>
+          </span>
+          <span class="ms-3">Cyan</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+      
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <h6 class="dropdown-header">Header style</h6>
+      </li>
+      <li>
+        <a class="dropdown-item d-flex align-items-center " data-snftt-colorset-neutral="off" href="#" aria-pressed="false">
+          <i class="bi bi-noise-reduction"></i>
+          <span class="ms-3">Neutral</span>
+          <i class="bi bi-check ms-auto"></i>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="nav-item col-12 col-xl-auto h-100" aria-hidden="true">
+    <div class="vr d-none d-xl-flex h-100 mx-xl-2 text-white-50"></div>
+    <hr class="d-lg-none text-white-50">
+  </li>
+
+              
+              <!-- lightdark-dropdown.html -->
+<li class="nav-item dropdown">
+  <a class="nav-link d-flex py-2 px-0 px-xl-2 dropdown-toggle align-items-center" id="snftt-luz" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" aria-label="Change appearance">
+    <i class="bi bi-circle-half" data-snftt-luz-icon-active></i>
+    <span id="snftt-luz-text" class="d-xl-none ms-2">Change appearance</span>
+  </a>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="snftt-luz-text">
+    <li>
+      <h6 class="dropdown-header">Change appearance</h6>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="light" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-sun" data-snftt-luz-icon="light"></i>
+        </span>
+        <span class="ms-3">Light</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center" data-snftt-luz="dark" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-moon-stars" data-snftt-luz-icon="dark"></i>
+        </span>
+        <span class="ms-3">Dark</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item current d-flex align-items-center" data-snftt-luz="default" href="#" aria-pressed="false">
+        <span>
+          <i class="bi bi-circle-half" data-snftt-luz-icon="default"></i>
+        </span>
+        <span class="ms-3">Automatic</span>
+        <i class="bi bi-check ms-auto"></i>
+      </a>
+    </li>
+  </ul>
+</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+
+    <div class="container-fluid">
+      <div class="nftt-gutter nftt-page">
+        <aside class="nftt-sidebar ">
+          <div class="nftt-sidebar-content">
+            
+            <div class="title d-none d-xl-none">
+              <i class="bi bi-book"></i>&nbsp;&nbsp;<span>Index</span>
+            </div>
+            <div id="sidebar" tabindex="-1" class="offcanvas-xl offcanvas-start" aria-labelledby="nfttSidebarOffcanvasLabel">
+                <!-- sidebartemplate: "globaltoc.html" --><div class="offcanvas-header border-bottom">
+  <h5 class="offcanvas-title fw-bold" id="nfttSidebarOffcanvasLabel">
+    Index
+  </h5>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#sidebar"></button>
+</div>
+
+<div class="offcanvas-body">
+  <nav class="toc" aria-label="Main menu">
+    <div class="mb-3 p-1 pb-4 border-bottom">
+      <input id="sidebar-filter" type="text" name="filter" class="form-control form-control-sm" placeholder="index filter" aria-label="index filter">
+    </div>
+    <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/configs.html">Configuration Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/optuna.html">Optuna Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage/data.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/tools.html">Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Help for Singularity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage/hpc_slurm.html">Running VISWIR on HPC with SLURM</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Source Code Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="VISWIR_vQuasar.html">VISWIR_vQuasar module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">common package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fusion.html">fusion package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fusion.NIQE.html">fusion.NIQE package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="optimization.html">optimization package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="processing.html">processing package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="realtime.html">realtime package</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Info</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
+</ul>
+
+  </nav>
+  <template data-toggle-item-template>
+    <button class="btn btn-sm btn-link toctree-expand" type="button">
+      <i class="bi bi-caret-right"></i>
+      <span class="visually-hidden">Toggle menu contents</span>
+    </button>
+  </template>
+</div>
+            </div>
+            
+          </div>
+        </aside>
+        <article id="content" class="nftt-content" role="main">
+          <div><div class="d-flex flex-row justify-content-between">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Start</a></li>
+        <li class="breadcrumb-item"><a href="modules.html">Source Code Documentation</a></li>
+      <li class="breadcrumb-item active" aria-current="page">common package</li>
+    </ol>
+  </nav>
+  
+    <div class="fs085">
+        <a href="_sources/common.rst.txt"  rel="nofollow" aria-label="Show source of this document"><i class="bi bi-file-earmark-code"></i></a>
+    </div>
+  
+</div>
+            
+    <section id="common-package">
+<h1>common package<a class="headerlink" href="#common-package" title="Link to this heading">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">common</span></code> package provides <strong>shared utilities and data structures</strong>
+used across the VISWIR project. It includes:</p>
+<ul class="simple">
+<li><p>Configuration loading and validation</p></li>
+<li><p>Core datatypes for fusion tasks and results</p></li>
+<li><p>Logging utilities</p></li>
+<li><p>Database access for results</p></li>
+<li><p>User interface helpers</p></li>
+</ul>
+<p>This package is designed to centralize functionality that is reused
+by multiple modules (fusion, optimization, processing, realtime).</p>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="common-config-loader-module">
+<h2>common.config_loader module<a class="headerlink" href="#common-config-loader-module" title="Link to this heading">¶</a></h2>
+<p>Utility functions for reading and validating configuration files.</p>
+<section id="config-loader-py">
+<span id="module-common.config_loader"></span><h3>config_loader.py<a class="headerlink" href="#config-loader-py" title="Link to this heading">¶</a></h3>
+<p>Module centralisé pour charger et valider les fichiers de configuration
+(YAML ou JSON) utilisés dans VISWIR_vQuasar.</p>
+<p>Ce fichier est conçu pour être extensible :
+- On peux ajouter de nouveaux fichiers de config (ex: logging_config.yaml).
+- On peux définir des clés obligatoires par contexte (fixed, sql, optuna…).
+- On peux fusionner plusieurs fichiers en un seul dictionnaire global.</p>
+<p>Auteur : Alexandre Riffard</p>
+</section>
+<dl class="py exception">
+<dt class="sig sig-object py" id="common.config_loader.ConfigError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">common.config_loader.</span></span><span class="sig-name descname"><span class="pre">ConfigError</span></span><a class="reference internal" href="_modules/common/config_loader.html#ConfigError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.config_loader.ConfigError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Custom exception for configuration-related errors.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="common.config_loader.load_all_configs">
+<span class="sig-prename descclassname"><span class="pre">common.config_loader.</span></span><span class="sig-name descname"><span class="pre">load_all_configs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'config/config_viswir.yaml'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'config/parameters.json'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yolo_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'config/yolo_config.json'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optuna_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'config/optuna_config.yaml'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'config/logging_config.yaml'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/common/config_loader.html#load_all_configs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.config_loader.load_all_configs" title="Link to this definition">¶</a></dt>
+<dd><p>Load and validate all configuration files required for the VISWIR_vQuasar project.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_path</strong> (<em>str</em><em> or </em><em>Path</em><em>, </em><em>optional</em>) – General configuration (paths, mode, etc.).</p></li>
+<li><p><strong>params_path</strong> (<em>str</em><em> or </em><em>Path</em><em>, </em><em>optional</em>) – Fusion parameters (fixed values or ranges).</p></li>
+<li><p><strong>yolo_path</strong> (<em>str</em><em> or </em><em>Path</em><em>, </em><em>optional</em>) – YOLO configuration (model, thresholds, classes).</p></li>
+<li><p><strong>optuna_path</strong> (<em>str</em><em> or </em><em>Path</em><em>, </em><em>optional</em>) – Optuna configuration (HPC optimization).</p></li>
+<li><p><strong>logging_path</strong> (<em>str</em><em> or </em><em>Path</em><em>, </em><em>optional</em>) – Logger configuration.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Structured dictionary containing all loaded configurations.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict of dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="common.config_loader.load_config">
+<span class="sig-prename descclassname"><span class="pre">common.config_loader.</span></span><span class="sig-name descname"><span class="pre">load_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">defaults</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/common/config_loader.html#load_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.config_loader.load_config" title="Link to this definition">¶</a></dt>
+<dd><p>Load a YAML or JSON configuration file and merge it with default values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em><em> or </em><em>Path</em>) – Path to the configuration file (.yaml/.yml or .json).</p></li>
+<li><p><strong>defaults</strong> (<em>dict</em><em>, </em><em>optional</em>) – Dictionary of default values to merge with the loaded configuration.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Final configuration dictionary (file values + defaults).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#common.config_loader.ConfigError" title="common.config_loader.ConfigError"><strong>ConfigError</strong></a> – If the file does not exist or has an unsupported format.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="common.config_loader.load_optuna_search_space">
+<span class="sig-prename descclassname"><span class="pre">common.config_loader.</span></span><span class="sig-name descname"><span class="pre">load_optuna_search_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'config/optuna_search_space.yaml'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/common/config_loader.html#load_optuna_search_space"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.config_loader.load_optuna_search_space" title="Link to this definition">¶</a></dt>
+<dd><p>Load the YAML file defining the Optuna search space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em><em> or </em><em>Path</em><em>, </em><em>optional</em>) – Path to the YAML file describing the search space.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary describing the Optuna search space.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="common.config_loader.resolve_config_path">
+<span class="sig-prename descclassname"><span class="pre">common.config_loader.</span></span><span class="sig-name descname"><span class="pre">resolve_config_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Path</span></span></span><a class="reference internal" href="_modules/common/config_loader.html#resolve_config_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.config_loader.resolve_config_path" title="Link to this definition">¶</a></dt>
+<dd><p>Resolve a configuration file path relative to current directory,
+project root, or config directory.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="common.config_loader.validate_config">
+<span class="sig-prename descclassname"><span class="pre">common.config_loader.</span></span><span class="sig-name descname"><span class="pre">validate_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required_keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/common/config_loader.html#validate_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.config_loader.validate_config" title="Link to this definition">¶</a></dt>
+<dd><p>Validate that required keys are present in the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<em>dict</em>) – Loaded configuration dictionary.</p></li>
+<li><p><strong>required_keys</strong> (<em>list</em><em> of </em><em>str</em>) – List of mandatory keys that must be present.</p></li>
+<li><p><strong>context</strong> (<em>str</em><em>, </em><em>optional</em>) – Context name (e.g., “optuna”, “sql”) used in error messages.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#common.config_loader.ConfigError" title="common.config_loader.ConfigError"><strong>ConfigError</strong></a> – If one or more required keys are missing.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="common-datatypes-module">
+<h2>common.datatypes module<a class="headerlink" href="#common-datatypes-module" title="Link to this heading">¶</a></h2>
+<p>Core dataclasses and type definitions for fusion tasks and results.</p>
+<p id="module-common.datatypes">Data structures and containers for the VISWIR project.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="common.datatypes.FusionConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">common.datatypes.</span></span><span class="sig-name descname"><span class="pre">FusionConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visible_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swir_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_image_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'fixed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_detection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/common/datatypes.html#FusionConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.datatypes.FusionConfig" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Generic configuration for the VISWIR project (loaded from YAML/JSON).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionConfig.visible_folder">
+<span class="sig-name descname"><span class="pre">visible_folder</span></span><a class="headerlink" href="#common.datatypes.FusionConfig.visible_folder" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the folder containing visible images.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionConfig.swir_folder">
+<span class="sig-name descname"><span class="pre">swir_folder</span></span><a class="headerlink" href="#common.datatypes.FusionConfig.swir_folder" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the folder containing SWIR images.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionConfig.output_folder">
+<span class="sig-name descname"><span class="pre">output_folder</span></span><a class="headerlink" href="#common.datatypes.FusionConfig.output_folder" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the folder where fused images will be saved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionConfig.ref_image_path">
+<span class="sig-name descname"><span class="pre">ref_image_path</span></span><a class="headerlink" href="#common.datatypes.FusionConfig.ref_image_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to a reference image, if required.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionConfig.ground_truth_path">
+<span class="sig-name descname"><span class="pre">ground_truth_path</span></span><a class="headerlink" href="#common.datatypes.FusionConfig.ground_truth_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the ground truth image, if available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionConfig.mode">
+<span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#common.datatypes.FusionConfig.mode" title="Link to this definition">¶</a></dt>
+<dd><p>Execution mode. Possible values: “fixed”, “sql”, “optuna”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str, default=”fixed”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionConfig.run_detection">
+<span class="sig-name descname"><span class="pre">run_detection</span></span><a class="headerlink" href="#common.datatypes.FusionConfig.run_detection" title="Link to this definition">¶</a></dt>
+<dd><p>Whether to run object detection after fusion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool, default=False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">ground_truth_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">mode</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fixed'</span></em><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">output_folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">ref_image_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id3" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">run_detection</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#id4" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">swir_folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#id5" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">visible_folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#id6" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="common.datatypes.FusionTask">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">common.datatypes.</span></span><span class="sig-name descname"><span class="pre">FusionTask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visible_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swir_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_image_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_detection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/common/datatypes.html#FusionTask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.datatypes.FusionTask" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Representation of a single fusion task (used by batch_runner / task_manager).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionTask.visible_path">
+<span class="sig-name descname"><span class="pre">visible_path</span></span><a class="headerlink" href="#common.datatypes.FusionTask.visible_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the visible image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionTask.swir_path">
+<span class="sig-name descname"><span class="pre">swir_path</span></span><a class="headerlink" href="#common.datatypes.FusionTask.swir_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the SWIR image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionTask.ref_image_path">
+<span class="sig-name descname"><span class="pre">ref_image_path</span></span><a class="headerlink" href="#common.datatypes.FusionTask.ref_image_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the reference image, if available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionTask.ground_truth_path">
+<span class="sig-name descname"><span class="pre">ground_truth_path</span></span><a class="headerlink" href="#common.datatypes.FusionTask.ground_truth_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the ground truth image, if available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionTask.params">
+<span class="sig-name descname"><span class="pre">params</span></span><a class="headerlink" href="#common.datatypes.FusionTask.params" title="Link to this definition">¶</a></dt>
+<dd><p>Dictionary of fusion parameters for this task.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict of str to Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionTask.save_output">
+<span class="sig-name descname"><span class="pre">save_output</span></span><a class="headerlink" href="#common.datatypes.FusionTask.save_output" title="Link to this definition">¶</a></dt>
+<dd><p>Whether to save the fused output image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool, default=True</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionTask.run_detection">
+<span class="sig-name descname"><span class="pre">run_detection</span></span><a class="headerlink" href="#common.datatypes.FusionTask.run_detection" title="Link to this definition">¶</a></dt>
+<dd><p>Whether to run object detection after fusion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool, default=False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.FusionTask.output_dir">
+<span class="sig-name descname"><span class="pre">output_dir</span></span><a class="headerlink" href="#common.datatypes.FusionTask.output_dir" title="Link to this definition">¶</a></dt>
+<dd><p>Directory where results should be saved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">ground_truth_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id7" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">output_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id8" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id9">
+<span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#id9" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id10">
+<span class="sig-name descname"><span class="pre">ref_image_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id10" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">run_detection</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#id11" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id12">
+<span class="sig-name descname"><span class="pre">save_output</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#id12" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id13">
+<span class="sig-name descname"><span class="pre">swir_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#id13" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id14">
+<span class="sig-name descname"><span class="pre">visible_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#id14" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="common.datatypes.OptunaConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">common.datatypes.</span></span><span class="sig-name descname"><span class="pre">OptunaConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_trials</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampler</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'TPE'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pruner</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'MedianPruner'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/common/datatypes.html#OptunaConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.datatypes.OptunaConfig" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Configuration for Optuna optimization (loaded from optuna_config.yaml).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.OptunaConfig.n_trials">
+<span class="sig-name descname"><span class="pre">n_trials</span></span><a class="headerlink" href="#common.datatypes.OptunaConfig.n_trials" title="Link to this definition">¶</a></dt>
+<dd><p>Number of optimization trials.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.OptunaConfig.n_jobs">
+<span class="sig-name descname"><span class="pre">n_jobs</span></span><a class="headerlink" href="#common.datatypes.OptunaConfig.n_jobs" title="Link to this definition">¶</a></dt>
+<dd><p>Number of parallel jobs to run.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.OptunaConfig.sampler">
+<span class="sig-name descname"><span class="pre">sampler</span></span><a class="headerlink" href="#common.datatypes.OptunaConfig.sampler" title="Link to this definition">¶</a></dt>
+<dd><p>Sampling strategy used by Optuna.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str, default=”TPE”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.OptunaConfig.pruner">
+<span class="sig-name descname"><span class="pre">pruner</span></span><a class="headerlink" href="#common.datatypes.OptunaConfig.pruner" title="Link to this definition">¶</a></dt>
+<dd><p>Pruning strategy used by Optuna.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str, default=”MedianPruner”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.OptunaConfig.timeout">
+<span class="sig-name descname"><span class="pre">timeout</span></span><a class="headerlink" href="#common.datatypes.OptunaConfig.timeout" title="Link to this definition">¶</a></dt>
+<dd><p>Maximum optimization time in seconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id15">
+<span class="sig-name descname"><span class="pre">n_jobs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id16">
+<span class="sig-name descname"><span class="pre">n_trials</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id17">
+<span class="sig-name descname"><span class="pre">pruner</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'MedianPruner'</span></em><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id18">
+<span class="sig-name descname"><span class="pre">sampler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'TPE'</span></em><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id19">
+<span class="sig-name descname"><span class="pre">timeout</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="common.datatypes.OptunaResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">common.datatypes.</span></span><span class="sig-name descname"><span class="pre">OptunaResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visible_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swir_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics_fusion</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/common/datatypes.html#OptunaResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.datatypes.OptunaResult" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Result container optimized for Optuna trials.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.OptunaResult.visible_path">
+<span class="sig-name descname"><span class="pre">visible_path</span></span><a class="headerlink" href="#common.datatypes.OptunaResult.visible_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the visible image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.OptunaResult.swir_path">
+<span class="sig-name descname"><span class="pre">swir_path</span></span><a class="headerlink" href="#common.datatypes.OptunaResult.swir_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the SWIR image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.OptunaResult.params">
+<span class="sig-name descname"><span class="pre">params</span></span><a class="headerlink" href="#common.datatypes.OptunaResult.params" title="Link to this definition">¶</a></dt>
+<dd><p>Fusion parameters used in this trial.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict of str to Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.OptunaResult.metrics_fusion">
+<span class="sig-name descname"><span class="pre">metrics_fusion</span></span><a class="headerlink" href="#common.datatypes.OptunaResult.metrics_fusion" title="Link to this definition">¶</a></dt>
+<dd><p>Metrics computed on the fused image (NR-IQA or detection).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict of str to float, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.OptunaResult.error">
+<span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#common.datatypes.OptunaResult.error" title="Link to this definition">¶</a></dt>
+<dd><p>Error message if the fusion process failed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id20">
+<span class="sig-name descname"><span class="pre">error</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id21">
+<span class="sig-name descname"><span class="pre">metrics_fusion</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id22">
+<span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id23">
+<span class="sig-name descname"><span class="pre">swir_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id24">
+<span class="sig-name descname"><span class="pre">visible_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="common.datatypes.ProcessResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">common.datatypes.</span></span><span class="sig-name descname"><span class="pre">ProcessResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">visible_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swir_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics_fusion</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics_visible</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics_swir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/common/datatypes.html#ProcessResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.datatypes.ProcessResult" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Container for the result of a VIS-SWIR image fusion process.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.ProcessResult.visible_path">
+<span class="sig-name descname"><span class="pre">visible_path</span></span><a class="headerlink" href="#common.datatypes.ProcessResult.visible_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the visible image used in the fusion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.ProcessResult.swir_path">
+<span class="sig-name descname"><span class="pre">swir_path</span></span><a class="headerlink" href="#common.datatypes.ProcessResult.swir_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the SWIR image used in the fusion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.ProcessResult.ground_truth_path">
+<span class="sig-name descname"><span class="pre">ground_truth_path</span></span><a class="headerlink" href="#common.datatypes.ProcessResult.ground_truth_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the ground truth image, if available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Path, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.ProcessResult.params">
+<span class="sig-name descname"><span class="pre">params</span></span><a class="headerlink" href="#common.datatypes.ProcessResult.params" title="Link to this definition">¶</a></dt>
+<dd><p>Dictionary of fusion parameters (e.g., {“facteur_swir”: 0.89, “beta”: 1.07}).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict of str to Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.ProcessResult.metrics_fusion">
+<span class="sig-name descname"><span class="pre">metrics_fusion</span></span><a class="headerlink" href="#common.datatypes.ProcessResult.metrics_fusion" title="Link to this definition">¶</a></dt>
+<dd><p>Evaluation metrics computed on the fused image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict of str to float, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.ProcessResult.metrics_visible">
+<span class="sig-name descname"><span class="pre">metrics_visible</span></span><a class="headerlink" href="#common.datatypes.ProcessResult.metrics_visible" title="Link to this definition">¶</a></dt>
+<dd><p>Evaluation metrics computed on the visible image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict of str to float, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.ProcessResult.metrics_swir">
+<span class="sig-name descname"><span class="pre">metrics_swir</span></span><a class="headerlink" href="#common.datatypes.ProcessResult.metrics_swir" title="Link to this definition">¶</a></dt>
+<dd><p>Evaluation metrics computed on the SWIR image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict of str to float, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.datatypes.ProcessResult.error">
+<span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#common.datatypes.ProcessResult.error" title="Link to this definition">¶</a></dt>
+<dd><p>Error message if the fusion process failed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id25">
+<span class="sig-name descname"><span class="pre">error</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id26">
+<span class="sig-name descname"><span class="pre">ground_truth_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id26" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id27">
+<span class="sig-name descname"><span class="pre">metrics_fusion</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id27" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id28">
+<span class="sig-name descname"><span class="pre">metrics_swir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id29">
+<span class="sig-name descname"><span class="pre">metrics_visible</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id30">
+<span class="sig-name descname"><span class="pre">params</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id31">
+<span class="sig-name descname"><span class="pre">swir_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id32">
+<span class="sig-name descname"><span class="pre">visible_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Path</span></em><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="common-logger-module">
+<h2>common.logger module<a class="headerlink" href="#common-logger-module" title="Link to this heading">¶</a></h2>
+<p>Lightweight logging utilities for console and file output.</p>
+<p id="module-common.logger">logger.py — Centralized logging configuration for VISWIR</p>
+<p>This module provides a unified logging system using <strong>Loguru</strong> for flexible
+logging and <strong>Rich</strong> for enhanced terminal output. It allows logging both
+to the console and to rotating log files.</p>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Colored and formatted console output (Rich).</p></li>
+<li><p>Log file recording with rotation and compression (Loguru).</p></li>
+<li><p>Detailed stack traces with customizable format.</p></li>
+<li><p>Centralized configuration loaded from <cite>logging_config.yaml</cite>.</p></li>
+</ul>
+</section>
+<section id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">logger</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Processing image </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">path_to_image</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Default configuration is loaded from <cite>config/logging_config.yaml</cite>.</p></li>
+<li><p>If the configuration file is missing, fallback defaults are applied.</p></li>
+</ul>
+</section>
+</section>
+<section id="common-results-db-module">
+<h2>common.results_db module<a class="headerlink" href="#common-results-db-module" title="Link to this heading">¶</a></h2>
+<p>Database models and helpers for storing fusion results.</p>
+<p id="module-common.results_db">Database models and helpers for storing fusion results in SQLite.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="common.results_db.FusionResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">common.results_db.</span></span><span class="sig-name descname"><span class="pre">FusionResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/common/results_db.html#FusionResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.results_db.FusionResult" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></p>
+<p>SQLAlchemy ORM model for storing VIS–SWIR fusion results.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.results_db.FusionResult.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#common.results_db.FusionResult.id" title="Link to this definition">¶</a></dt>
+<dd><p>Primary key identifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.results_db.FusionResult.visible_img">
+<span class="sig-name descname"><span class="pre">visible_img</span></span><a class="headerlink" href="#common.results_db.FusionResult.visible_img" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the visible image used in the fusion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.results_db.FusionResult.swir_img">
+<span class="sig-name descname"><span class="pre">swir_img</span></span><a class="headerlink" href="#common.results_db.FusionResult.swir_img" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the SWIR image used in the fusion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.results_db.FusionResult.ref_img">
+<span class="sig-name descname"><span class="pre">ref_img</span></span><a class="headerlink" href="#common.results_db.FusionResult.ref_img" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the reference image, if available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.results_db.FusionResult.grd_tr">
+<span class="sig-name descname"><span class="pre">grd_tr</span></span><a class="headerlink" href="#common.results_db.FusionResult.grd_tr" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the ground truth image, if available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.results_db.FusionResult.alpha">
+<span class="sig-name descname"><span class="pre">alpha</span></span><a class="headerlink" href="#common.results_db.FusionResult.alpha" title="Link to this definition">¶</a></dt>
+<dd><p>Alpha parameter used in the fusion process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.results_db.FusionResult.beta">
+<span class="sig-name descname"><span class="pre">beta</span></span><a class="headerlink" href="#common.results_db.FusionResult.beta" title="Link to this definition">¶</a></dt>
+<dd><p>Beta parameter used in the fusion process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.results_db.FusionResult.level">
+<span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#common.results_db.FusionResult.level" title="Link to this definition">¶</a></dt>
+<dd><p>Fusion level parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.results_db.FusionResult.gamma">
+<span class="sig-name descname"><span class="pre">gamma</span></span><a class="headerlink" href="#common.results_db.FusionResult.gamma" title="Link to this definition">¶</a></dt>
+<dd><p>Gamma correction value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.results_db.FusionResult.metrics_f">
+<span class="sig-name descname"><span class="pre">metrics_f</span></span><a class="headerlink" href="#common.results_db.FusionResult.metrics_f" title="Link to this definition">¶</a></dt>
+<dd><p>Fusion metrics stored as a JSON string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.results_db.FusionResult.metrics_v">
+<span class="sig-name descname"><span class="pre">metrics_v</span></span><a class="headerlink" href="#common.results_db.FusionResult.metrics_v" title="Link to this definition">¶</a></dt>
+<dd><p>Visible image metrics stored as a JSON string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.results_db.FusionResult.metrics_s">
+<span class="sig-name descname"><span class="pre">metrics_s</span></span><a class="headerlink" href="#common.results_db.FusionResult.metrics_s" title="Link to this definition">¶</a></dt>
+<dd><p>SWIR image metrics stored as a JSON string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="common.results_db.FusionResult.error">
+<span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#common.results_db.FusionResult.error" title="Link to this definition">¶</a></dt>
+<dd><p>Error message if the fusion process failed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id33">
+<span class="sig-name descname"><span class="pre">alpha</span></span><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id34">
+<span class="sig-name descname"><span class="pre">beta</span></span><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id35">
+<span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id36">
+<span class="sig-name descname"><span class="pre">gamma</span></span><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id37">
+<span class="sig-name descname"><span class="pre">grd_tr</span></span><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id38">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id39">
+<span class="sig-name descname"><span class="pre">level</span></span><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id40">
+<span class="sig-name descname"><span class="pre">metrics_f</span></span><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id41">
+<span class="sig-name descname"><span class="pre">metrics_s</span></span><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id42">
+<span class="sig-name descname"><span class="pre">metrics_v</span></span><a class="headerlink" href="#id42" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id43">
+<span class="sig-name descname"><span class="pre">ref_img</span></span><a class="headerlink" href="#id43" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id44">
+<span class="sig-name descname"><span class="pre">swir_img</span></span><a class="headerlink" href="#id44" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id45">
+<span class="sig-name descname"><span class="pre">visible_img</span></span><a class="headerlink" href="#id45" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="common.results_db.get_session">
+<span class="sig-prename descclassname"><span class="pre">common.results_db.</span></span><span class="sig-name descname"><span class="pre">get_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'results.db'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/common/results_db.html#get_session"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.results_db.get_session" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new SQLAlchemy session connected to the results database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>db_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to the SQLite database file (default is “results.db”).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A SQLAlchemy session object bound to the database.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Session</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="common.results_db.save_result_to_db">
+<span class="sig-prename descclassname"><span class="pre">common.results_db.</span></span><span class="sig-name descname"><span class="pre">save_result_to_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visible_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swir_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grd_tr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics_dict_f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics_dict_v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metrics_dict_s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/common/results_db.html#save_result_to_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.results_db.save_result_to_db" title="Link to this definition">¶</a></dt>
+<dd><p>Save a new fusion result entry into the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>session</strong> (<em>Session</em>) – Active SQLAlchemy session.</p></li>
+<li><p><strong>visible_img</strong> (<em>str</em>) – Path to the visible image.</p></li>
+<li><p><strong>swir_img</strong> (<em>str</em>) – Path to the SWIR image.</p></li>
+<li><p><strong>ref_img</strong> (<em>str</em>) – Path to the reference image.</p></li>
+<li><p><strong>grd_tr</strong> (<em>str</em>) – Path to the ground truth image.</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – Alpha parameter used in the fusion process.</p></li>
+<li><p><strong>beta</strong> (<em>float</em>) – Beta parameter used in the fusion process.</p></li>
+<li><p><strong>level</strong> (<em>float</em>) – Fusion level parameter.</p></li>
+<li><p><strong>gamma</strong> (<em>float</em>) – Gamma correction value.</p></li>
+<li><p><strong>metrics_dict_f</strong> (<em>dict</em><em> or </em><em>str</em>) – Fusion metrics (dictionary or JSON string).</p></li>
+<li><p><strong>metrics_dict_v</strong> (<em>dict</em><em> or </em><em>str</em>) – Visible image metrics (dictionary or JSON string).</p></li>
+<li><p><strong>metrics_dict_s</strong> (<em>dict</em><em> or </em><em>str</em>) – SWIR image metrics (dictionary or JSON string).</p></li>
+<li><p><strong>error</strong> (<em>str</em><em>, </em><em>optional</em>) – Error message if the fusion process failed.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Metrics dictionaries are automatically converted to JSON strings.</p></li>
+<li><p>The result is committed immediately to the database.</p></li>
+</ul>
+</dd></dl>
+
+</section>
+<section id="common-ui-module">
+<h2>common.ui module<a class="headerlink" href="#common-ui-module" title="Link to this heading">¶</a></h2>
+<p>Basic user interface helpers.</p>
+<p id="module-common.ui">Terminal UI formatting and license display utilities using Rich.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="common.ui.print_license_info">
+<span class="sig-prename descclassname"><span class="pre">common.ui.</span></span><span class="sig-name descname"><span class="pre">print_license_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/common/ui.html#print_license_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.ui.print_license_info" title="Link to this definition">¶</a></dt>
+<dd><p>Display license information for VISWIR in the terminal.</p>
+<p>This function renders the LGPL license notice using Rich’s Markdown
+and Panel components, providing a styled and readable output.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The license is <strong>LGPL (Lesser General Public License)</strong>.</p></li>
+<li><p>Users are free to use, modify, and distribute the software,
+provided derivative works remain under the same license.</p></li>
+<li><p>The license text is available at:
+<a class="reference external" href="https://www.gnu.org/licenses/lgpl-3.0.html">https://www.gnu.org/licenses/lgpl-3.0.html</a></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="common.ui.print_viswir_header">
+<span class="sig-prename descclassname"><span class="pre">common.ui.</span></span><span class="sig-name descname"><span class="pre">print_viswir_header</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/common/ui.html#print_viswir_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#common.ui.print_viswir_header" title="Link to this definition">¶</a></dt>
+<dd><p>Display the VISWIR header panel in the terminal.</p>
+<p>This function uses the Rich library to render a styled panel
+announcing the initialization of the VISWIR fusion pipeline.
+It also calls <a class="reference internal" href="#common.ui.print_license_info" title="common.ui.print_license_info"><code class="xref py py-func docutils literal notranslate"><span class="pre">print_license_info()</span></code></a> to display license details.</p>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The panel includes a title, subtitle, and a styled message.</p></li>
+<li><p>Originally designed to include a spinner animation (currently disabled).</p></li>
+<li><p>Intended for user-facing terminal output when launching VISWIR.</p></li>
+</ul>
+</dd></dl>
+
+</section>
+<section id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+<p>The top-level <code class="docutils literal notranslate"><span class="pre">common</span></code> module re-exports selected utilities
+from its submodules for convenience.</p>
+<section id="id46">
+<h3>common package<a class="headerlink" href="#id46" title="Link to this heading">¶</a></h3>
+<p>Utility modules shared across the VISWIR project:
+- Logging
+- Configuration loading
+- Database helpers
+- UI utilities</p>
+</section>
+</section>
+</section>
+
+</div>
+        </article>
+        <aside class="nftt-toc">
+          
+          <div class="my-sm-1 my-lg-0 ps-xl-3 text-muted">
+            <button class="btn btn-link p-lg-0 mb-2 mb-lg-0 text-decoration-none nftt-toc-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents"
+            >On this page <i class="ms-2 bi bi-chevron-expand"></i></button>
+            <div class="title d-none d-lg-block">
+              <i class="bi bi-file-earmark-text"></i>&nbsp;&nbsp;<span class="small">On this page</span>
+            </div>
+            <div class="collapse nftt-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <ul>
+<li><a class="reference internal" href="#">common package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#common-config-loader-module">common.config_loader module</a><ul>
+<li><a class="reference internal" href="#config-loader-py">config_loader.py</a></li>
+<li><a class="reference internal" href="#common.config_loader.ConfigError"><code class="docutils literal notranslate"><span class="pre">ConfigError</span></code></a></li>
+<li><a class="reference internal" href="#common.config_loader.load_all_configs"><code class="docutils literal notranslate"><span class="pre">load_all_configs()</span></code></a></li>
+<li><a class="reference internal" href="#common.config_loader.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
+<li><a class="reference internal" href="#common.config_loader.load_optuna_search_space"><code class="docutils literal notranslate"><span class="pre">load_optuna_search_space()</span></code></a></li>
+<li><a class="reference internal" href="#common.config_loader.resolve_config_path"><code class="docutils literal notranslate"><span class="pre">resolve_config_path()</span></code></a></li>
+<li><a class="reference internal" href="#common.config_loader.validate_config"><code class="docutils literal notranslate"><span class="pre">validate_config()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#common-datatypes-module">common.datatypes module</a><ul>
+<li><a class="reference internal" href="#common.datatypes.FusionConfig"><code class="docutils literal notranslate"><span class="pre">FusionConfig</span></code></a><ul>
+<li><a class="reference internal" href="#common.datatypes.FusionConfig.visible_folder"><code class="docutils literal notranslate"><span class="pre">FusionConfig.visible_folder</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.FusionConfig.swir_folder"><code class="docutils literal notranslate"><span class="pre">FusionConfig.swir_folder</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.FusionConfig.output_folder"><code class="docutils literal notranslate"><span class="pre">FusionConfig.output_folder</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.FusionConfig.ref_image_path"><code class="docutils literal notranslate"><span class="pre">FusionConfig.ref_image_path</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.FusionConfig.ground_truth_path"><code class="docutils literal notranslate"><span class="pre">FusionConfig.ground_truth_path</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.FusionConfig.mode"><code class="docutils literal notranslate"><span class="pre">FusionConfig.mode</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.FusionConfig.run_detection"><code class="docutils literal notranslate"><span class="pre">FusionConfig.run_detection</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">FusionConfig.ground_truth_path</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">FusionConfig.mode</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">FusionConfig.output_folder</span></code></a></li>
+<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">FusionConfig.ref_image_path</span></code></a></li>
+<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">FusionConfig.run_detection</span></code></a></li>
+<li><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">FusionConfig.swir_folder</span></code></a></li>
+<li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">FusionConfig.visible_folder</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#common.datatypes.FusionTask"><code class="docutils literal notranslate"><span class="pre">FusionTask</span></code></a><ul>
+<li><a class="reference internal" href="#common.datatypes.FusionTask.visible_path"><code class="docutils literal notranslate"><span class="pre">FusionTask.visible_path</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.FusionTask.swir_path"><code class="docutils literal notranslate"><span class="pre">FusionTask.swir_path</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.FusionTask.ref_image_path"><code class="docutils literal notranslate"><span class="pre">FusionTask.ref_image_path</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.FusionTask.ground_truth_path"><code class="docutils literal notranslate"><span class="pre">FusionTask.ground_truth_path</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.FusionTask.params"><code class="docutils literal notranslate"><span class="pre">FusionTask.params</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.FusionTask.save_output"><code class="docutils literal notranslate"><span class="pre">FusionTask.save_output</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.FusionTask.run_detection"><code class="docutils literal notranslate"><span class="pre">FusionTask.run_detection</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.FusionTask.output_dir"><code class="docutils literal notranslate"><span class="pre">FusionTask.output_dir</span></code></a></li>
+<li><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">FusionTask.ground_truth_path</span></code></a></li>
+<li><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">FusionTask.output_dir</span></code></a></li>
+<li><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">FusionTask.params</span></code></a></li>
+<li><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">FusionTask.ref_image_path</span></code></a></li>
+<li><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">FusionTask.run_detection</span></code></a></li>
+<li><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">FusionTask.save_output</span></code></a></li>
+<li><a class="reference internal" href="#id13"><code class="docutils literal notranslate"><span class="pre">FusionTask.swir_path</span></code></a></li>
+<li><a class="reference internal" href="#id14"><code class="docutils literal notranslate"><span class="pre">FusionTask.visible_path</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#common.datatypes.OptunaConfig"><code class="docutils literal notranslate"><span class="pre">OptunaConfig</span></code></a><ul>
+<li><a class="reference internal" href="#common.datatypes.OptunaConfig.n_trials"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.n_trials</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.OptunaConfig.n_jobs"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.n_jobs</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.OptunaConfig.sampler"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.sampler</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.OptunaConfig.pruner"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.pruner</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.OptunaConfig.timeout"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.timeout</span></code></a></li>
+<li><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.n_jobs</span></code></a></li>
+<li><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.n_trials</span></code></a></li>
+<li><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.pruner</span></code></a></li>
+<li><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.sampler</span></code></a></li>
+<li><a class="reference internal" href="#id19"><code class="docutils literal notranslate"><span class="pre">OptunaConfig.timeout</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#common.datatypes.OptunaResult"><code class="docutils literal notranslate"><span class="pre">OptunaResult</span></code></a><ul>
+<li><a class="reference internal" href="#common.datatypes.OptunaResult.visible_path"><code class="docutils literal notranslate"><span class="pre">OptunaResult.visible_path</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.OptunaResult.swir_path"><code class="docutils literal notranslate"><span class="pre">OptunaResult.swir_path</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.OptunaResult.params"><code class="docutils literal notranslate"><span class="pre">OptunaResult.params</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.OptunaResult.metrics_fusion"><code class="docutils literal notranslate"><span class="pre">OptunaResult.metrics_fusion</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.OptunaResult.error"><code class="docutils literal notranslate"><span class="pre">OptunaResult.error</span></code></a></li>
+<li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">OptunaResult.error</span></code></a></li>
+<li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">OptunaResult.metrics_fusion</span></code></a></li>
+<li><a class="reference internal" href="#id22"><code class="docutils literal notranslate"><span class="pre">OptunaResult.params</span></code></a></li>
+<li><a class="reference internal" href="#id23"><code class="docutils literal notranslate"><span class="pre">OptunaResult.swir_path</span></code></a></li>
+<li><a class="reference internal" href="#id24"><code class="docutils literal notranslate"><span class="pre">OptunaResult.visible_path</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#common.datatypes.ProcessResult"><code class="docutils literal notranslate"><span class="pre">ProcessResult</span></code></a><ul>
+<li><a class="reference internal" href="#common.datatypes.ProcessResult.visible_path"><code class="docutils literal notranslate"><span class="pre">ProcessResult.visible_path</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.ProcessResult.swir_path"><code class="docutils literal notranslate"><span class="pre">ProcessResult.swir_path</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.ProcessResult.ground_truth_path"><code class="docutils literal notranslate"><span class="pre">ProcessResult.ground_truth_path</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.ProcessResult.params"><code class="docutils literal notranslate"><span class="pre">ProcessResult.params</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.ProcessResult.metrics_fusion"><code class="docutils literal notranslate"><span class="pre">ProcessResult.metrics_fusion</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.ProcessResult.metrics_visible"><code class="docutils literal notranslate"><span class="pre">ProcessResult.metrics_visible</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.ProcessResult.metrics_swir"><code class="docutils literal notranslate"><span class="pre">ProcessResult.metrics_swir</span></code></a></li>
+<li><a class="reference internal" href="#common.datatypes.ProcessResult.error"><code class="docutils literal notranslate"><span class="pre">ProcessResult.error</span></code></a></li>
+<li><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">ProcessResult.error</span></code></a></li>
+<li><a class="reference internal" href="#id26"><code class="docutils literal notranslate"><span class="pre">ProcessResult.ground_truth_path</span></code></a></li>
+<li><a class="reference internal" href="#id27"><code class="docutils literal notranslate"><span class="pre">ProcessResult.metrics_fusion</span></code></a></li>
+<li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">ProcessResult.metrics_swir</span></code></a></li>
+<li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">ProcessResult.metrics_visible</span></code></a></li>
+<li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">ProcessResult.params</span></code></a></li>
+<li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">ProcessResult.swir_path</span></code></a></li>
+<li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">ProcessResult.visible_path</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#common-logger-module">common.logger module</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#common-results-db-module">common.results_db module</a><ul>
+<li><a class="reference internal" href="#common.results_db.FusionResult"><code class="docutils literal notranslate"><span class="pre">FusionResult</span></code></a><ul>
+<li><a class="reference internal" href="#common.results_db.FusionResult.id"><code class="docutils literal notranslate"><span class="pre">FusionResult.id</span></code></a></li>
+<li><a class="reference internal" href="#common.results_db.FusionResult.visible_img"><code class="docutils literal notranslate"><span class="pre">FusionResult.visible_img</span></code></a></li>
+<li><a class="reference internal" href="#common.results_db.FusionResult.swir_img"><code class="docutils literal notranslate"><span class="pre">FusionResult.swir_img</span></code></a></li>
+<li><a class="reference internal" href="#common.results_db.FusionResult.ref_img"><code class="docutils literal notranslate"><span class="pre">FusionResult.ref_img</span></code></a></li>
+<li><a class="reference internal" href="#common.results_db.FusionResult.grd_tr"><code class="docutils literal notranslate"><span class="pre">FusionResult.grd_tr</span></code></a></li>
+<li><a class="reference internal" href="#common.results_db.FusionResult.alpha"><code class="docutils literal notranslate"><span class="pre">FusionResult.alpha</span></code></a></li>
+<li><a class="reference internal" href="#common.results_db.FusionResult.beta"><code class="docutils literal notranslate"><span class="pre">FusionResult.beta</span></code></a></li>
+<li><a class="reference internal" href="#common.results_db.FusionResult.level"><code class="docutils literal notranslate"><span class="pre">FusionResult.level</span></code></a></li>
+<li><a class="reference internal" href="#common.results_db.FusionResult.gamma"><code class="docutils literal notranslate"><span class="pre">FusionResult.gamma</span></code></a></li>
+<li><a class="reference internal" href="#common.results_db.FusionResult.metrics_f"><code class="docutils literal notranslate"><span class="pre">FusionResult.metrics_f</span></code></a></li>
+<li><a class="reference internal" href="#common.results_db.FusionResult.metrics_v"><code class="docutils literal notranslate"><span class="pre">FusionResult.metrics_v</span></code></a></li>
+<li><a class="reference internal" href="#common.results_db.FusionResult.metrics_s"><code class="docutils literal notranslate"><span class="pre">FusionResult.metrics_s</span></code></a></li>
+<li><a class="reference internal" href="#common.results_db.FusionResult.error"><code class="docutils literal notranslate"><span class="pre">FusionResult.error</span></code></a></li>
+<li><a class="reference internal" href="#id33"><code class="docutils literal notranslate"><span class="pre">FusionResult.alpha</span></code></a></li>
+<li><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">FusionResult.beta</span></code></a></li>
+<li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">FusionResult.error</span></code></a></li>
+<li><a class="reference internal" href="#id36"><code class="docutils literal notranslate"><span class="pre">FusionResult.gamma</span></code></a></li>
+<li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">FusionResult.grd_tr</span></code></a></li>
+<li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">FusionResult.id</span></code></a></li>
+<li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">FusionResult.level</span></code></a></li>
+<li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">FusionResult.metrics_f</span></code></a></li>
+<li><a class="reference internal" href="#id41"><code class="docutils literal notranslate"><span class="pre">FusionResult.metrics_s</span></code></a></li>
+<li><a class="reference internal" href="#id42"><code class="docutils literal notranslate"><span class="pre">FusionResult.metrics_v</span></code></a></li>
+<li><a class="reference internal" href="#id43"><code class="docutils literal notranslate"><span class="pre">FusionResult.ref_img</span></code></a></li>
+<li><a class="reference internal" href="#id44"><code class="docutils literal notranslate"><span class="pre">FusionResult.swir_img</span></code></a></li>
+<li><a class="reference internal" href="#id45"><code class="docutils literal notranslate"><span class="pre">FusionResult.visible_img</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#common.results_db.get_session"><code class="docutils literal notranslate"><span class="pre">get_session()</span></code></a></li>
+<li><a class="reference internal" href="#common.results_db.save_result_to_db"><code class="docutils literal notranslate"><span class="pre">save_result_to_db()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#common-ui-module">common.ui module</a><ul>
+<li><a class="reference internal" href="#common.ui.print_license_info"><code class="docutils literal notranslate"><span class="pre">print_license_info()</span></code></a></li>
+<li><a class="reference internal" href="#common.ui.print_viswir_header"><code class="docutils literal notranslate"><span class="pre">print_viswir_header()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-contents">Module contents</a><ul>
+<li><a class="reference internal" href="#id46">common package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </nav>
+            </div>
+          </div>
+          
+        </aside>
+      </div>
+    </div>
+
+    <footer class="nftt-footer">
+      <nav id="paginator" class="py-4" aria-label="Documentation navigation">
+    <div class="container">
+      <ul class="pagination justify-content-between mb-0"><li class="d-flex page-item">
+            <a href="VISWIR_vQuasar.html" class="d-flex pe-5 px-lg-5 align-items-end" rel="prev" aria-label="Previous page: VISWIR_vQuasar module">
+              <span class="prev-page"><i class="bi bi-caret-left"></i></span>
+              <div class="d-none d-sm-flex flex-column">
+                <span class="text-small text-start text-muted">Previous</span>
+                <span class="underline">VISWIR_vQuasar module</span>
+              </div>
+            </a>
+          </li>
+        <li class="d-flex page-item ms-auto">
+            <a href="fusion.html" class="d-flex ps-5 px-lg-5 align-items-end" rel="next" aria-label="Next page: fusion package">
+              <div class="d-flex flex-column">
+                <span class="text-small text-end text-start text-muted">Next</span>
+                <span class="underline">fusion package</span>
+              </div>
+              <span class="next-page"><i class="bi bi-caret-right"></i></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+      <div class="py-5 px-4 px-md-3">
+  <div class="container">
+    
+    <div class="row">
+      <ul id="nftt-footer-links" class="list-unstyled list-separator col-lg-12 pb-2 text-center">
+        
+          <li class="d-inline">
+            <a href="mailto%3Aalexandre%40uca.fr.html"  class="list-item">Contact</a>
+          </li>
+        
+          <li class="d-inline">
+            <a href="license.html"  class="list-item">License</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a class="brand-text d-inline-flex align-items-center mb-2 text-decoration-none" href="/" aria-label="VISWIR: Visible and SWIR Weighted Image Reconstruction">
+          <span class="fs-6 fw-bold">VISWIR: Visible and SWIR Weighted Image Reconstruction</span>
+        </a>
+        
+          <ul class="list-unstyled small text-muted">
+            <li>2025, Riffard Alexandre - Institut Pascal</li>
+          </ul>
+        
+        <div class="built-with pt-2">
+          Built with <a href="http://sphinx-doc.org">Sphinx 8.1.3</a> and <a href="https://github.com/danirus/sphinx-nefertiti">Nefertiti 0.9.9</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </footer>
+
+    <div class="modal modal-xl fade" id="nftt-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-xxl-down modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="nftt-modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="nftt-modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="_static/documentation_options.js?v=bc51abb5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/colorsets.js?v=58f89e02"></script>
+    <script src="_static/docs-versions.js?v=08b0cbfb"></script>
+    <script src="_static/sphinx-nefertiti.min.js?v=af404e0e"></script>
+    <script src="_static/bootstrap.bundle.min.js?v=c066362f"></script>
+  </body>
+</html>
