@@ -12,7 +12,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/comsee-research/VISWIR)
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/comsee-research/viswir/blob/main/demo/VISWIR_demo.ipynb)
-<!--(url)[![Documentation](https://img.shields.io/badge/docs-online-brightgreen.svg)](https://comsee-research.github.io/viswir/)-->
+[![Documentation](https://img.shields.io/badge/docs-online-brightgreen.svg)](https://comsee-research.github.io/viswir/)
 [![Paper](https://img.shields.io/badge/Paper-Sensors--MDPI-blue.svg)](https://www.mdpi.com/1424-8220/26/13/4035)
 [![DOI](https://img.shields.io/badge/DOI-10.3390%2Fs26134035-orange.svg)](https://doi.org/10.3390/s26134035)
 
